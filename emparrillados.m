@@ -1,7 +1,9 @@
 % ----------------------------------------------------------------------
 % ejemplo de codigo para analisis de emparrillados usando a metodo matricial
-% Ejecucion en GNU-Octave - Octubre 2019 - Jorge Perez Zerpa
+% Ejecucion en GNU-Octave - Octubre 2019 - Jorge Perez Zerpa, Ignacio Suarez
 % ----------------------------------------------------------------------
+
+close all, clear all
 
 l  = 2     ;
 E  = 210e9 ;
@@ -27,11 +29,13 @@ Angles = [ 0 -pi/2 ]' ;
 
 fixeddofs = [ 1 2 3 7 ];
 
+nelems = size( Conec,1);
+nnodes = size( Nodes,1);
+
+
 freedofs  = (1:(3*nnodes));
 freedofs(fixeddofs) = [] ;
 
-nelems = size( Conec,1);
-nnodes = size( Nodes,1);
 
 KG      = sparse( 3*nnodes, 3*nnodes ) ;
  
@@ -80,10 +84,10 @@ UG(freedofs ) = u
 
 %ploteo de parrillado
 figure
+hold on, grid on
 for i=1:nelems
 eli=Conec(i,:);
 p1=[Nodes(eli(1),1),Nodes(eli(1),2)];
 p2=[Nodes(eli(2),1),Nodes(eli(2),2)];
-hold on
 plot([p1(1),p2(1)],[p1(2),p2(2)],'r')
-endfor
+end
