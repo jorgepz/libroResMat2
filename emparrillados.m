@@ -1,6 +1,6 @@
 % ----------------------------------------------------------------------
 % ejemplo de codigo para analisis de emparrillados usando a metodo matricial
-% Ejecucion en GNU-Octave - Octubre 2019 - Jorge Perez Zerpa, Ignacio Suarez
+% Ejecucion en GNU-Octave - Octubre 2019 - Jorge Perez Zerpa, Ignacio Suarez, Bruno Bouchard
 % ----------------------------------------------------------------------
 
 close all, clear all
@@ -58,10 +58,11 @@ for i = 1:nelems
   KL([1 4], [1 4])         = G*J/lelem * [ 1 -1 ; ...
                                           -1  1 ] ; 
 
-  KL([2 3 5 6], [2 3 5 6]) = E*I * [ 12/(l^3)  6/(l^2) -12/(l^3)  6/(l^2) ; ...
-                                      6/(l^2)  4/(l  )  -6/(l^2)  2/(l  ) ; ...
-                                    -12/(l^3) -6/(l^2)  12/(l^3) -6/(l^2) ; ...
-                                      6/(l^2)  2/(l  )  -6/(l^2)  4/(l  ) ] ;
+   KL([2 3 5 6], [2 3 5 6]) = E*I * [ 12/(lelem^3)  6/(lelem^2) -12/(lelem^3)  6/(lelem^2) ; ...
+                                      6/(lelem^2)  4/(lelem  )  -6/(lelem^2)  2/(lelem  ) ; ...
+                                    -12/(lelem^3) -6/(lelem^2)  12/(lelem^3) -6/(lelem^2) ; ...
+                                      6/(lelem^2)  2/(lelem  )  -6/(lelem^2)  4/(lelem  ) ] ;
+
 
   dofsElem = [ (elemNodes(1)*3-2):(elemNodes(1)*3) (elemNodes(2)*3-2):(elemNodes(2)*3) ] ;
 
