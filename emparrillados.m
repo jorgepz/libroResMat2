@@ -75,3 +75,15 @@ FG( fixeddofs  ) = [] ;
 u = KG\FG ;
 UG = zeros( 3*nnodes,1);
 UG(freedofs ) = u 
+
+
+
+%ploteo de parrillado
+figure
+for i=1:nelems
+eli=Conec(i,:);
+p1=[Nodes(eli(1),1),Nodes(eli(1),2)];
+p2=[Nodes(eli(2),1),Nodes(eli(2),2)];
+hold on
+plot([p1(1),p2(1)],[p1(2),p2(2)],'r')
+endfor
