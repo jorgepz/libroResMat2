@@ -86,9 +86,15 @@ UG(freedofs ) = u
 %ploteo de parrillado
 figure
 hold on, grid on
+diameterStructure = max(max( Nodes))  - min(min(Nodes)) ;
+margen = 0.1 * diameterStructure ;
+
 for i=1:nelems
-eli=Conec(i,:);
-p1=[Nodes(eli(1),1),Nodes(eli(1),2)];
-p2=[Nodes(eli(2),1),Nodes(eli(2),2)];
-plot([p1(1),p2(1)],[p1(2),p2(2)],'r')
+  nodesElem = Conec(i,:) 
+  p1 = Nodes( nodesElem(1),:) 
+  p2 = Nodes( nodesElem(2),:) 
+  plot3( [p1(1)  p2(1)], [p1(2)  p2(2)], [0 0] ,'b')
 end
+view(3)
+
+
