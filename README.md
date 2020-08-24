@@ -1,3 +1,3 @@
-# emparrillados
+# codigos Libro R2
 
-Un código minimal para cálculo de estructuras de emparrillados usando el Método de Elementos Finitos.
+Repositorio con códigos de ejemplo de los apuntes del curso Resistencia de Materiales 2
