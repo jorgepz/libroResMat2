@@ -1,0 +1,309 @@
+% codigoFuenteLibroR2
+% Copyright (C) 2020  J.M. Perez Zerpa, et. al.
+%
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation version 3 of the License.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%
+\documentclass{textbook}
+
+% --- fuentes e idioma ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{libertine}
+\usepackage{textcase}
+\usepackage[spanish,es-nodecimaldot]{babel}
+% ------------------------
+
+\usepackage{libertinust1math}
+
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage[usenames]{color}
+%\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx,epsfig}
+\usepackage{mathrsfs,amsfonts,amssymb,amsmath,amsthm,mathtools}
+\usepackage{hyperref}
+\usepackage{anysize}
+
+\usepackage{wasysym}
+\usepackage{ifthen}
+
+\usepackage{subfig}
+
+\usepackage{natbib,apalike}
+
+\usepackage{enumitem}
+
+\usepackage{lipsum}
+\usepackage{tcolorbox}
+
+\tcbuselibrary{skins,breakable}
+\usetikzlibrary{shadings,shadows}
+
+\usepackage[pagewise]{lineno}
+
+\usepackage[font=footnotesize]{caption}
+
+% formato 
+\usepackage[paperwidth=6in,paperheight=9in,%
+            top=16.5mm,bottom=12.8mm,left=15mm,right=6mm,%
+            portrait]{geometry}
+
+
+\usepackage[a4,center,frame,noinfo]{crop}
+%\usepackage[a4,center,noinfo]{crop}
+
+\setlength{\columnseprule}{.05mm}
+\setlength{\columnsep}{10mm}
+
+
+\usepackage{listings}
+\lstset{%
+  language=Octave, %
+  basicstyle=\small,
+  commentstyle=\color{mygreen},
+  keywordstyle=\color{blue},
+  morecomment = [l][\itshape\color{mygreen}]{\%},
+  showspaces=false, % show spaces adding particular underscores
+  showstringspaces=false, % underline spaces within strings
+  frame=single % adds a frame around the code
+  %breaklines=true, % sets automatic line breaking
+  title=\lstname
+}
+
+\makeatletter
+\def\mathcolor#1#{\@mathcolor{#1}}
+\def\@mathcolor#1#2#3{%
+	\protect\leavevmode
+	\begingroup
+	\color#1{#2}#3%
+	\endgroup
+}
+\makeatother
+
+% codigos embebidos
+\usepackage[numbered,framed]{matlab-prettifier}
+
+\let\ph\mlplaceholder % shorter macro
+\lstMakeShortInline"
+
+\lstset{
+	style              = Matlab-editor,
+	basicstyle         = \footnotesize\mlttfamily,
+	language           = Octave,
+	escapechar         = ",
+	mlshowsectionrules = true,
+}
+\renewcommand\lstlistingname{Código}
+% --------------------------------
+
+% --- colores ---
+\definecolor{grisecito}{rgb}{0.1,0.1,0,1}
+%\definecolor{BlueLUH}{cmyk}{1.0,0.7,0.0}
+\definecolor{ultramarine}{rgb}{0.07, 0.04, 0.56} 
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{migreen}{rgb}{0.1,0.3,0}%
+\definecolor{ugentblauw}{cmyk}{1 0.8 0.3 0.05}%
+\definecolor{miblue}{rgb}{0,0.1,0.6}%
+\definecolor{bluedark}{rgb}{0,0.1,0.5}%
+\definecolor{colorbordecajas}{rgb}{0,0.1,0.4}%
+\definecolor{colorfondocajas}{rgb}{.86,.91,.996}%
+\definecolor{colorbordecajasconcepto}{rgb}{0.1,0.33,0.01}%
+\definecolor{colorfondocajasconcepto}{rgb}{.9,.99,.8}%
+\colorlet{shadecolor}{ugentblauw}
+% ---------------
+
+\newenvironment{definicion}[1]{%
+	\tcolorbox[beamer,%
+	noparskip,breakable,
+	colback=white,
+	colframe=ultramarine,%
+%	colbacklower=grisecito,%
+%	colbacklower=DarkBlue!95!LightBlue,%
+	colbacklower=ultramarine,%
+	title=#1]}%
+{\endtcolorbox}
+%	colbacklower=DarkBlue!95!LightBlue,%
+
+
+\newenvironment{ejemplo}[1]{%
+	\tcolorbox[beamer,%
+	noparskip,breakable,
+	colback=LightGreen,colframe=DarkGreen,%
+	colbacklower=LimeGreen!75!LightGreen,%
+	title=#1]}%
+{\endtcolorbox}
+
+\newcommand{\includecode}[2][c]{\lstinputlisting[caption=#2]{#2}}
+%\renewcommand{\baselinestretch}{1.15}
+\renewcommand{\baselinestretch}{1.05}
+%\renewcommand{\tablename}{Tabla}
+\addto{\captionsspanish}{\renewcommand*{\contentsname}{Lista de contenidos}}
+\addto{\captionsspanish}{\renewcommand*{\tablename}{Tabla}}
+\addto{\captionsspanish}{\renewcommand*{\chaptername}{Unidad temática}}
+
+
+\titleformat{\section}
+{\normalfont\Large\color{migreen}\bfseries}{\color{migreen}\thesection}{1em}{}[{\color{migreen}\titlerule[1.0pt]}]
+
+\titlespacing*{\section}      {0pt}{3.0ex}{1.0ex}
+\titlespacing*{\subsection}   {0pt}{2.5ex}{0.8ex}
+\titlespacing*{\subsubsection}{0pt}{2.0ex}{0.6ex}
+
+
+\usepackage{titlesec}
+% \titleformat{\chapter}[display]% OLD
+%     {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}% OLD
+% \titlespacing*{\chapter}{0pt}{50pt}{40pt}% OLD
+\titleformat{\chapter}[display]% NEW
+{\Large\bfseries}{\chaptertitlename\ \thechapter}{5pt}{\LARGE}% NEW
+
+\titlespacing*{\chapter}{0pt}{30pt}{20pt}% NEW
+
+\numberwithin{equation}{chapter}
+
+\graphicspath{{./figs/}%
+	            {./figs/UT1/}{./figs/UT2/}{./figs/UT3/}{./figs/UT4/}%
+	            {./figs/UT5/}{./figs/UT6/}{./figs/UT7/}{./figs/UT8/}{./figs/Sols/}%
+              }
+
+% -----------  cajas ----------------------------
+\newcommand{\cajaactividad}[1]{
+	\begin{center}
+		\begin{tcolorbox}[enhanced,width=0.9\textwidth,drop fuzzy shadow southwest,colframe=colorbordecajas,colback=colorfondocajas,title=\textbf{Actividad}]
+			#1
+		\end{tcolorbox}
+	\end{center}
+}
+
+\newcommand{\cajaconcepto}[2]{
+	\begin{center}
+		\begin{tcolorbox}[enhanced,width=0.9\textwidth,drop fuzzy shadow southwest,colframe=colorbordecajasconcepto,colback=colorfondocajasconcepto,title=\textbf{#1}]
+			#2
+		\end{tcolorbox}
+	\end{center}
+}
+% -----------------------------------------------
+
+
+
+% ----------------------------------------------------
+% ----- encabezados ------------
+\usepackage{fancyhdr,fancybox}
+\pagestyle{fancy}
+
+% ensure that the chapter and section headings are in lowercase.
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\hspace{1ex}#1}{}}
+
+\renewcommand{\sectionmark}[1]{\markright{Sección \thesection.\hspace{1ex}#1}}
+\fancyhf{} % delete current header and footer
+\fancyhead[LE,RO]{\small\sffamily\bfseries\thepage}
+\fancyhead[LO]{\small\sffamily\bfseries\nouppercase{\rightmark}}
+\fancyhead[RE]{\small\sffamily\bfseries\nouppercase{\leftmark}}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{3.6pt} % space for the rule
+\fancypagestyle{plain}{%
+	\fancyhead{} % get rid of headers on plain pages
+	\renewcommand{\headrulewidth}{0pt} % and the line
+}
+% ----------------------------------------------------
+
+\usepackage{setspace}
+
+% ----------  PIE DE PAGINA ------------
+\fancyfoot{}
+\renewcommand{\headrulewidth}{1.2pt}
+\renewcommand{\footrulewidth}{0.4pt}
+%\fancyhead[L,R]{\slshape \leftmark}
+%\fancyfoot[R]{\thepage}
+\fancyfoot[C]{\scriptsize{Material en revisión, publicar errores/sugerencias en el \href{https://eva.fing.edu.uy/mod/forum/view.php?id=90908}{foro de EVA correspondiente}.}}
+%\headrulewidth 0.4pt
+%\footrulewidth 0 pt
+%\renewcommand{\headrulewidth}{0pt}
+
+% bash: wget https://raw.githubusercontent.com/jorgepz/myLaTeXDefinitions/master/definitions.tex
+\include{texs/definitions}
+
+\newcommand{\cambio}{\color{blue}}
+
+\usepackage[normalem]{ulem}
+
+% ================  documento  ====================
+%
+\begin{document}
+
+\frontmatter
+\begin{titlepage}
+	\doublespacing
+	\begin{center}
+%		~\\[1cm]
+		% Upper part of the page
+		\includegraphics[height=0.14\textwidth]{figs/logofing}
+		\hfill
+		\includegraphics[height=0.17\textwidth]{figs/logoudelar}    
+		%
+        \rule{\linewidth}{0.5mm} \\[4mm]
+		{\large\sffamily Material de apoyo} \\
+		{\large\sffamily\bfseries	Unidad Curricular Resistencia de Materiales 2}\\[0.1cm]
+		
+	\singlespacing
+		
+		{\sffamily \small
+	Instituto de Estructuras y Transporte\\
+	Facultad de Ingeniería, Universidad de la República\\
+	Montevideo, Uruguay\\[0.1cm]
+	
+	\today
+}
+
+		\rule{\linewidth}{0.5mm} \\[2mm]
+	\end{center}
+  
+\end{titlepage}
+\thispagestyle{empty}
+~
+
+% indice
+\newpage
+\thispagestyle{empty}
+
+\input{texs/sobrelosapuntes.tex}
+
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+
+\mainmatter
+
+%\linenumbers
+
+%\input{Cap1_intro}
+%\input{Cap2_MD_MF}
+%\input{Cap3_MDVigas}
+%\input{Cap4_AnPP}
+%\input{Cap5_PEsp}
+%\input{Cap6_AnaliSecc}
+%\input{Cap7_Estabilidad}
+%\input{Cap7_Inestabilidad_Otros}
+%\input{Cap8_Losas}
+
+\bibliographystyle{apalike}
+\bibliography{bibs/esc_apuntes}
+
+%\appendix
+%%\input{Ape_FormulasyTablas}
+%\input{Soluciones}
+%\input{Ape_Cods}
+
+\end{document}
