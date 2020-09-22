@@ -1,3 +1,3 @@
-# codigos Libro R2
+# codigos fuente Libro R2
 
-Repositorio con códigos de ejemplo de los apuntes del curso Resistencia de Materiales 2
+Repositorio con todos los archivos de código fuente del libro de apoyo de dictado de la Unidad Curricular Resistencia de Materiales 2.
