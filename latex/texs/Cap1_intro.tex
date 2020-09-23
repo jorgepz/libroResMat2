@@ -921,8 +921,8 @@ Durante el curso se abordarán las teorías de vigas y pórticos así como tambi
 
 \section{Grados de indeterminación}
 
-Existen diversos métodos disponibles para el análisis de una estructura, por lo tanto, es útil identificar qué tipo de métodos son los más adecuados {\cambio antes de iniciar el análisis estructural. %
-En esta sección se presentan propiedades geométricas (valores numéricos) que pueden ser calculados antes del análisis para poder asistir en la decisión del método a utilizar.}
+Existen diversos métodos disponibles para el análisis de una estructura, por lo tanto, es útil identificar qué tipo de métodos son los más adecuados antes de iniciar el análisis estructural. %
+En esta sección se presentan propiedades geométricas (valores numéricos) que pueden ser calculados antes del análisis para poder asistir en la decisión del método a utilizar.
 
 Los grados de indeterminación estática y cinemática son valores dados por la geometría y los vínculos entre componentes de la estructura. %
 %
@@ -935,8 +935,7 @@ Estos valores numéricos permiten estimar la complejidad de la resolución usand
 % -------------------------
 El grado de indeterminación estática (también llamado \textit{grado de hiperestaticidad}) es un valor numérico definido por la diferencia entre: el número de incógnitas de fuerza y el número de ecuaciones de equilibrio. %
 %
-{\cambio 
-La metodología de cálculo presentada en esta sección está basada en \citep{CerveraRuiz2002ii}}.
+La metodología de cálculo presentada en esta sección está basada en \citep{CerveraRuiz2002ii}.
 
 Las \textbf{incógnitas de fuerza} son aquellas necesarias para determinar completamente el \textit{\textbf{estado tensional}} de toda la estructura. En las estructuras consideradas en este texto, estas incógnitas son:
 %
@@ -959,7 +958,7 @@ La expresión matemática del grado de indeterminación estática puede ser pres
 gh = n_R + n_S - n_C \, n_{E}.
 \end{equation}
 
-{\cambio Como ejemplo se presentan las estructuras de la Figura~\ref{fig:ejemghSimp}, formadas por un único componente y con diferente cantidad de reacciones externas. Dado que no se cortan o liberan vínculos internos de la estructura no hay $n_S$.}
+Como ejemplo se presentan las estructuras de la Figura~\ref{fig:ejemghSimp}, formadas por un único componente y con diferente cantidad de reacciones externas. Dado que no se cortan o liberan vínculos internos de la estructura no hay $n_S$.
 
 \begin{figure}[htb]
 \centering
@@ -969,7 +968,7 @@ gh = n_R + n_S - n_C \, n_{E}.
   \label{fig:ejemghSimp}
 \end{figure}
 
-{\cambio En la Figura~\ref{fig:ejemghMed}. se muestra un reticulado, donde nuevamente si se desacopla en $n_C=3$ componentes una por barra, se tiene que cada articulación introduce dos vínculos a determinar. Por lo tanto $gh = 2+1+2+2+2-3\times 3 = 0$.}
+En la Figura~\ref{fig:ejemghMed}. se muestra un reticulado, donde nuevamente si se desacopla en $n_C=3$ componentes una por barra, se tiene que cada articulación introduce dos vínculos a determinar. Por lo tanto $gh = 2+1+2+2+2-3\times 3 = 0$.
 
 \begin{figure}[htb]
 	\centering
@@ -979,10 +978,8 @@ gh = n_R + n_S - n_C \, n_{E}.
 	\label{fig:ejemghMed}
 \end{figure}
 
-{\cambio 
 \paragraph{Analogía con cálculo a partir de grados de libertad} %
 El cálculo presentado es análogo al utilizado en otros cursos, en los cuales se considera el número de grados de libertad total de las estructuras (en el ejemplo $3\times 3$) y se van restando los vínculos que restringen el movimiento entre barras y a tierra ($-2-1-2-2-2$) por lo que se obtiene un valor opuesto al $gh$.
-}
 
 \paragraph{Clasificación de estructuras según grado de hiperestaticidad} %
 Las estructuras pueden ser clasificadas según su grado de hiperestaticidad:
@@ -1024,7 +1021,6 @@ En el ejemplo visto en la Figura~\ref{fig:ejemghSimp} a la derecha, se tiene: $g
 
 Finalmente, se puede usar los valores $gh_E$ y $gh$ para formular una condición \textbf{necesaria} que una estructura \textit{isostática} debe cumplir. %
 %
-{\cambio
 Se dice que:
 %
 $$
@@ -1032,17 +1028,15 @@ $$
 \text{Estructura isostática} \quad \Rightarrow \quad gh_E = 0 \, \textbf{y} \, gh = 0.
 }%
 $$
-}
 % -------------------------
 
 
-{\cambio 
 Existen casos de particulares, de estructuras en las cuales aún siendo isostáticas el grado de hiperestaticidad externa es mayor que cero, como por ejemplo la mostrada en la Figura~\ref{fig:hipereje}. %
 %
 Esto se debe a que la estructura está conformada por barras no conectadas entre sí como ocurre en la mostrada en las Figuras \ref{fig:ejemghMed} o \ref{fig:retic_gh}. %
 %
 Esta peculiaridad teórica no será relevante al momento de aplicación práctica del Método de las Fuerzas como se verá en la UT siguiente.
-}
+
 
 \subsubsection{Cálculo general de grado de hiperestaticidad en pórticos/vigas/barras planos}
 
@@ -1075,11 +1069,9 @@ Dado que en este texto dicho método es desarrollado únicamente para reticulado
 En la Sección 1.6 de \citep{CerveraRuiz2002ii} se presenta un desarrollo más extenso sobre la determinación del grado de hiperestaticidad así como también se muestran diversos ejemplos.
 
 
-{\cambio 
 \subsubsection{Cálculo simplificado de grado de hiperestaticidad para reticulados}
 
 En el caso particular de reticulados es posible considerar una forma alternativa y simplificada de cálculo. %
-}
 % 
 El estado tensional de estructuras formadas por barras articuladas queda definido a partir de los valores de tensiones axiales, como se ve en la Ecuación~\ref{eqn:sigmaBarra}. %
 %

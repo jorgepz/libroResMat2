@@ -4,5 +4,6 @@
 *.toc
 *.gz
 *.pdf
+*.pdf_tex
 *.bbl
 *.blg
