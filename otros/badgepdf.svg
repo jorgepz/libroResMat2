@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="90"
+   height="20"
+   version="1.1"
+   id="svg25"
+   sodipodi:docname="badgepdf.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata31">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs29" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2375"
+     inkscape:window-height="1239"
+     id="namedview27"
+     showgrid="false"
+     inkscape:zoom="6.3111111"
+     inkscape:cx="47.832312"
+     inkscape:cy="39.268795"
+     inkscape:window-x="82"
+     inkscape:window-y="66"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g23" />
+  <linearGradient
+     id="a"
+     x2="0"
+     y2="100%">
+    <stop
+       offset="0"
+       stop-color="#bbb"
+       stop-opacity=".1"
+       id="stop2" />
+    <stop
+       offset="1"
+       stop-opacity=".1"
+       id="stop4" />
+  </linearGradient>
+  <rect
+     rx="3"
+     width="90"
+     height="20"
+     fill="#555"
+     id="rect7" />
+  <rect
+     rx="3"
+     x="37"
+     width="53"
+     height="20"
+     fill="#4c1"
+     id="rect9" />
+  <path
+     fill="#4c1"
+     d="M37 0h4v20h-4z"
+     id="path11" />
+  <rect
+     rx="3"
+     width="90"
+     height="20"
+     fill="url(#a)"
+     id="rect13" />
+  <g
+     fill="#fff"
+     text-anchor="middle"
+     font-family="DejaVu Sans,Verdana,Geneva,sans-serif"
+     font-size="11"
+     id="g23">
+    <text
+       x="19.5"
+       y="15"
+       id="text15"
+       style="fill:#010101;fill-opacity:0.3">pdf</text>
+    <text
+       x="19.5"
+       y="14"
+       id="text17">pdf</text>
+    <text
+       x="62.5"
+       y="15"
+       id="text19"
+       style="fill:#010101;fill-opacity:0.3">libroR2</text>
+    <text
+       x="62.5"
+       y="14"
+       id="text21">libroR2</text>
+  </g>
+</svg>
