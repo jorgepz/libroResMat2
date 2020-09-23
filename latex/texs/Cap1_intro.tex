@@ -180,7 +180,7 @@ De acuerdo a su geometría y cargas aplicadas una estructura puede ser clasifica
        \item las restricciones cinemáticas son tales que las reacciones correspondientes cumplan con las condiciones anteriores de fuerza y momento.
     \end{enumerate}
   %
-  \item \textbf{Estructura Plano-espacial}: Una estructura será considerada \textbf{planoespacial}, también llamada emparrillado, si se cumple: 
+  \item \textbf{Estructura Plano-espacial}: Una estructura será considerada \textbf{plano-espacial}, también llamada emparrillado, si se cumple: 
     \begin{enumerate}
 	\item todos los ejes de sus barras pertenecen a un plano,
 	%
@@ -191,7 +191,7 @@ De acuerdo a su geometría y cargas aplicadas una estructura puede ser clasifica
 	\item las restricciones cinemáticas son tales que las reacciones correspondientes cumplan con las condiciones anteriores de fuerza y momento.
 \end{enumerate}
   
-  \item \textbf{Estructura tridimensional}: una estructura será considerada \textbf{tridimensional} si: no es clasificada dentro de ninguna de las dos categorías anteriores.
+  \item \textbf{Estructura tridimensional}: una estructura será considerada \textbf{tridimensional} si no es clasificada dentro de ninguna de las dos categorías anteriores.
 \end{itemize}
 
 \cajaactividad{
@@ -247,7 +247,7 @@ Los \textit{vínculos a tierra}, o condiciones de apoyo, de cada nodo de una est
 \begin{itemize}
 \item \textbf{libre}: un nodo o un extremo de una viga que no está vinculado a tierra o que no tiene desplazamiento ni giro impuesto ni restringido en ninguna dirección o ángulo,
 %
-\item \textbf{desplazamiento impedido}: vínculo que impide el desplazamiento de un nodo en una o más direcciones.
+\item \textbf{desplazamiento impedido}: vínculo que impide el desplazamiento de un nodo en una o más direcciones,
 %
 \item \textbf{giro impedido}: vínculo que impide el giro de un nodo según un cierto vector,
 %
@@ -309,7 +309,7 @@ Analice qué tipo de apoyo puede tener la estructura sobre el suelo así como ta
 \subsection{Modelado estructural}
 
 % presentacion conceptos
-El análisis estructural es la herramienta utilizada por profesionales responsable del diseño de estructuras. %
+El análisis estructural es la herramienta utilizada por profesionales responsables del diseño de estructuras. %
 %
 El diseño de una estructura consiste en un proceso iterativo en el cual se definen dimensiones de los componentes estructurales, se determinan sus solicitaciones y se verifica que se cumpla con el criterio del profesional y las normativas correspondientes. %
 %
@@ -343,7 +343,7 @@ También se pueden incluir aquí las hipótesis sobre el comportamiento constitu
 
 \paragraph{Modelo Numérico}
 %
-El \textit{Modelo Numérico} (MN) de una estructura es la herramienta que utilizamos para obtener magnitudes solución de las ecuaciones asociadas al EB (es decir, desplazamientos, solicitaciones, tensiones, etc). %
+El \textit{Modelo Numérico} (MN) de una estructura es la herramienta que se utiliza para obtener magnitudes solución de las ecuaciones asociadas al EB (es decir, desplazamientos, solicitaciones, tensiones, etc). %
 %
 Para estas soluciones se debe utilizar algún método numérico para resolver un conjunto de ecuaciones lineales o en algunos casos no lineales \citep{Bazzano2017}. %
 %
@@ -354,11 +354,11 @@ El proceso de diseño estructural consiste en un procedimiento iterativo que pue
 \begin{enumerate}
   \item establecer \textbf{condiciones} que la ER debe cumplir (arquitectónicas, normativas, etc.)
   %
-  \item \textbf{realizar un EB} a partir de una primer estimación de secciones, materiales vínculos entre componentes
+  \item \textbf{realizar un EB} a partir de una primer estimación de secciones, materiales, vínculos entre componentes
   %
   \item a través del uso de un MN \textbf{obtener las solicitaciones} a las que cada componente de la estructura estará sometido
   %
-  \item \textbf{diseñar los componentes} estructuras para soportar las solicitaciones (acero, secciones, tipo hormigón, etc.) 
+  \item \textbf{diseñar los componentes} de las estructuras para soportar las solicitaciones (acero, secciones, tipo de hormigón, etc.) 
   %
   \item \textbf{verificar} si se cumplen las condiciones definidas en (1): si se cumplen entonces se finalizó, si no se cumplen se debe proponer un nuevo EB recomenzando desde el paso (2).
 \end{enumerate}
@@ -465,7 +465,7 @@ En este material y en el curso se tendrán en cuenta las siguientes hipótesis/c
 \end{itemize}
 
 
-\subsection{Ecuaciones de teoría de vigas en flexión pura}
+\subsection{Ecuaciones de la teoría de vigas en flexión pura}
 
 Se pasa ahora a considerar el plano $x-y$ y que la viga está sometida a un estado de flexión pura. %
 %
