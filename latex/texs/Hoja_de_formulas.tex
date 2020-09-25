@@ -1,0 +1,423 @@
+\newcommand{\mE}{{\rm E}}
+\newcommand{\mG}{{\rm G}}
+
+\chapter{Hoja de fórmulas}
+
+\begin{scriptsize}
+	\scriptsize{v.\today\date{\today} - Errores y comentarios:}
+	%\vspace{0.05cm}
+	\scriptsize{\href{https://eva.fing.edu.uy/mod/forum/view.php?id=67335}{Foro de EVA de errores y sugerencias}}
+\end{scriptsize}
+
+\begin{center}
+	\fcolorbox{black}{lightgray}{\textbf{Método de Desplazamientos matricial para reticulados.}}
+\end{center}
+
+\underline{
+	Ecuación de rigidez del elemento finito:}\quad $\textbf{K}^e \,\textbf{u}^e = \textbf{f}^e$\\
+
+\underline{
+	Matriz de rigidez:} Coordenadas locales bidimensional
+%
+\vspace{-0.3cm}
+$$
+\textbf{K}_ L^e= %
+\frac{\Omega_e\mE_e}{L_e}
+\left(
+\begin{array}{rrrr}
+1  & 0 & -1 & 0 \\
+0  & 0 &  0 & 0 \\
+-1 & 0 &  1 & 0 \\
+0  & 0 &  0 & 0 \\
+\end{array}
+\right)
+$$
+
+$$
+\textbf{R}^e = %
+\left(
+\begin{array}{rrrr}
+c  & -s &  0 & 0 \\
+s  & c &  0 & 0 \\
+0  & 0 &  c & -s \\
+0  & 0 & s & c \\
+\end{array}
+\right)
+$$
+
+\underline{
+	Matriz de rigidez:} - Coordenadas globales - $\textbf{K}_ G^e=\textbf{R}^e \textbf{K}_ L^e\textbf{R}^T$
+\vspace{-0.3cm}
+$$
+\textbf{K}_ G^e= %
+\frac{\Omega_e\mE_e}{L_e}
+\left(
+\begin{array}{rrrr}
+c^2  & cs   & -c^2 &  -cs \\
+cs  & s^2  &  -cs & -s^2 \\
+-c^2  & -cs  &  c^2 &   cs \\
+-cs  & -s^2 &   cs &  s^2 \\
+\end{array}
+\right)
+$$
+
+\vspace{-0.2cm}
+$c=\cos(\alpha)$, $s=\sen(\alpha)$ siendo $\alpha$ el ángulo que forman los ejes globales con los locales (sentido: eje global hacia eje local antihorario positivo).
+
+\vspace{0.3cm}
+\underline{Vector desplazamiento} - Coordenadas globales - $\textbf{u}^e=\textbf{R} \textbf{u}_ L^e$
+
+\vspace{0.3cm}
+$\textbf{u}^e=[u_1^e \quad v_1^e  \quad u_2^e \quad v_2^e]^T$ \centering
+
+
+\begin{center}
+	\fcolorbox{black}{lightgray}{\textbf{Método de las fuerzas para reticulados.}}
+\end{center}
+
+
+Grado de hiperestaticidad total: $gh=n_R + n_S - n_C n_E$\raggedright
+
+Grado de hiperestaticidad externa: $ghe=n_R - n_E$
+
+Grado de hiperestaticidad interna: $ghi=gh - ghe$
+
+\vspace{0.3cm}
+\underline{Energía potencial complementaria:}\raggedright
+
+$$
+\Pi^* (\bfX) = \frac{1}{2}  \sum_{e=1}^{n_e} \frac{(N_0^e + \sum_{j=1}^{gh} X_j N_j^e)^2}{E^e A^e} \ell^e - \bfu^T \left( \bff_0 +  \sum_{j=1}^{gh} X_j \bff_j \right).
+$$
+
+
+Sistema de ecuaciones del MF:
+$$
+\bfM_f \bfX = \bff_f
+$$
+%
+con
+$$
+(\bfM_f)_{ij} =  \sum_{e=1}^{n_e} \frac{N_i^e N_j^e }{E^e A^e} \ell^e,
+\qquad
+(\bff_f)_{i} =  - \sum_{e=1}^{n_e} \frac{N_0^e N_i^e }{E^e A^e} \ell^e.
+$$
+
+\underline{Directa en las barras y reacciones:}
+$$
+N^e (x)=N_0^e +  \sum_{j=1}^{gh} X_j N_j^e ;
+\qquad
+R^i(x)=R_0^i +  \sum_{j=1}^{gh} X_j R_j^i
+$$
+
+\underline{Desplazamiento asociado al estado adicional $gh+1$:}
+$$
+\delta_{gh+1}= \sum_{e=1}^{n_e} \frac{N_{gh+1}^e (N_0^e + \sum_{j=1}^{gh} X_j N_j^e)}{E^e A^e} \ell^e 
+$$
+
+\begin{center}
+	\fcolorbox{black}{lightgray}{\textbf{Método de Slope-Deflection}}
+\end{center}
+
+\begin{center}
+	%\def\svgwidth{0.85\textwidth}
+	%\resizebox{1\linewidth}{1\linewidth}{\input{./figs/eje_viga_deformada.pdf_tex}}
+	\def\svgwidth{0.85\textwidth}
+	\input{./figs/HojaFormulas/eje_viga_deformada.pdf_tex}
+\end{center}
+
+\underline{Desplazamiento relativo:}
+$$\psi=\frac{v_2 - v_1}{L}$$
+
+\underline{Momentos nodales:}
+$$
+\left\{
+\begin{array}{rl}
+\displaystyle
+M_{12} &=\frac{2 EI}{L} \left( 2 \theta_1  + \theta_2 - 3 \psi   \right)  +  M_{12}^{emp}  \\[3mm]
+\displaystyle
+M_{21} &=\frac{2 EI}{L} \left( \theta_1 + 2  \theta_2 - 3 \psi  \right)   +  M_{21}^{emp}
+\end{array}
+\right.
+$$
+\vspace{0.2cm}
+\underline{Fuerzas nodales:}
+$$
+\left\{
+\begin{array}{rl}
+\displaystyle
+F_{12} &= \frac{M_{12} + M_{21}}{L} + F_{12}^{tramo-iso} \\[3mm]
+\displaystyle
+F_{21} &= -\frac{(M_{12} + M_{21})}{L} + F_{21}^{tramo-iso} 
+\end{array}
+\right.
+$$
+
+&
+
+\underline{Caso particular ($M_{21}=0$):}
+$$
+M_{12}=\frac{3EI}{L}\left( \theta_{1}-\psi \right) + M_{12}^{emp}
+$$
+
+\begin{center}
+	\fcolorbox{black}{lightgray}{\textbf{Estructuras tridimensionales de barras}}
+\end{center}
+
+\underline{Torsión}
+$$
+M_t=GJ\Theta,
+\qquad
+\Theta=\frac{\theta_2 - \theta_1}{l},
+\qquad
+G=\frac{E}{2(1+\nu)}
+$$
+
+
+$$
+\tau_{MAX}=\frac{M_t}{W_t}
+$$
+
+
+\vspace{0.2cm}
+\begin{center}
+	\def\svgwidth{0.65\textwidth}
+	\input{./figs/HojaFormulas/viga3d_torsion.pdf_tex}
+\end{center}
+
+
+\vspace{0.3cm}
+\underline{Ecuación de rigidez del elemento finito:}\quad $ \textbf{K}^e \, \textbf{u}^e=\textbf{f}^e$
+
+\vspace{0.3cm}
+\underline{Matriz de rigidez} -coordenadas locales-
+\renewcommand{\arraystretch}{1.35}
+\[
+\textbf{K}_L^e = 
+\left[
+\begin{matrix}
+\frac{GJ}{l}  & 0 & 0 & -\frac{GJ}{l} & 0 & 0 \\
+0  & 12\frac{EI_z}{l^3} & 6\frac{EI_z}{l^2} & 0  & -12\frac{EI_z}{l^3} & 6\frac{EI_z}{l^2} \\
+0  & 6\frac{EI_z}{l^2} & 4\frac{EI_z}{l} & 0  & -6\frac{EI_z}{l^2} & 2\frac{EI_z}{l} \\
+-\frac{GJ}{l}  & 0 & 0 & \frac{GJ}{l} & 0 & 0 \\
+0  & -12\frac{EI_z}{l^3} & -6\frac{EI_z}{l^2} & 0  & 12\frac{EI_z}{l^3} & -6\frac{EI_z}{l^2} \\
+0  & 6\frac{EI_z}{l^2} & 2\frac{EI_z}{l} & 0  & -6\frac{EI_z}{l^2} & 4\frac{EI_z}{l} \\
+\end{matrix}
+\right]
+\]
+
+\underline{Matriz de rotación:}
+\renewcommand{\arraystretch}{1.1}
+\[
+\textbf{R}^e = 
+\left[
+\begin{matrix}
+cos(\alpha_y) & 0 & -sin(\alpha_y) & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 \\
+sin(\alpha_y)  & 0 & cos(\alpha_y)  & 0 & 0 & 0 \\
+0 & 0 & 0 & cos(\alpha_y)  & 0 & -sin(\alpha_y) \\
+0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & sin(\alpha_y) & 0 & cos(\alpha_y) \\
+\end{matrix}
+\right]
+\]
+
+
+$\alpha_y$ es el ángulo que forman los ejes globales con los locales (sentido: eje global hacia eje local como se muestra en la figura).
+
+\vspace{0.3cm}
+\underline{Matriz de rigidez} - coordenadas globales - $\textbf{K}_G^e=\textbf{R}^e\textbf{K}_L^e{\textbf{R}^e}^T$
+
+\vspace{0.3cm}
+\underline{Vector desplazamiento} - coordenadas globales - $\textbf{u}^e=\textbf{R}^e\textbf{u}^e_L$
+$$
+\textbf{u}^e=[\theta_{x,1} \quad v_{y,1} \quad \theta_{z,1} \quad \theta_{x,2} \quad v_{y,2} \quad \theta_{z,2}]^T
+$$
+
+\vspace{0.3cm}
+\underline{Vector Fuerza} - coordenadas globales - $\textbf{f}^e=\textbf{R}^e\textbf{f}^e_L$
+$$
+\textbf{f}^e=[M_{x,1} \quad F_{y,1}\quad M_{z,1}\quad M_{x,2} \quad F_{y,2} \quad M_{z,2}]^T
+$$
+
+\begin{center}
+	\fcolorbox{black}{lightgray}{\textbf{Análisis seccional}}
+\end{center}
+
+\begin{minipage}{0.33\textwidth}
+	\includegraphics[width=1.1\textwidth]{NCesquema1}
+\end{minipage}
+\begin{minipage}{0.66\textwidth}
+	$$
+	\sigma(x,y,z)=\frac{N(x)}{A} \left (1+\frac{y_A}{\rho_z^2}y +\frac{z_A}{\rho_y^2}z\right)
+	$$
+	$$
+	\rho_y^2=\frac{I_y}{A} ;
+	\qquad
+	\rho_z^2=\frac{I_z}{A}
+	$$
+\end{minipage}
+
+\vspace{0.7cm}
+\begin{minipage}{0.33\textwidth}
+	\includegraphics[width=1.2\textwidth]{MNSTesquema1}
+\end{minipage}
+\begin{minipage}{0.66\textwidth}
+	\hspace{0.7cm}
+	Ecuación de la línea neutra:
+	$$
+	1 +\frac{y_A}{\rho_z^2}y +\frac{z_A}{\rho_y^2}z=0
+	$$
+	\hspace{0.7cm}
+	Equilibrio de fuerzas en la sección:
+	$$
+	\hspace{0.7cm}
+	N=\int_{A} \sigma dA ;
+	\qquad
+	\sigma= k.z= -\frac{\sigma_{maxc}}{c} z
+	$$
+	\hspace{0.7cm}
+	Equilibrio de momentos en la sección:
+	$$
+	N (c-d)=\int_{A} \sigma dA ;
+	$$
+\end{minipage}
+
+\vspace{0.6cm}
+Caso Sección Rectangular
+
+\begin{minipage}{0.33\textwidth}
+	\includegraphics[width=1.3\textwidth]{MNSTrect}
+\end{minipage}
+\begin{minipage}{0.66\textwidth}
+	\vspace{0.4cm}
+	$$
+	c=3d
+	$$
+	\vspace{0.02cm}
+	$$
+	N=-\frac{\sigma_{maxc}}{c}\frac{b\, c^2}{2}
+	$$
+	\vspace{0.02cm}
+	$$
+	\sigma_{maxc}=-\frac{2N}{bc}
+	$$
+\end{minipage}
+
+\vspace{0.2cm}
+\begin{center}
+	\fcolorbox{black}{lightgray}{\textbf{Estabilidad Estructural}}
+\end{center}
+
+$$
+\frac{d^2}{dx^2}\left(EI\frac{d^2 v}{dx^2}\right) + N\frac{d^2 v}{dx^2} + q =0 ;
+\qquad
+k^2=\frac{N}{EI}
+$$
+
+$$
+\text{Caso de compresión}: v(x)= Acos(kx) + Bsin(kx) + Cx + D
+$$
+
+$$
+V(x) = \frac{d}{dx}\left(EI\frac{d^2 v}{dx^2}\right) + N\frac{dv}{dx}
+$$
+
+$$
+M(x) = E \, I\frac{d^2 v}{dx^2}
+$$
+
+
+$$
+\sigma_{cr,i}=\frac{E\,I\,\pi^2}{A\, {L_{p,i}}^2} ;
+\qquad
+L_{p,i}=\beta_i L ;
+\qquad
+i \, \in \, \{y,z\}
+$$
+
+$$
+\sigma_{cr,i}= \frac {\pi^2 E}{{\lambda_i}^2} ;
+\qquad
+\lambda_i=\frac{L_{p,i}}{\rho_i} ;
+\qquad
+\rho_i=\sqrt{\frac{I_i}{A}}
+$$
+
+$$
+\frac{M}{W} + \frac{N}{A} \leq min \{\sigma_{fluencia}, \sigma_{cr}\}
+$$
+
+
+\begin{center}
+	\fcolorbox{black}{lightgray}{\textbf{Tabla de propiedades geométricas}}
+\end{center}
+
+\centering
+\scalebox{0.62}[0.62]{
+	\begin{tabular}{| c |c | c| c | c|}
+		\hline
+		\begin{tabular}{l}
+		\end{tabular} &
+		\begin{tabular}{l}
+			\scalebox{2}[2]{ $I_x$} 
+		\end{tabular} &
+		\begin{tabular}{l}
+			\scalebox{2}[2]{  $W_x$}
+		\end{tabular} &
+		\begin{tabular}{l}
+			\scalebox{1.5}[1.5]{  $I_y$}
+		\end{tabular} &
+		\begin{tabular}{l}
+			\scalebox{1.5}[1.5]{  $W_y$}
+		\end{tabular} \\
+		\hline
+		\begin{tabular}{l}
+			\input{./figs/HojaFormulas/rectangulo.pdf_tex}
+		\end{tabular} &
+		\begin{tabular}{l}
+			\scalebox{2.5}[2.5]{  $\frac{bh^3}{12}$}
+		\end{tabular} &
+		\begin{tabular}{l}
+			\scalebox{2.5}[2.5]{  $\frac{bh^2}{6}$}
+		\end{tabular} &
+		\begin{tabular}{l}
+			\scalebox{2.5}[2.5]{  $\frac{hb^3}{12}$}
+		\end{tabular} &
+		\begin{tabular}{l}
+			\scalebox{2.5}[2.5]{  $\frac{hb^2}{6}$}
+		\end{tabular} \\
+		\hline
+		\begin{tabular}{l}
+			\input{./figs/HojaFormulas/triangulo.pdf_tex}
+		\end{tabular} &
+		\begin{tabular}{l}
+			\scalebox{2.5}[2.5]{  $\frac{bh^3}{36}$}
+		\end{tabular} &
+		\begin{tabular}{l}
+			\scalebox{2.5}[2.5]{  -}
+		\end{tabular} &
+		\begin{tabular}{l}
+			\scalebox{2.5}[2.5]{  $\frac{hb^3}{48}$}
+		\end{tabular} &
+		\begin{tabular}{l}
+			\scalebox{2.5}[2.5]{  -}
+		\end{tabular} 
+		\\
+		\hline
+		\begin{tabular}{c}
+			\input{./figs/HojaFormulas/circulo.pdf_tex}
+		\end{tabular} &
+		\begin{tabular}{l}
+			\scalebox{2.5}[2.5]{  $\frac{\pi R^4}{4}$}
+		\end{tabular} &
+		\begin{tabular}{l}
+			\scalebox{2.5}[2.5]{  $\frac{\pi R^3}{4}$}
+		\end{tabular} &
+		\begin{tabular}{l}
+			\scalebox{2.5}[2.5]{  $\frac{\pi R^4}{4}$}
+		\end{tabular} &
+		\begin{tabular}{l}
+			\scalebox{2.5}[2.5]{  $\frac{\pi R^3}{4}$}
+		\end{tabular} \\
+		\hline
+\end{tabular}}
