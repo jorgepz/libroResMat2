@@ -19,7 +19,7 @@
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{textbook}[\filedate\ \fileversion\ LaTeX Class for writing textbooks in english or spanish.]
 %\LoadClass[oneside,openright,10pt]{book}
-\LoadClass[twoside,openright,10pt]{book}
+\LoadClass[oneside,openright,10pt]{book}
 %
 % --- packages ---
 %

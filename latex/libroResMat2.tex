@@ -26,12 +26,22 @@
 \usepackage{libertinust1math}
 
 \usepackage{titlesec}
-\usepackage{hyperref}
+
 \usepackage[usenames]{color}
 %\usepackage[dvipsnames]{xcolor}
 \usepackage{graphicx,epsfig}
 \usepackage{mathrsfs,amsfonts,amssymb,amsmath,amsthm,mathtools}
-\usepackage{hyperref}
+
+
+\definecolor{bluedark}{rgb}{0,0.1,0.5}%
+\definecolor{miblue}{rgb}{0,0.1,0.6}%
+
+\usepackage[colorlinks = true,
+linkcolor = miblue,
+urlcolor  = miblue,
+citecolor = blue,
+anchorcolor = miblue{hyperref}
+
 \usepackage{anysize}
 
 \usepackage{wasysym}
@@ -240,8 +250,6 @@
 
 % bash: wget https://raw.githubusercontent.com/jorgepz/myLaTeXDefinitions/master/definitions.tex
 \include{texs/definitions}
-
-%\newcommand{\cambio}{\color{blue}}
 
 \usepackage[normalem]{ulem}
 
