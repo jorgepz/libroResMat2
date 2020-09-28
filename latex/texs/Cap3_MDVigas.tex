@@ -1,4 +1,18 @@
-% =======================================
+% codigoFuenteLibroR2
+% Copyright (C) 2020  J.M. Perez Zerpa, et. al.
+%
+% This program is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation version 3 of the License.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 \chapter[Método de Desplazamientos en pórticos]{Método de Desplazamientos en pórticos}
 
 % intro e hipotesis
@@ -560,20 +574,20 @@ El objetivo es entonces encontrar las fuerzas nodales equivalentes que tengan la
 %
 \begin{equation}
 \Pi_{ext}^{tr} =
--F_{x,1}^{tr} v_1 - M_1^{tr} \theta_1 -F_{x,2}^{tr} v_2 -  M_2^{tr} \theta_2
+-F_{y,1}^{tr} v_1 - M_1^{tr} \theta_1 -F_{y,2}^{tr} v_2 -  M_2^{tr} \theta_2
 \end{equation}
 donde
 \begin{eqnarray}
-F_{x,1}^{tr} = \int_{0}^{L} q(x) \varphi_{v_1}(x) \dif x \qquad & \displaystyle M_1^{tr} = \int_{0}^{L}q(x) \varphi_{\theta_1}(x)  \dif x  \nonumber\\
-F_{x,2}^{tr} = \int_{0}^{L}q(x) \varphi_{v_2}(x)  \dif x \qquad & \displaystyle M_2^{tr} = \int_{0}^{L} q(x)\varphi_{\theta_2}(x)  \dif x  \nonumber
+F_{y,1}^{tr} = \int_{0}^{L} q(x) \varphi_{v_1}(x) \dif x \qquad & \displaystyle M_1^{tr} = \int_{0}^{L}q(x) \varphi_{\theta_1}(x)  \dif x  \nonumber\\
+F_{y,2}^{tr} = \int_{0}^{L}q(x) \varphi_{v_2}(x)  \dif x \qquad & \displaystyle M_2^{tr} = \int_{0}^{L} q(x)\varphi_{\theta_2}(x)  \dif x  \nonumber
 \end{eqnarray}
 
 En el caso particular de carga distribuida uniforme $q(x) = q$ se tiene:
 %
 \begin{eqnarray}
-F_{x,1}^{tr} &=& \frac{q L}{2} \\
+F_{y,1}^{tr} &=& \frac{q L}{2} \\
 M_1^{tr} &=& \frac{q L^{2}}{12} \\
-F_{x,2}^{tr} &=& \frac{q L}{2} \\
+F_{y,2}^{tr} &=& \frac{q L}{2} \\
 M_2^{tr} &=& - \frac{q L^{2}}{12}
 \end{eqnarray}
 
@@ -1267,16 +1281,6 @@ se tiene que esa condición es equivalente a
 \int_{0}^{\ell} \frac{	N (x)^2 }{E A} \dif x \ll \int_{0}^{\ell} \frac{	M (x)^2 }{E I}  \dif x.
 \end{equation}
 
-%En clase se resolvió un ejemplo considerando deformación por esfuerzos axiales y se mostró que, en ese caso particular, la hipótesis de rigidez a directa es razonable. %
-%
-
-
-
-%\subsection{Ejemplo}
-%
-%PNI 20 3x3x3 carga 400 kg/m2
-% Resolviendo usando ONSAS se tiene
-
 
 
 \subsection{Método de Elementos Finitos}
@@ -1399,14 +1403,3 @@ Sean las siguientes estructuras conformadas por barras de \textbf{EI}=cte y de l
 	\def\svgwidth{0.45\textwidth}
 	b) \input{figs/UT3/UT3ejDespb.pdf_tex}
 \end{center}
-
-
-
-\begin{center}
-	%\def\svgwidth{0.45\textwidth}
-	%c) \input{figs/UT3/UT3ejDespc.pdf_tex}
-	%\def\svgwidth{0.45\textwidth}
-	%d) \input{figs/UT3/UT3ejDespd.pdf_tex}	
-\end{center}
-
-
