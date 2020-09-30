@@ -39,3 +39,10 @@ calcular energías y verificar hipótesis en ejemplo visto
 ### Consultas grupos laboratorio
 
  * [ ] consultas de grupos... 
+
+
+
+## Clase 2020.10.06
+
+ 1. [ ] consultas de pauta?
+ 1. [ ] ...
