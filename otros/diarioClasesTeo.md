@@ -31,5 +31,11 @@ calcular energías y verificar hipótesis en ejemplo visto
 
 ## Clase 2020.10.01
 
+ 1. [ ] consultas de pauta?
  1. [ ] consultas de UT2/3?
- 1. ...
+ 1. [ ] pendiente clase pasada
+ 1. [ ] inicio UT4
+
+### Consultas grupos laboratorio
+
+ * [x] consultas de dos grupos
