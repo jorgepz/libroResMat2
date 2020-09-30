@@ -38,4 +38,4 @@ calcular energías y verificar hipótesis en ejemplo visto
 
 ### Consultas grupos laboratorio
 
- * [x] consultas de dos grupos
+ * [ ] consultas de grupos... 
