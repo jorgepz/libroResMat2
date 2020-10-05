@@ -3,6 +3,7 @@
 *.out
 *.toc
 *.gz
+*.xwm
 *.pdf
 *.pdf_tex
 *.bbl
