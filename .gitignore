@@ -7,3 +7,5 @@
 *.pdf_tex
 *.bbl
 *.blg
+latex/svg2pdftex.sh
+latex/texs/definitions.tex
