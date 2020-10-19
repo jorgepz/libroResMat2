@@ -11,4 +11,4 @@ wget https://gist.githubusercontent.com/jorgepz/9b3050d12ce9e79cdeac415b3845c715
 mv definitions.tex latex/texs/
 
 #cd latex && latexmk -pdf libroResMat2.tex && cd ..
-cd latex && pdflatex libroResMat2.tex && cd ..
+cd latex && pdflatex libroResMat2.tex && pdflatex libroResMat2.tex && cd ..
