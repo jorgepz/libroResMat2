@@ -19,7 +19,7 @@
 compile_pdf:
   image: tianon/latex
   before_script:
-    - apt-get update && apt-get install -y --no-install-recommends apt-utils && apt-get install -y -qq wget
+    - apt-get update && apt-get install -y --no-install-recommends apt-utils && apt-get install -y -qq wget && apt-get install -y -qq inkscape
   script:
     - ./descrgaDepsYCompilar.sh
   artifacts:
