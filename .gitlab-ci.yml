@@ -18,6 +18,8 @@
 
 compile_pdf:
   image: tianon/latex
+before_script:
+  - apt-get update -qq && apt-get install -y -qq wget
   script:
     - ./descrgaDepsYCompilar.sh
   artifacts:
