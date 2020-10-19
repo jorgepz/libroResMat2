@@ -2,7 +2,8 @@ wget https://raw.githubusercontent.com/jorgepz/svg2pdf_tex/master/svg2pdftex.sh
 mv svg2pdftex.sh latex/
 
 cd latex
-chmod +x svg2pdftex.sh 1
+chmod +x svg2pdftex.sh
+./svg2pdftex.sh 1
 cd ..
 
 
