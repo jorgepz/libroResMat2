@@ -1,4 +1,4 @@
-% codigoFuenteLibroR2
+% libroResMat2
 % Copyright (C) 2020  J.M. Perez Zerpa, et. al.
 %
 % This program is free software: you can redistribute it and/or modify
@@ -26,8 +26,7 @@
 \usepackage{libertinust1math}
 \usepackage{titlesec}
 
-\usepackage[usenames]{color}
-%\usepackage[dvipsnames]{xcolor}
+\usepackage[usenames]{xcolor}
 \usepackage{graphicx,epsfig}
 \usepackage{mathrsfs,amsfonts,amssymb,amsmath,amsthm,mathtools}
 
@@ -73,12 +72,11 @@ anchorcolor = miblue]{hyperref}
             portrait]{geometry}
 
 
-\usepackage[a4,center,frame,noinfo]{crop}
-%\usepackage[a4,center,noinfo]{crop}
+%\usepackage[a4,center,frame,noinfo]{crop}
+\usepackage[a4,center,frame]{crop}
 
 \setlength{\columnseprule}{.05mm}
 \setlength{\columnsep}{10mm}
-
 
 \usepackage{listings}
 \lstset{%
@@ -242,15 +240,21 @@ anchorcolor = miblue]{hyperref}
 \renewcommand{\footrulewidth}{0.4pt}
 %\fancyhead[L,R]{\slshape \leftmark}
 %\fancyfoot[R]{\thepage}
-\fancyfoot[C]{\scriptsize{Material en revisión, publicar errores/sugerencias en \href{https://gitlab.fing.edu.uy/jorgepz/codigoFuenteLibroR2/-/issues}{gitlab.fing.edu.uy/jorgepz/codigoFuenteLibroR2/-/issues}.}}
+\fancyfoot[C]{\scriptsize{Material en revisión, publicar errores/sugerencias en \href{https://gitlab.fing.edu.uy/ResMat2/libroResMat2/-/issues}{gitlab.fing.edu.uy/ResMat2/libroResMat2/-/issues}.}}
 %\headrulewidth 0.4pt
 %\footrulewidth 0 pt
 %\renewcommand{\headrulewidth}{0pt}
 
-% bash: wget https://raw.githubusercontent.com/jorgepz/myLaTeXDefinitions/master/definitions.tex
 \include{texs/definitions}
 
 \usepackage[normalem]{ulem}
+
+
+% marca de agua: EN REVISION
+%\usepackage[printwatermark]{xwatermark}
+%\newwatermark[allpages,color=red!15,angle=45,scale=1.8,xpos=0,ypos=0]{en revisión}
+
+
 
 % ================  documento  ====================
 %
@@ -274,9 +278,10 @@ anchorcolor = miblue]{hyperref}
 		
 		{\sffamily \small
 	Instituto de Estructuras y Transporte\\
-	Facultad de Ingeniería, Universidad de la República\\
-	Montevideo, Uruguay\\[0.1cm]
+	Facultad de Ingeniería\\
+	Universidad de la República\\[0.5cm]
 	
+	Montevideo, Uruguay\\
 	\today
 }
 
@@ -284,12 +289,12 @@ anchorcolor = miblue]{hyperref}
 	\end{center}
   
 \end{titlepage}
-\thispagestyle{empty}
-~
+%\thispagestyle{empty}
+%~
 
 % indice
-\newpage
-\thispagestyle{empty}
+%\newpage
+%\thispagestyle{empty}
 
 \input{texs/sobrelosapuntes.tex}
 
