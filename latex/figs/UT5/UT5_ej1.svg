@@ -7,6 +7,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="210mm"
@@ -41,8 +42,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="442.23722"
-     inkscape:cy="604.78935"
+     inkscape:cx="462.2732"
+     inkscape:cy="706.00228"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -101,25 +102,27 @@
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:4.10792542px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="78.306229"
-       y="144.00331"
-       id="text887"><tspan
+       style="font-style:normal;font-weight:normal;font-size:3.89949918px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="142.51248"
+       y="82.692574"
+       id="text887"
+       transform="rotate(30)"><tspan
          sodipodi:role="line"
          id="tspan885"
-         x="78.306229"
-         y="144.00331"
+         x="142.51248"
+         y="82.692574"
          style="stroke-width:0.26458332">$L$</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:4.10792542px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="135.99878"
-       y="145.93425"
-       id="text887-3"><tspan
+       x="94.358849"
+       y="178.15825"
+       id="text887-3"
+       transform="rotate(-15)"><tspan
          sodipodi:role="line"
          id="tspan885-5"
-         x="135.99878"
-         y="145.93425"
+         x="94.358849"
+         y="178.15825"
          style="stroke-width:0.26458332">$L$</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:url(#Arrow1Lend)"
@@ -167,5 +170,64 @@
        d="m 109.41895,144.05858 c 3.43308,-0.9889 3.43308,-0.9889 3.43308,-0.9889"
        id="path1278"
        inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 77.073849,124.87842 c -1.572125,-0.90767 -1.572125,-0.90767 -1.572125,-0.90767"
+       id="path1318"
+       inkscape:connector-curvature="0"
+       inkscape:tile-cx="76.287785"
+       inkscape:tile-cy="124.42458"
+       inkscape:tile-w="1.704417"
+       inkscape:tile-h="1.1368056"
+       inkscape:tile-x0="75.435576"
+       inkscape:tile-y0="123.85618" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#path1318"
+       xlink:href="#path1318"
+       id="use5023" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#path1318"
+       xlink:href="#path1318"
+       transform="translate(0,2.2736113)"
+       id="use5025" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#path1318"
+       xlink:href="#path1318"
+       transform="translate(0,4.5472226)"
+       id="use5027" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#path1318"
+       xlink:href="#path1318"
+       transform="translate(0,6.8208339)"
+       id="use5029" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#path1318"
+       xlink:href="#path1318"
+       transform="translate(0,9.0944452)"
+       id="use5031" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#path1318"
+       xlink:href="#path1318"
+       transform="translate(0,11.368056)"
+       id="use5033" />
+    <use
+       x="0"
+       y="0"
+       inkscape:tiled-clone-of="#path1318"
+       xlink:href="#path1318"
+       transform="translate(0,13.641668)"
+       id="use5035" />
   </g>
 </svg>
