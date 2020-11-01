@@ -4,10 +4,8 @@
 *.toc
 *.gz
 *.xwm
-*.pdf
-*.pdf_tex
+./latex/*.pdf
 *.bbl
 *.blg
 *.xwm
 latex/svg2pdftex.sh
-latex/texs/definitions.tex

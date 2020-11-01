@@ -1,0 +1,80 @@
+%% Creator: Inkscape inkscape 0.92.5, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'fig_geom_reg.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{41.12583344bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.53241548)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0.8917986,0.44627909){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$P$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{fig_geom_reg.pdf}}%
+    \put(0.16019422,0.05289073){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}x\end{tabular}}}}%
+    \put(0.11961954,0.09755033){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}y\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{fig_geom_reg.pdf}}%
+    \put(0.14816927,0.25295601){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}x\end{tabular}}}}%
+    \put(0.11443346,0.29761561){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}y\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{fig_geom_reg.pdf}}%
+    \put(0.15283106,0.4592286){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}x\end{tabular}}}}%
+    \put(0.11987879,0.51658889){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}y\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{fig_geom_reg.pdf}}%
+    \put(14.06084199,-33.84240118){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.07006203\unitlength}\raggedright \end{minipage}}}%
+    \put(0.10383899,0.36881297){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}b\end{tabular}}}}%
+    \put(0.02110571,0.46758395){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}h/2\end{tabular}}}}%
+    \put(0.0212014,0.41884577){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}h/2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{fig_geom_reg.pdf}}%
+    \put(0.10049654,0.1871437){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}b\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{fig_geom_reg.pdf}}%
+    \put(-0.00153496,0.26113098){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}2h/3\end{tabular}}}}%
+    \put(0.01166835,0.22436157){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}h/3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{fig_geom_reg.pdf}}%
+    \put(0.0189503,0.01596879){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}R\end{tabular}}}}%
+    \put(0.01835942,0.05487367){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}R\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

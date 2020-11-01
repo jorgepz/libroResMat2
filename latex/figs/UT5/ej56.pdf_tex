@@ -1,0 +1,87 @@
+%% Creator: Inkscape inkscape 0.92.5, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'ej56.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{92.9683357bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.48134079)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{ej56.pdf}}%
+    \put(0.21803374,1.16649244){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}C\end{tabular}}}}%
+    \put(0.36588559,1.13825566){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}D\end{tabular}}}}%
+    \put(0.60300442,0.99016188){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}E\end{tabular}}}}%
+    \put(0.40155586,0.07336058){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}A\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{ej56.pdf}}%
+    \put(0.55563341,1.44946604){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}F\end{tabular}}}}%
+    \put(0.78151746,0.72167236){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}G\end{tabular}}}}%
+    \put(0.24928161,0.74561119){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}H\end{tabular}}}}%
+    \put(0.43706725,0.52777034){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}B\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{ej56.pdf}}%
+    \put(0.46470596,0.62919331){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}20 kN\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{ej56.pdf}}%
+    \put(0.32350459,0.68693049){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}80 kN\end{tabular}}}}%
+    \put(0.56890273,0.7751944){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}30 kN\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{ej56.pdf}}%
+    \put(0.38223414,1.43634421){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}80 kN\end{tabular}}}}%
+    \put(0.87672821,0.77951375){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}80 kN\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{ej56.pdf}}%
+    \put(0.20189943,0.26450369){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}12.5 m\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{ej56.pdf}}%
+    \put(0.19884509,0.76689439){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}12.5 m\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{ej56.pdf}}%
+    \put(0.40095295,1.02627897){\color[rgb]{0,0,0}\rotatebox{-30}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}7 m\end{tabular}}}}}%
+    \put(0.26609083,1.10178862){\color[rgb]{0,0,0}\rotatebox{-30}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2 m\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{ej56.pdf}}%
+    \put(0.76393949,1.16325153){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}15 m\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{ej56.pdf}}%
+    \put(-0.00241249,1.26243572){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}q=6.5 kN/m\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{ej56.pdf}}%
+  \end{picture}%
+\endgroup%

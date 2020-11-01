@@ -1,0 +1,73 @@
+%% Creator: Inkscape inkscape 0.92.5, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'viga3d_torsion.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{235.78318878bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.57951333)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{viga3d_torsion.pdf}}%
+    \put(0.72163446,0.23114154){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\theta_{x,2}, M_{x,2}$\end{tabular}}}}%
+    \put(0.67259721,0.3596017){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$v_{y,2}, F_{y,2}$\end{tabular}}}}%
+    \put(0.45593117,0.23746214){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\theta_{z,2}, M_{z,2}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{viga3d_torsion.pdf}}%
+    \put(0.35783705,0.53124977){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$v_{y,1}, F_{y,1}$\end{tabular}}}}%
+    \put(0.24159379,0.35724259){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\theta_{z,1}, M_{z,1}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{viga3d_torsion.pdf}}%
+    \put(0.2370903,0.24234618){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\alpha_{y}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{viga3d_torsion.pdf}}%
+    \put(0.09962896,0.50085338){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\theta_{x,1}, M_{x,1}$\end{tabular}}}}%
+    \put(0.00431568,0.40656271){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\theta_{x,1,L}, M_{x,1,L}$\end{tabular}}}}%
+    \put(0.26955595,0.02372004){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\theta_{x,2,L}, M_{x,2,L}$\end{tabular}}}}%
+    \put(0.04392788,0.0972195){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\theta_{z,2,L}, M_{z,2,L}$\end{tabular}}}}%
+    \put(-0.00180598,0.29034477){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\theta_{z,1,L}, M_{z,1,L}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{viga3d_torsion.pdf}}%
+  \end{picture}%
+\endgroup%
