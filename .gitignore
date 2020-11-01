@@ -4,7 +4,7 @@
 *.toc
 *.gz
 *.xwm
-./latex/*.pdf
+latex/*.pdf
 *.bbl
 *.blg
 *.xwm
