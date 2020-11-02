@@ -5,16 +5,16 @@
 
 close all, clear all
 
-l  = 2     ;
-E  = 210e9 ;
-nu = 0.3   ;
-P  = 4e3   ;
+l  = 2     ;  width = 0.05 ;
 
-G = 80.7e9
-J = 0.141*0.05^4
+E  = 210e9 ; nu = 0.3   ;   P  = 4e3   ;
 
-I  = .05^4/12 ;
-A  = .05^2    ;
+
+% modulo de corte
+G = E/(2*(1+nu)) ;
+
+% propiedades geometricas de seccion cuadrada
+J = 0.141*width^4 ; I  = width^4/12 ; A  = width^2    ;
 
 %         x    z      
 Nodes = [ 0   l/2  ; ...
@@ -32,10 +32,8 @@ fixeddofs = [ 1 2 3 7 ];
 nelems = size( Conec,1);
 nnodes = size( Nodes,1);
 
-
 freedofs  = (1:(3*nnodes));
 freedofs(fixeddofs) = [] ;
-
 
 KG      = sparse( 3*nnodes, 3*nnodes ) ;
  
@@ -63,7 +61,6 @@ for i = 1:nelems
                                     -12/(lelem^3) -6/(lelem^2)  12/(lelem^3) -6/(lelem^2) ; ...
                                       6/(lelem^2)  2/(lelem  )  -6/(lelem^2)  4/(lelem  ) ] ;
 
-
   dofsElem = [ (elemNodes(1)*3-2):(elemNodes(1)*3) (elemNodes(2)*3-2):(elemNodes(2)*3) ] ;
 
   KG( dofsElem, dofsElem ) += R * KL * R' ;
@@ -80,8 +77,6 @@ FG( fixeddofs  ) = [] ;
 u = KG\FG ;
 UG = zeros( 3*nnodes,1);
 UG(freedofs ) = u 
-
-
 
 %ploteo de parrillado
 figure

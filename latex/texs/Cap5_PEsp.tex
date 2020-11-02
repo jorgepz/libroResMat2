@@ -26,7 +26,7 @@ Estas estructuras, tal como fue visto en la Sección~\ref{sec:clasifest}, son ll
 
 En cursos anteriores se abordó la teoría de torsión de Saint-Venant para vigas de sección transversal con doble eje de simetría. %
 %
-A continuación se enumeran algunas de las magnitudes y conceptos más importantes, utilizando el enfoque utilizado en \citep{Wunderlich2002}.
+A continuación se enumeran algunas de las magnitudes y conceptos más importantes, aplicando el enfoque utilizado en \citep{Wunderlich2002}.
 
 Sea una barra con un extremo empotrado sometida a un momento torsor $M_t$ se verifica:
 %
@@ -43,13 +43,15 @@ $\Theta$ es el barrenado dado por el cociente entre el ángulo de giro del extre
 J = \int_{A} \psi_P \dif A.
 \end{equation}
 %
-En esta última expresión $\psi_P$ representa la función de Prandtl, dada por la solución del siguiente problema en derivadas parciales:
+donde $A$ es el área de la sección transversal y $\psi_P$ es la función de \emph{Prandtl}. %
+%
+La función de \emph{Prandtl}, puede ser obtenida como la solución del siguiente problema en derivadas parciales:
 %
 \begin{equation}
 \left\{
 \begin{array}{lr}
 \Delta \psi_P = -2 & \text{en} \, A\\
-\psi_P = 0 & \text{en} \, \partial A
+\psi_P = 0 & \text{sobre } \, \partial A
 \end{array}
 \right.
 \end{equation} 
@@ -291,21 +293,21 @@ Para el elemento 2, $\bfK_L$ es calculada considerando el largo $\ell/2$ en la e
 \end{equation}
 
 
-El módulo de corte es $G=80.7 $ GPa. La inercia flexional es $I= 5.208 \times 10^{-7}$ m$^4$, la inercia flexional $J= 0.141 (0.05)^4 = 8.81 \times 10^{-7}$ m$^4$.
+El módulo de corte es $G=\frac{E}{2(1+\nu)} = 80.7 $ GPa. La inercia flexional es $I= 5.208 \times 10^{-7}$ m$^4$ y la inercia torsional, para una sección cuadrada, está dada por $J= 0.141 (0.05)^4 = 8.81 \times 10^{-7}$ m$^4$.
 
-Los desplazamientos para el nodo 2 son:
-
+Los desplazamientos generalizados para el nodo 2 son:
+%
 $$
-\theta_{x,2} = -0.022154
+\theta_{x,2} = -0.006898
 \quad 
-v_2 = -0.048762 
+v_2 = -0.04876
 \quad
-\theta_{z,2} = -0.036571
+\theta_{z,2} = -0.03657
 $$
-
-Y para el nodo 3 son
+%
+y para el nodo 3 son:
 $$
-v_3 = -0.083107
+v_3 = -0.05374
 \quad
 \theta_{z,3} = 
 -0.036571
@@ -316,7 +318,21 @@ $$
 
 En el Código~\ref{cod:emparrillados} en la Sección~\ref{sec:codut5} se presenta una implementación en GNU-Octave del método descrito y su aplicación para la resolución del ejemplo visto. %
 %
-El código ha recibido aportes y modificaciones de estudiantes del curso 2019, los nombres de los autores de los aportes fueron agregados al código y los cambios están visibles en el repositorio\footnote{\href{https://gitlab.fing.edu.uy/jorgepz/emparrillados/commits/master}{https://gitlab.fing.edu.uy/jorgepz/emparrillados/commits/master}.}
+El código ha recibido aportes y modificaciones de estudiantes del curso 2019, los nombres de los autores fueron agregados al código y los cambios están visibles en el repositorio del código fuente de este documento.
+
+Para validar los resultados obtenidos con el Código~\ref{cod:emparrillados} se realiza otro modelo usando la herramienta ONSAS. Se realiza un primer modelo con análisis lineal y la misma geometría, luego otro modelo con la geometría completa y finalmente un modelo con la geometría completa y análisis no lineal para una carga máxima 20 veces superior a $P$. El archivo del modelo está disponible en el repositorio de ONSAS\footnote{\href{https://github.com/ONSAS/ONSAS/blob/master/examples/onsasExample_emparrillado.m}{github.com/ONSAS/ONSAS/blob/master/examples/onsasExample\_emparrillado.m}} La figura deformada para el estado de cargas máximo con el análisis no lineal es mostrado en la Figura~\ref{fig:empa}.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.65\textwidth]{defONSASemparrillado}
+	\caption{Deformada emparrillado, con análisis no lineal y estado de carga 20 $P$ (factor de esacala: 1).}
+	\label{fig:empa}
+\end{figure}
+
+
+\subsection{Cargas equivalentes nodales}
+
+Para el análisis de la estructura tridimensional completa mostrada en la Figura~\ref{fig:UT5_ejemplo} utilizando un método analítico, es posible llevar la carga en el punto medio a los nodos, utilizando el enfoque de cargas equivalentes presentado en la Sección~\ref{sec:cargequiv}.
 
 
 \section{Estructuras tridimensionales de barras}
@@ -361,8 +377,7 @@ En clase se presentará el razonamiento utilizado en este desarrollo así como t
 
 En clase se presentará brevemente el elemento de barra tridimensional, el cual es considerado sometido a torsión, flexión en ambos planos (es decir \textit{flexión esviada}) y directa. %
 %
-Este es el elemento de viga que se encuentra implementado en el código ONSAS, utilizado en clases de teórico para resolver problemas de pórtico 3D.
-
+En este curso se realizar un especial énfasis en el análisis de estructuras de pórtico 3D isostáticas.
 
 \section{Ejercicios}
 \setcounter{ejercicio}{0}
@@ -403,6 +418,7 @@ Se construye un emparrillado con caños de acero (E=210 GPa, $\nu=0.3$) de $\phi
 Considerando $q=2$ kN/m y $L=1$ m, se pide:
 
 \parte Resolver mediante el método de análisis matricial, considerando la simetría o antisimetría del problema para trabajar con una cantidad de barras reducida.
+%
 \parte Trazar diagramas de solicitaciones y comparar con los obtenidos con un modelo computacional de la estructura.
 
 \vspace{1cm}

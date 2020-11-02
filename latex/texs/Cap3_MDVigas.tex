@@ -543,7 +543,7 @@ Estas ecuaciones son planteadas para cada elemento de barra y los momentos que a
 
 
 
-\subsection{Cargas equivalentes}
+\subsection{Cargas equivalentes} \label{sec:cargequiv}
 
 En el caso en que la barra tenga cargas aplicadas entre los nodos se puede considerar fuerzas y momentos aplicados en los nodos con la misma energía potencial externa. %
 %
@@ -624,7 +624,15 @@ Se verifica nuevamente que el momento equivalente es el opuesto del momento de e
 
 Para el otro momento se tiene
 \begin{equation}
-M_2^{tr} = -P x_P^2 (L-x_P) \frac{1}{L^2}.
+M_2^{tr} = -P x_P^2 (L-x_P) \frac{1}{L^2},
+\end{equation}
+%
+y para las cargas equivalentes se tiene
+%
+\begin{equation}
+F_{y,1}^{tr} = P \left(1 - \frac{3 x^{2}}{L^{2}} + \frac{2 x^{3}}{L^{3}}\right) \qquad
+F_{y,2}^{tr} =
+P \left(\frac{3 x^{2}}{L^{2}} - \frac{2 x^{3}}{L^{3}}\right).
 \end{equation}
 
 %
