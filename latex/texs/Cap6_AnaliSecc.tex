@@ -76,7 +76,6 @@ Sustituyendo las expresiones de las solicitaciones en la Ecuación~\eqref{eqn:te
 %
 donde fueron introducidas dos propiedades geométricas, llamadas radio de giro: $\rho_y = \sqrt{ I_y / A}$ y $\rho_z = \sqrt{ I_z / A}$. %
 %
-El desarrollo completo de este paso será visto en clase.
 
 La condición de pertenencia a la LN es equivalente a anular la expresión de tensión axial. %
 %
@@ -88,7 +87,6 @@ Por lo tanto, dado un punto de aplicación $(y_A,z_A)$, se demuestra que la ecua
 
 Se observa que la recta está contenida en el $plano$ $yz$ y no pasa por el origen, esto se debe a la existencia de una fuerza de directa aplicada.
 %
-En clase se discutirá con mayor detalle sobre esto.
 
 
 \subsubsection{Determinación de punto de aplicación a partir de la Línea Neutra}
@@ -164,15 +162,18 @@ En cada punto del contorno se puede definir una LN tangente, la cual se correspo
 \end{figure}
 
 Se desea obtener la curva paramétrica de los puntos de aplicación $(y_A(t),z_A(t))$, asociadas a las líneas neutras tangentes a la sección transversal en cada punto $y(t),z(t)$ y que no cortan a la sección. Por lo tanto, para dichos puntos de aplicación, existe al menos un punto del contorno de la sección correspondiente a la LN en que $\sigma(x,y(t),z(t)) = 0$. Utilizando la expresión de la Ecuación~\eqref{eqn:AptoLN} se tiene:
-\begin{equation}\label{eqn:NC1}
+%
+\begin{equation}
 1 +  \frac{ y_A(t)}{\rho_z^2} y(t) +  \frac{ z_A(t)}{\rho_y^2} z(t) = 0
 \end{equation}
 
-Se ha encontrado entonces un punto de aplicación $(y_A(t),z_A(t))$ en el que la expresión de tensión axial para los distintos puntos del contorno es,
+Se ha encontrado entonces un punto de aplicación $(y_A(t),z_A(t))$ en el que la expresión de la tensión axial para los distintos puntos del contorno es,
 \begin{equation}\label{eqn:NC1}
 \sigma(x,y(\hat t),z(\hat t)) = \frac{N}{A} \left(1 +  \frac{ y_A(t)}{\rho_z^2} y(\hat t) +  \frac{ z_A(t)}{\rho_y^2} z(\hat t) \right)= 0
 \end{equation}
 Donde $\hat t$ es la variable que permite recorrer el contorno de la sección.
+
+
 
 Los puntos del contorno de la sección, pertenecientes a la LN tangente a la sección y que no cortan a la misma, donde $\sigma(x,y(\hat t),z(\hat t)) = 0$, cumplen además que son puntos críticos, mínimo si $N(x)>0$ y máximo si $N(x)<0$. Imponiendo esta condición se obtiene:
 
@@ -186,8 +187,6 @@ Combinando la Ecuación~\eqref{eqn:NC1} con la Ecuación~\eqref{eqn:NC2} y usand
 y_A(t) &=& - \frac{ \dot{z}(t) }{ \dot{z}(t) y(t) - \dot{y}(t) z(t) } \rho^2_z \label{eqn:ecsPSy} \\
 z_A(t) &=& \frac{ \dot{y}(t) }{ \dot{z}(t) y(t) - \dot{y}(t) z(t) } \rho^2_y \label{eqn:ecsPSz}
 \end{eqnarray}
-
-Este planteo será desarrollado con mayor detalle en clase.
 
 \subsubsection{Cálculo de NC para secciones con borde no suave}
 
@@ -277,7 +276,7 @@ Para terminar de confirmar que los puntos $A$ en el segmento pertenecen al NC, e
 	\caption{Esquema de sección en el plano.}
 	\label{fig:NCesquema4}
 \end{figure}
-
+%
 
 Para mostrar esto se considera la función de tensiones correspondiente a la aplicación de N en A:
 %
@@ -298,7 +297,7 @@ $$
  z_A = \lambda_1 z_1 + \lambda_2 z_2,
 $$
 y sustituyendo en la expresión del gradiente de $\sigma$ se tiene
-
+%
 \begin{equation}\label{eqn:gradiente}
 \nabla \sigma = \frac{N}{A} \left( \lambda_1 \left[ \begin{array}{c}
 \displaystyle \dfrac{y_1}{\rho_z^2} \\[3mm]
@@ -379,7 +378,7 @@ z_A(t) &=& - \frac{R}{4} sen(t)
 \end{eqnarray}
 
 \subsubsection{Sección rectangular}
-
+%
 En la Figura~\ref{fig:NCrect1} se tiene una sección de forma rectangular de ancho $a$ y alto $b$. Se plantea la curva paramétrica correspondiente al lado superior de la sección como:
 
 \begin{equation}
@@ -543,7 +542,8 @@ Obteniendo que la tensión máxima de compresión es,
 \end{equation}
 
 
-\newpage
+
+
 
 \section{Ejercicios}
 \setcounter{ejercicio}{0}
@@ -661,7 +661,8 @@ Sobre la sección de la figura se aplican las cargas $P$ y $Q$ de igual valor y 
 \ejercicio 
 
 \begin{minipage}[b]{0.5\textwidth}
-La zapata de la figura trasmite al terreno la descarga vertical de un pilar, siendo $P=40kN$.
+La zapata de la figura trasmite al terreno la descarga vertical de un pilar, siendo $P=40kN$. %
+%
 Calcular el lado menor ($b$) de la zapata, si $\sigma_{terreno}=0,15MPa$.
 
 \parte $e=0$.
@@ -670,9 +671,9 @@ Calcular el lado menor ($b$) de la zapata, si $\sigma_{terreno}=0,15MPa$.
 \end{minipage}
 ~
 \begin{minipage}[b]{0.5\textwidth}
-\begin{center}
-\includegraphics[width=0.45\linewidth]{UT6ej8}
-\end{center}
+ \begin{center}
+  \includegraphics[width=0.45\linewidth]{UT6ej8}
+ \end{center}
 \end{minipage}
 
 
