@@ -69,33 +69,45 @@ Finalmente, las normas también exigen la evaluación de la estabilidad global d
 En pocas palabras, se requiere que el ingeniero evalúe la estabilidad de la estructura en su conjunto y que determine los efectos que puedan surgir de la esbeltez global de la estructura. Estas evaluaciones son parte básica del trabajo del profesional que diseña una estructura.
 
 
+% -----------------------------------------------------------
 \section{Principio de Mínima Energía Potencial Total}
 
+
 \subsection{Criterios de equilibrio y estabilidad} 
-En la sección 1.2.2 se introdujo el concepto que una estructura satisface las ecuaciones de elasticidad lineal (equilibrio, compatibilidad de deformaciones y relación tensión deformación lineal) si es solución del problema de minimización:
+
+En las unidades temáticas anteriores, se han definido y aplicado las condiciones que la configuración deformada de una estructura debe satisfacer para ser solución del problema de Elasticidad Lineal (equilibrio, compatibilidad de deformaciones y relación tensión deformación lineal). En particular, se aplicó la formulación basada en el Principio de Mínima Energía Potencial Total, como solución del siguiente problema de minimización:
 
 \begin{equation*}
 \bfu = \arg\min_{\bfu\in\mcU} \Pi(\bfu)
 \end{equation*}
 
-La condición de mínima energía potencial total no solo garantiza equilibrio de las estructuras, sino que también implica la estabilidad de las mismas.
+En esta Unidad Temática se introduce del concepto de \textit{Estabilidad} dado por la siguiente definición.
 
-Debe entenderse por estabilidad la propiedad de la estructura de, bajo un cierto conjunto de cargas externas, poder mantenerse arbitrariamente cerca de la configuración de equilibrio al ser sometida a una pequeña perturbación arbitraria.
+\cajaconcepto{Definición: Estabilidad estructural}
+{Dada una estructura sometida a cargas externas dadas y dada una \textit{configuración deformada} en equilibrio con dichas cargas, se dice que la configuración es \textit{estable} si, dicha configuración es mantenida luego de aplicar una perturbación arbitraria pequeña a la estructura.}
 
-Para el modelo estructural lineal (i.e. equilibrio en la configuración de referencia, pequeños desplazamientos y material elástico lineal) de estructuras de barras visto en capítulos anteriores, la condición de mínimo requiere que la matriz de rigidez de la estructura $\bfK$ sea definida positiva.
+La condición de mínima energía potencial total no solo garantiza el equilibrio de las estructuras, sino que también implica la estabilidad de las mismas.
 
-$$\forall \bfu\neq 0 \in \mcU, \bfu \cdot \bfK \bfu > 0$$
+\subsubsection{Caso lineal}
 
-Esto se desprende del hecho que la energía potencial total de la estructura es igual a:
+Para el modelo estructural lineal (i.e. equilibrio en la configuración de referencia, pequeños desplazamientos y material elástico lineal) se vio que la energía potencial total de la estructura está dada por la expresión general:
+%
+\begin{equation}\label{eqn:pilineal}
+\Pi(\bfu)= \frac{1}{2} \bfu \cdot \bfK \bfu - \bfF_G \cdot \bfu
+\end{equation}
+%
+donde $\bfF_G$ es el vector de fuerzas generalizadas y $\bfK$ la matriz de rigidez. %
+Se puede verificar que para estructuras con condiciones de apoyo suficientes y que no tengan mecanismos internos o externos, se tiene una matriz de rigidez definida positiva. Esto es equivalente a:
+\begin{equation}\label{eqn:Kdefpos}
+\bfu \cdot \bfK \bfu > 0 \quad \forall \bfu\neq 0 \in \mcU.
+\end{equation}
 
-$$\Pi(\bfu)= \frac{1}{2} \bfu \cdot \bfK \bfu - \bfF_G \cdot \bfu$$
+Calculando la hessiana de $\Pi$ y usando la Ecuación~\ref{eqn:Kdefpos} se muestra que en caso de encontrar una configuración de equilibrio que minimice $\Pi$, se tiene automáticamente que esta es estable, ya que el mínimo es estricto, y único.  
 
-La condición de mínimo requiere que todos los valores propios de matriz Hessiana de la función $\Pi(\bfu)$ sean positivos. Donde dicha matriz Hessiana igual a $\bfK$ y la condición de valores propios positivos es equivalente a la condición de definida positiva. 
-
-Se puede verificar que para estructuras con condiciones de apoyo suficientes y que no tengan mecanismos internos, se verifica la condición presentada. Con lo cual, se puede concluir que con dichos modelos estructurales lineales, no es posible modelar la inestabilidad elástica de una estructura. Para ello, debemos modificar el modelo estructural y abandonar la hipótesis de equilibrio en la configuración de referencia.
+Se concluye entonces que los modelos estructurales lineales, no permiten modelar la inestabilidad elástica de una estructura. %
+%
+Para ello, se debe modificar el modelo estructural y abandonar la hipótesis de equilibrio en la configuración de referencia.
  
-%(pmept). Mostrar q lo visto hasta este momento (pequeñas defs y material lineal) resulta en estructuras estables de barras (i.e. una vez impuestos CdB suficientes, K es definida positiva).
-
 \subsection{Tipos de Sistemas Estructurales} 
 
 El estudio de estabilidad elástica mediante el prinicipio de mínima energía potencial total puede realizarse tanto en estructuras discretas como continuas. La diferencia entre un tipo de estructuras y el otro es el espacio $\mcU$ donde buscamos el mínimo de la energía potencial total.
