@@ -248,7 +248,7 @@ anchorcolor = miblue]{hyperref}
 \include{texs/definitions}
 
 \usepackage[normalem]{ulem}
-
+\usepackage{datetime}
 
 % marca de agua: EN REVISION
 %\usepackage[printwatermark]{xwatermark}
@@ -260,51 +260,17 @@ anchorcolor = miblue]{hyperref}
 %
 \begin{document}
 
+% -----------------------------------
 \frontmatter
-\begin{titlepage}
-	\doublespacing
-	\begin{center}
-%		~\\[1cm]
-		% Upper part of the page
-		\includegraphics[height=0.14\textwidth]{figs/logofing}
-		\hfill
-		\includegraphics[height=0.17\textwidth]{figs/logoudelar}    
-		%
-        \rule{\linewidth}{0.5mm} \\[4mm]
-		{\large\sffamily Material de apoyo} \\
-		{\large\sffamily\bfseries	Unidad Curricular Resistencia de Materiales 2}\\[0.1cm]
-		
-	\singlespacing
-		
-		{\sffamily \small
-	Instituto de Estructuras y Transporte\\
-	Facultad de Ingeniería\\
-	Universidad de la República\\[0.5cm]
-	
-	Montevideo, Uruguay\\
-	\today
-}
 
-		\rule{\linewidth}{0.5mm} \\[2mm]
-	\end{center}
-  
-\end{titlepage}
-%\thispagestyle{empty}
-%~
-
-% indice
-%\newpage
-%\thispagestyle{empty}
+\input{texs/cover.tex}
 
 \input{texs/sobrelosapuntes.tex}
 
-%\newpage
-\tableofcontents
-\thispagestyle{empty}
+\tableofcontents \thispagestyle{empty}
+% -----------------------------------
 
 \mainmatter
-
-%\linenumbers
 
 \input{texs/Cap1_intro}
 \input{texs/Cap2_MD_MF}
@@ -312,7 +278,7 @@ anchorcolor = miblue]{hyperref}
 \input{texs/Cap4_AnPP}
 \input{texs/Cap5_PEsp}
 \input{texs/Cap6_AnaliSecc}
-%\input{texs/Cap7_Estabilidad}
+\input{texs/Cap7_Estabilidad}
 %\input{texs/Cap7_Inestabilidad_Otros}
 %\input{texs/Cap8_Losas}
 
