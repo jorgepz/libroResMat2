@@ -733,3 +733,171 @@ por lo tanto, a partir de este resultado, se puede observar como la longitud de 
 % * Inestabilidad de almas en corte.
 % * Resistencia post-crítica de chapas planas permite tener capacidad más alla de carga crítica.
 
+
+
+\newpage
+
+\section{Ejercicios}
+\setcounter{ejercicio}{0}
+
+Nota: Salvo aclaración contraria, se considerará que las piezas pueden pandear en torno a cualquiera de sus direcciones principales.
+
+\ejercicio 
+
+Determinar los coeficientes $\beta$ tal que la luz de pandeo es $L_P=\beta\ell$ para las condiciones de borde mostradas en la Figura~\ref{fig:UT71}.
+
+\begin{figure}[htb]
+	\centering
+	\subfloat[]{
+		\includegraphics[width=0.1\textwidth]{UT7ej1-a}
+		\label{fig:UT71.a}}
+	\hspace{0.1\textwidth}
+	\subfloat[]{
+		\includegraphics[width=0.1\textwidth]{UT7ej1-b}
+		\label{fig:UT71.b}}
+	\hspace{0.1\textwidth}
+	\subfloat[]{
+		\includegraphics[width=0.1\textwidth]{UT7ej1-c}
+		\label{fig:UT71.c}}
+	\caption{Condiciones de borde a considerar en Ejercicio 7.1.}
+	\label{fig:UT71}
+\end{figure}
+
+Sugerencia: para ~\ref{fig:UT71.a} y ~\ref{fig:UT71.c}, plantear el origen de coordenadas en el extremo superior del pilar.
+
+%\ejercicio 
+%
+%Dada la barra de la Figura, construida con un $PNI30$, determinar $P_{cr}$ si $\sigma_{adm}=140MPa$, $E=200GPa$ y $L=2m$.
+%
+%\begin{center}
+%	\includegraphics[width=0.5\linewidth]{UT7ej2}
+%\end{center}
+
+%\ejercicio 
+%
+%Dimensionar la barra de la Figura en sección cuadrada de madera, sabiendo que $\sigma_{adm}=10MPa$ y $E=10GPa$. Utilizar las tablas de escuadrías de madera.
+%
+%\begin{center}
+%	\includegraphics[width=0.5\linewidth]{UT7ej3}
+%\end{center}
+
+%\ejercicio 
+%
+%\begin{center}
+%	\includegraphics[width=0.6\linewidth]{UT7ej4-3}
+%\end{center}
+%
+%Dada la barra de la estructura, construida con un $PNI14$ ($\sigma_{adm}=140MPa$ y $E=200GPa$), determinar $P_{cr}$ para los siguientes dos casos:
+%
+%\begin{figure}[htb]
+%	\centering
+%	\subfloat[Caso 1]{
+%		\includegraphics[width=0.2\textwidth]{UT7ej4-1}
+%		\label{fig:UT74.1}}
+%	~
+%	\subfloat[Caso 2]{
+%		\includegraphics[width=0.15\textwidth]{UT7ej4-2}
+%		\label{fig:UT74.2}}
+%	\caption{}
+%	\label{fig:UT74}
+%\end{figure}
+
+%\ejercicio
+%
+%\begin{minipage}[b]{0.7\textwidth}
+%	
+%	Una columna soldada de 8 m de luz tiene la sección de la figura conformada por acero ($\sigma_{adm}=140MPa$ y $E=200GPa$). 
+%	\parte Hallar $x$ tal que el radio de giro de la sección según sus dos ejes sea el mismo, es decir que la sección trabaje de forma óptima.
+%	\parte ¿Cuál es la carga de compresión crítica centrada si el esquema estructural de la columna es el de una ménsula?
+%	
+%\end{minipage}
+%~
+%\begin{minipage}[b]{0.3\textwidth}
+%	\begin{center}
+%		\includegraphics[width=0.85\linewidth]{UT7ej5}
+%	\end{center}
+%\end{minipage}
+
+
+
+
+
+\ejercicio
+
+La barra horizontal de la figura está soportada por dos columnas. Cada columna está articulada en su parte superior a la barra horizontal, mientras que el apoyo inferior de la columna izquierda es un empotramiento y el de la derecha es un apoyo fijo. Ambas columnas son barras de acero $E=200GPa$ de sección transversal cuadrada con un ancho de $15 mm$.
+\parte Si $a=0.4m$, ¿Cuál es el valor crítico de la carga $Q$?
+\parte Si a varía entre 0 y 1 m. ¿Cuál es el valor máximo de $Q_{critico}$, y cuál es el valor correspondiente de $a$?
+
+Nota: Estudiar la inestabilidad sólo en el plano de la figura.
+
+\begin{center}
+	\includegraphics[width=0.4\linewidth]{UT7ej6}
+\end{center}
+
+
+
+
+
+\ejercicio
+
+\begin{minipage}[b]{0.6\textwidth}
+	
+	Una columna rectangular, con dimensiones de sección transversal $b \times h$, está articulada en los extremos A y C, como se indica en la Figura.
+	
+	La columna está restringida en el plano de la figura en la mitad de su altura, pero puede deformarse libremente en el plano perpendicular al de la figura.
+	
+	Determinar la relación $h/b$ tal que la carga crítica sea la misma para el pandeo en los dos planos principales de la columna.
+	
+	Nota: Analizar el problema a partir de los posibles modos de pandeo obtenidos en un pilar biarticulado.
+	
+\end{minipage}
+~
+\begin{minipage}[b]{0.4\textwidth}
+	\begin{center}
+		\includegraphics[width=0.65\linewidth]{UT7ej7}
+	\end{center}
+\end{minipage}
+
+
+
+
+
+\ejercicio
+
+Se tiene la columna de la Figura ($EI=cte$) de largo $L$. La misma está soportada en su parte superior por un resorte elástico lineal de constante $r=2EI/L^3$ contenido en el $plano$ $xy$, mientras que en el plano perpendicular se encuentra en ménsula (libre en su extremo superior). Se pretende que la pieza sea capaz de soportar una carga $Q=200 kN$ con una altura $L=3m$.
+
+Hallar la ecuación que permite determinar la luz de pandeo en el plano del resorte y demostrar que $L_p=1,56L$. Se sugiere plantear el origen de coordenadas en el extremo superior del pilar.
+
+%\parte Dimensionar dicha pieza con un perfil laminado $PNI$ ($\sigma_{adm}=140MPa$ y $E=200GPa$).
+%\parte Dimensionarla utilizando perfiles laminados $PNIP$ ($\sigma_{adm}=140MPa$ y $E=200GPa$). 
+%\parte Dimensionarla utilizando una escuadría cuadrada de quebracho, el cual tiene una tensión admisible $\sigma_{adm,comp//}=12MPa$ (compresión paralela a las fibras) y $E=10GPa$.
+%
+%En b), c) y d) indicar como orientar el perfil o escuadría.
+
+\begin{center}
+	\includegraphics[width=0.2\linewidth]{UT7ej8}
+\end{center}
+
+%
+%\ejercicio (Adicional)
+%
+%\begin{center}
+%	\includegraphics[width=0.6\linewidth]{UT7ej10-3}
+%\end{center}
+%
+%Sean $P_1=500 kN$ y $P_2=120 kN$. Dimensionar en $PNIP$ (alas anchas) considerando $\sigma_{adm}=140MPa$ y $E=200GPa$. Analizar dos casos:
+%
+%\begin{figure}[htb]
+%	\centering
+%	\subfloat[Caso 1]{
+%		\includegraphics[width=0.15\textwidth]{UT7ej10-1}
+%		\label{fig:UT710.1}}
+%	~
+%	\subfloat[Caso 2]{
+%		\includegraphics[width=0.15\textwidth]{UT7ej10-2}
+%		\label{fig:UT710.2}}
+%	\caption{}
+%	\label{fig:UT710}
+%\end{figure}
+%
+
