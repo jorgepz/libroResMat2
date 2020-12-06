@@ -232,49 +232,50 @@ $$
 $$
 
 \begin{center}
-	\fcolorbox{black}{lightgray}{\textbf{Análisis seccional}}
+	\fcolorbox{black}{lightgray}{\textbf{Análisis seccional lineal}}
 \end{center}
 
-\begin{minipage}{0.33\textwidth}
-	\includegraphics[width=1.1\textwidth]{NCesquema1}
+\begin{minipage}{0.28\textwidth}
+	\includegraphics[width=1\textwidth]{NCesquema1HF}
 \end{minipage}
-\begin{minipage}{0.66\textwidth}
+\begin{minipage}{0.7\textwidth}
+Expresión de tensión axial (ver ejes):
 	$$
-	\sigma(x,y,z)=\frac{N(x)}{A} \left (1+\frac{y_A}{\rho_z^2}y +\frac{z_A}{\rho_y^2}z\right)
-	$$
-	$$
+	\sigma(x,y,z)=\frac{N(x)}{A} \left (1+\frac{y_A}{\rho_z^2}y +\frac{z_A}{\rho_y^2}z\right),
+\quad
 	\rho_y^2=\frac{I_y}{A} ;
-	\qquad
-	\rho_z^2=\frac{I_z}{A}
+	\quad
+	\rho_z^2=\frac{I_z}{A}.
 	$$
+Ecuación de la línea neutra a partir de pto. de aplicación A:
+$$
+1 +\frac{y_A}{\rho_z^2}y +\frac{z_A}{\rho_y^2}z=0
+$$
 \end{minipage}
 
-\vspace{0.7cm}
-\begin{minipage}{0.33\textwidth}
-	\includegraphics[width=1.2\textwidth]{MNSTesquema1}
+\begin{center}
+	\fcolorbox{black}{lightgray}{\textbf{Análisis seccional sin resistencia a tracción}}
+\end{center}
+
+\begin{minipage}{0.32\textwidth}
+	\includegraphics[width=\textwidth]{MNSTesquema1}
 \end{minipage}
-\begin{minipage}{0.66\textwidth}
-	\hspace{0.7cm}
-	Ecuación de la línea neutra:
+\begin{minipage}{0.65\textwidth}
+	\hspace{0.4cm}
+	Equilibrio de fuerzas y tensión en la sección:
 	$$
-	1 +\frac{y_A}{\rho_z^2}y +\frac{z_A}{\rho_y^2}z=0
-	$$
-	\hspace{0.7cm}
-	Equilibrio de fuerzas en la sección:
-	$$
-	\hspace{0.7cm}
 	N=\int_{A} \sigma dA ;
 	\qquad
 	\sigma= k.z= -\frac{\sigma_{maxc}}{c} z
 	$$
-	\hspace{0.7cm}
+	\hspace{0.4cm}
 	Equilibrio de momentos en la sección:
 	$$
-	N (c-d)=\int_{A} \sigma dA ;
+	N (c-d)=\int_{A} \sigma z dA ;
 	$$
 \end{minipage}
 
-\vspace{0.6cm}
+\vspace{0.2cm}
 Caso Sección Rectangular
 
 \begin{minipage}{0.33\textwidth}
@@ -312,9 +313,7 @@ $$
 
 $$
 V(x) = \frac{d}{dx}\left(EI\frac{d^2 v}{dx^2}\right) + N\frac{dv}{dx}
-$$
-
-$$
+\qquad
 M(x) = E \, I\frac{d^2 v}{dx^2}
 $$
 
