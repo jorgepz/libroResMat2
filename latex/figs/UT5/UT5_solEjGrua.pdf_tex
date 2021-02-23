@@ -1,0 +1,82 @@
+%% Creator: Inkscape inkscape 0.92.5, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'UT5_solEjGrua.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{347.03043913bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.07421119)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{UT5_solEjGrua.pdf}}%
+    \put(0.14869903,0.78708517){\makebox(0,0)[lt]{\lineheight{0.6250006}\smash{\begin{tabular}[t]{l}$-750.0$\end{tabular}}}}%
+    \put(0.08102185,0.56058491){\makebox(0,0)[lt]{\lineheight{0.6250006}\smash{\begin{tabular}[t]{l}Directa (kN)\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{UT5_solEjGrua.pdf}}%
+    \put(0.38822006,0.56058491){\makebox(0,0)[lt]{\lineheight{0.6250006}\smash{\begin{tabular}[t]{l}Momento $M_y$ (kNm)\end{tabular}}}}%
+    \put(0.76951633,0.56058491){\makebox(0,0)[lt]{\lineheight{0.6250006}\smash{\begin{tabular}[t]{l}Momento $M_z$ (kNm)\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{UT5_solEjGrua.pdf}}%
+    \put(0.41115936,1.05079243){\makebox(0,0)[lt]{\lineheight{0.6250006}\smash{\begin{tabular}[t]{l}$5000.0$\end{tabular}}}}%
+    \put(0.40178743,0.80663972){\makebox(0,0)[lt]{\lineheight{0.6250006}\smash{\begin{tabular}[t]{l}$0.0$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{UT5_solEjGrua.pdf}}%
+    \put(0.08102185,0.02028652){\makebox(0,0)[lt]{\lineheight{0.6250006}\smash{\begin{tabular}[t]{l}Torsor $M_x$ (kNm)\end{tabular}}}}%
+    \put(0.38822006,0.00407757){\makebox(0,0)[lt]{\lineheight{0.6250006}\smash{\begin{tabular}[t]{l}Cortante $V_y$ (kN)\end{tabular}}}}%
+    \put(0.76951633,0.02028652){\makebox(0,0)[lt]{\lineheight{0.6250006}\smash{\begin{tabular}[t]{l}Cortante $V_z$ (kN\end{tabular}}}}%
+    \put(0.13017455,0.21317204){\makebox(0,0)[lt]{\lineheight{0.6250006}\smash{\begin{tabular}[t]{l}$37,5$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{UT5_solEjGrua.pdf}}%
+    \put(0.73253243,0.28420349){\makebox(0,0)[lt]{\lineheight{0.6250006}\smash{\begin{tabular}[t]{l}$500.0$\end{tabular}}}}%
+    \put(0.81452582,0.44349427){\makebox(0,0)[lt]{\lineheight{0.6250006}\smash{\begin{tabular}[t]{l}$250.0$\end{tabular}}}}%
+    \put(0.84395752,0.22081398){\makebox(0,0)[lt]{\lineheight{0.6250006}\smash{\begin{tabular}[t]{l}$0.0$\end{tabular}}}}%
+    \put(0.43580831,0.41599596){\makebox(0,0)[lt]{\lineheight{0.60750043}\smash{\begin{tabular}[t]{l}$2.5$\end{tabular}}}}%
+    \put(0.50430412,0.38243038){\makebox(0,0)[lt]{\lineheight{0.60750043}\smash{\begin{tabular}[t]{l}$5.0$\end{tabular}}}}%
+    \put(0.50976191,0.35759709){\makebox(0,0)[lt]{\lineheight{0.60750043}\smash{\begin{tabular}[t]{l}$7.5$\end{tabular}}}}%
+    \put(0.53939602,0.03939892){\makebox(0,0)[lt]{\lineheight{0.60750043}\smash{\begin{tabular}[t]{l}$17.5$\end{tabular}}}}%
+    \put(0.89646399,0.61580662){\makebox(0,0)[lt]{\lineheight{0.6250006}\smash{\begin{tabular}[t]{l}$500.0$\end{tabular}}}}%
+    \put(0.87161673,0.9579592){\makebox(0,0)[lt]{\lineheight{0.6250006}\smash{\begin{tabular}[t]{l}$50.0$\end{tabular}}}}%
+    \put(0.76233642,0.98242194){\makebox(0,0)[lt]{\lineheight{0.6250006}\smash{\begin{tabular}[t]{l}$12.5$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
