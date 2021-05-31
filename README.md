@@ -4,7 +4,7 @@ Repositorio con todos los archivos de código fuente del libro de apoyo de dicta
 
 ## pdfs de releases:
 
-Los pdfs compilados tanto del libro como de la pauta están disponibles en [esta página](https://gitlab.fing.edu.uy/jorgepz/codigoFuenteLibroR2/-/releases).
+Los pdfs compilados tanto del libro como de la pauta están disponibles en [esta página](https://gitlab.fing.edu.uy/jorgepz/libroResMat2/-/releases).
 
 ## contacto:
 
