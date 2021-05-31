@@ -4,18 +4,19 @@ ForceIndepTerm(:,1) = - Fext  ;
 
 Meqred = Meq;
 
+virtualforces
+
 for j=1:hiperdegree
   ForceIndepTerm(:,1+j) = -Meq(:,virtualforces(j)) ;
   Meqred(:,virtualforces(j) ) = [] ;
 end
 
-
-x = Meqred \ ForceIndepTerm ;
-
+ForceIndepTerm
+x = Meqred \ ForceIndepTerm 
 
 supportreactions = zeros(nfixeddofs, hiperdegree+1) ;
 
-supportreactions( isostaticsupports , : ) = x( 1:length(isostaticsupports) ,:) ; 
+supportreactions( isostaticsupports , : ) = x( 1:length(isostaticsupports) ,:) 
 if length(virtualforcessupports)>0
   aux = find( fixeddofs == virtualforcessupports) ;
   for j=1:hiperdegree

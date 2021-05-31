@@ -21,7 +21,7 @@ freedofs(fixeddofs)=[];
 # calculates the total number of force unknowns (element stress and reactions)
 nforceunknowns = nfixeddofs + nelems ;
 
-# assembles the vector of virtual force states
+# assembles the vector of virtual force states, first the fixed dofs and after the truss elements normal forces.
 if length(virtualforcessupports)>0
   virtualforces  = [ find( fixeddofs == virtualforcessupports) ...
   virtualforceselements+nfixeddofs ] ;  
