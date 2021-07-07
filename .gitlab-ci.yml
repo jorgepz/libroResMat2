@@ -1,0 +1,7 @@
+libro:
+  image: tianon/latex
+  script:
+    - cd latex && pdflatex libroResMat2.tex && bibtex libroResMat2.aux && pdflatex libroResMat2.tex && pdflatex libroResMat2.tex && cd ..
+  artifacts:
+    paths:
+      - latex/libroResMat2.pdf
