@@ -354,7 +354,7 @@ El proceso de diseño estructural consiste en un procedimiento iterativo que pue
 \begin{enumerate}
   \item establecer \textbf{condiciones} que la ER debe cumplir (arquitectónicas, normativas, etc.)
   %
-  \item \textbf{realizar un EB} a partir de una primer estimación de secciones, materiales, vínculos entre componentes
+  \item \textbf{definir un EB} a partir de una primer estimación de secciones, materiales, vínculos entre componentes
   %
   \item a través del uso de un MN \textbf{obtener las solicitaciones} a las que cada componente de la estructura estará sometido
   %
@@ -922,7 +922,7 @@ Durante el curso se abordarán las teorías de vigas y pórticos así como tambi
 \section{Grados de indeterminación}
 
 Existen diversos métodos disponibles para el análisis de una estructura, por lo tanto, es útil identificar qué tipo de métodos son los más adecuados antes de iniciar el análisis estructural. %
-En esta sección se presentan propiedades geométricas (valores numéricos) que pueden ser calculados antes del análisis para poder asistir en la decisión del método a utilizar.
+En esta sección se presentan propiedades geométricas (valores numéricos) que pueden ser calculados antes del análisis para tomar una mejor decisión sobre el método a utilizar.
 
 Los grados de indeterminación estática y cinemática son valores dados por la geometría y los vínculos entre componentes de la estructura. %
 %
@@ -935,13 +935,15 @@ Estos valores numéricos permiten estimar la complejidad de la resolución usand
 % -------------------------
 El grado de indeterminación estática (también llamado \textit{grado de hiperestaticidad}) es un valor numérico definido por la diferencia entre: el número de incógnitas de fuerza y el número de ecuaciones de equilibrio. %
 %
-La metodología de cálculo presentada en esta sección está basada en \citep{CerveraRuiz2002ii}.
+La metodología de cálculo presentada en esta sección está basada en \citep{CerveraRuiz2002ii}. %
+%
+En esta metodología se parte de un EBC, opcionalmente se pueden considerar componentes separadas de la estructura y se aplica una ecuación para el cálculo.
 
 Las \textbf{incógnitas de fuerza} son aquellas necesarias para determinar completamente el \textit{\textbf{estado tensional}} de toda la estructura. En las estructuras consideradas en este texto, estas incógnitas son:
 %
 \begin{itemize}
-	\item $n_S$: solicitaciones o fuerzas debidas a vínculos internos de la estructura,
-	\item $n_R$: reacciones dadas por vínculos externos.
+	\item $n_S$: solicitaciones o fuerzas debidas a \textit{vínculos internos} de la estructura,
+	\item $n_R$: reacciones dadas por \textit{vínculos externos}.
 \end{itemize}
 
 
@@ -977,6 +979,8 @@ En la Figura~\ref{fig:ejemghMed}. se muestra un reticulado, donde nuevamente si 
 	\caption{Ejemplo de cálculo de grado de hiperestaticidad en reticulado.}
 	\label{fig:ejemghMed}
 \end{figure}
+
+Este cálculo también puede ser realizado considerando la estructura como una única componente. Más adelante se mostrará una ecuación práctica para el cálculo de $gh$ en reticulados planos.
 
 \paragraph{Analogía con cálculo a partir de grados de libertad} %
 El cálculo presentado es análogo al utilizado en otros cursos, en los cuales se considera el número de grados de libertad total de las estructuras (en el ejemplo $3\times 3$) y se van restando los vínculos que restringen el movimiento entre barras y a tierra ($-2-1-2-2-2$) por lo que se obtiene un valor opuesto al $gh$.
