@@ -1,4 +1,4 @@
-%% Creator: Inkscape inkscape 0.92.5, www.inkscape.org
+%% Creator: Inkscape 1.1 (c4e8f9ed74, 2021-05-24), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
 %% Accompanies image file 'viga2d.pdf' (pdf, eps, ps)
 %%
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{64.35796221bp}%
+    \setlength{\unitlength}{63.3406246bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,16 +50,16 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.33684511)%
+  \begin{picture}(1,0.3422553)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{viga2d.pdf}}%
-    \put(0.80818122,0.14559374){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$w(x)$\end{tabular}}}}%
+    \put(0.82116173,0.14793217){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$v(x)$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{viga2d.pdf}}%
-    \put(0.89212334,0.25353113){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\theta(x)$\end{tabular}}}}%
+    \put(0.90645207,0.25760319){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\theta(x)$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{viga2d.pdf}}%
-    \put(0.20544547,0.12818622){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\bfe_x$\end{tabular}}}}%
-    \put(0.04078399,0.2811029){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\bfe_z$\end{tabular}}}}%
+    \put(0.20874521,0.13024506){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\bfe_x$\end{tabular}}}}%
+    \put(0.04143903,0.2856178){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\bfe_y$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{viga2d.pdf}}%
   \end{picture}%
 \endgroup%
