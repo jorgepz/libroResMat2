@@ -10,40 +10,14 @@
 % de Ingenieria at Universidad de la Republica.
 %%
 
+clear all, close all
+
 %% 1- Input data
 % Input parameters of geometry and material of the truss.
 % Applied loads and fixed degrees of freedom (supports)
 %%
 
-clear all, close all, format compact g
-
-% cross section properties vector (areas)
-As = [ 0.001 0.01 ]' ;
-
-% material properties
-Es = [ 210e9 ] ;
-
-% nodes coordinates, each row: x y
-NodsCoord = [  -10  0 ;
-                 0 10 ;
-                 0  0 ;
-                10  0 ] ;
-
-% elements conectivity, each row:  inode  jnode  material  section
-ElemConec = [ ...
-1 2 1 1 ;
-2 3 1 2 ; ...
-2 4 1 1 ] ;
-
-% fixed degrees of freedom
-fixeddofs = [ 1 2    5 6 7 8 ] ;
-
-% nodal loads, each row: node fx fy
-NodalLoads = [ 2 10000 0 ];
-
-% Deformed scale factor
-scalefactor = 1e3;
-% -----------------------------
+FMTrusSInput_ej1UT2
 
 %% 2- Previous calculations and stiffness matrix assembly
 % Assembles the global stiffness matrix KG and computes the matrix for each element.
@@ -60,22 +34,22 @@ Angles = atan2( ( NodsCoord( ElemConec(:,2),2) - NodsCoord( ElemConec(:,1),2) ) 
 nnodes = size( NodsCoord,1);     nelems = size( ElemConec,1);
 
 nfixeddofs          = length(fixeddofs) ;
-freedofs            = 1:(2*nnodes);    
+freedofs            = 1:(2*nnodes);
 freedofs(fixeddofs) = [];
 
 KG = sparse( 2*nnodes,2*nnodes ) ;
 for i=1:nelems
-  
+
   l   = Lengths(i) ;    ang = Angles(i);
 
-  nodi = ElemConec(i,1);    nodj = ElemConec(i,2);  
+  nodi = ElemConec(i,1);    nodj = ElemConec(i,2);
 
-  Eele = Es( ElemConec(i,3) ) ;    Aele = As( ElemConec(i,4) ) ;  
+  Eele = Es( ElemConec(i,3) ) ;    Aele = As( ElemConec(i,4) ) ;
 
   elemdofs = nodes2dofs ( [ nodi nodj ]' ,2) ;
-  
+
   ca = cos(ang);  sa = sin(ang);
-  
+
   R = [ ca -sa   0   0 ;
         sa  ca   0   0 ;
          0   0  ca -sa ;
@@ -85,8 +59,8 @@ for i=1:nelems
                           0  0  0  0 ;
                          -1  0  1  0 ;
                           0  0  0  0 ] ;
-  KGelem = R * KL * R' 
-  
+  KGelem = R * KL * R'
+
   KG(elemdofs,elemdofs) =  KG(elemdofs,elemdofs) + KGelem ;
 end
 
@@ -100,7 +74,7 @@ end
 %% 3- Process
 % Linear system resolution.
 %%
- 
+
 K     = KG;
 FGred = FG;
 
@@ -130,28 +104,28 @@ for i=1:nelems
   l   = Lengths(i) ;
   ang = Angles(i);
 
-  nodi = ElemConec(i,1);  
-  nodj = ElemConec(i,2);  
+  nodi = ElemConec(i,1);
+  nodj = ElemConec(i,2);
 
-  Eele = Es( ElemConec(i,3) ) ;  
-  Aele = As( ElemConec(i,4) ) ;  
+  Eele = Es( ElemConec(i,3) ) ;
+  Aele = As( ElemConec(i,4) ) ;
 
   elemdofs = nodes2dofs ( [ nodi nodj ]' ,2) ;
-  
+
   ca = cos(ang);
   sa = sin(ang);
-  
+
   R = [ ca -sa   0   0 ;
         sa  ca   0   0 ;
          0   0  ca -sa ;
          0   0  sa  ca ];
 
-  KL = ...          
+  KL = ...
   Eele*Aele/l   * [  1  0 -1  0 ;
                      0  0  0  0 ;
                     -1  0  1  0 ;
                      0  0  0  0 ] ;
-  
+
   Belemloc         = 1/ Lengths(i) * [ -1 0 1 0] ;
 
   LocalDispl       =  ( R' * UG( elemdofs ) ) ;
@@ -182,14 +156,14 @@ quiver( NodsCoord(:,1), NodsCoord(:,2), FG(1:2:end)*loadscfactor ...
 for i=1:nelems
   xselem = NodsCoord( ElemConec(i,1:2) , 1 );
   yselem = NodsCoord( ElemConec(i,1:2) , 2 ) ;
-  
+
   plot( xselem, yselem, 'k--', 'linewidth', LW*0.75, 'markersize', MS );
-  
+
   elemdofs = nodes2dofs( ElemConec(i,1:2),3) ;
- 
+
   xselem = NodsCoordDef ( ElemConec(i,1:2) , 1 ) ;
   yselem = NodsCoordDef ( ElemConec(i,1:2) , 2 ) ;
-  
+
   plot( xselem, yselem, 'b-o', 'linewidth', LW, 'markersize', MS );
 end
 title('Deformed: black: reference configuration, blue: deformed configuration, cyan: loads.')
@@ -203,15 +177,15 @@ for i=1:nelems
 
   xselem = NodsCoord( ElemConec(i,1:2) , 1 ) ;
   yselem = NodsCoord( ElemConec(i,1:2) , 2 ) ;
-  
+
   elemdofs = nodes2dofs( ElemConec(i,1:2), 2 ) ;
 
   if     NormalForces(i) >0, colornormalforce='b';
   elseif NormalForces(i) <0, colornormalforce='r';
   else                             colornormalforce='k'; end
 
-  plot( xselem, yselem, [colornormalforce '-o'], 'linewidth', LW, 'markersize', MS );  
-  
+  plot( xselem, yselem, [colornormalforce '-o'], 'linewidth', LW, 'markersize', MS );
+
   text( sum(xselem)*0.5*(1.05), sum(yselem)*0.5, sprintf( '%8.2e', NormalForces(i) ) ...
     ,'color',colornormalforce, 'fontsize', 14);
 end
