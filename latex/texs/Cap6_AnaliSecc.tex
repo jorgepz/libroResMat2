@@ -17,13 +17,13 @@
 
 En esta unidad se presentan conceptos vinculados al análisis de tensiones en secciones transversales en vigas y/o columnas. %
 
-En la Sección~\ref{sec:lnnc} se desarrolla y aplica un método práctico para el cálculo del Núcleo Central en secciones de cualquier forma. %
+En la Sección~\ref{sec:lnnc} se desarrolla y aplica un método práctico para el cálculo del Núcleo Central en secciones. %
 %
-Parte del desarrollo es similar al usado en \citep{massood2001} mientras que otra parte fue desarrollada por los autores. %
+Parte del desarrollo es similar al usado en \citep{massood2001} mientras que otra parte fue desarrollada con la colaboración de Diego Figueredo. %
 %
 Un desarrollo anterior se puede encontrar en el capítulo VIII de \citep{Timoshenko1953}. %
 %
-En la Sección~\ref{sec:nucleocentral} se presenta el análisis seccional para materiales que no soportan tracción, basado principalmente en el apartado 52 de \citep{Timoshenko1953} con una notación similar a la utilizada en los materiales de \textit{Resistencia de Materiales IIn} elaborados principalmente por el Prof. Atilio Morquio.
+En la Sección~\ref{sec:nucleocentral} se presenta el análisis seccional para materiales que no soportan tracción, basado principalmente en el apartado 52 de \citep{Timoshenko1953} con una notación similar a la utilizada en los materiales del curso \textit{Resistencia de Materiales IIn}, elaborados principalmente por el Prof. Atilio Morquio.
 
 % -----------------------------------------------
 % -----------------------------------------------
@@ -46,27 +46,29 @@ A continuación se muestran los desarrollos para obtener la LN a partir del punt
 
 \subsubsection{Determinación de la Línea Neutra a partir del punto de aplicación}
 
-
-Se considera una viga con un corte en una sección tranversal en la posición $x$, y una carga $N$ aplicada en un punto de coordenadas $(y_A,z_A)$ como se muestra en la \autoref{fig:NCesquema1}. %
+Se considera una viga con solicitaciones internas: $N$, $M_y$ y $M_z$, como se muestra en la  \autoref{fig:NCesquema1}, donde $N\neq 0 $. A partir de estas solicitaciones se considera un torsor equivalente con fuerza saliente $N$ aplicada en el punto $A$ como se muestra en la figura.
 
 \begin{figure}[htb]
 	\centering
-   \def\svgwidth{0.9\textwidth}
-   \input{figs/UT6/NCesquema1.pdf_tex}
+	\def\svgwidth{0.9\textwidth}
+	\input{figs/UT6/NCesquema1.pdf_tex}
 	\caption{Esquema de sección, sistema de coordenadas considerado y equivalencia de torsores de carga y solicitaciones internas.}
 	\label{fig:NCesquema1}
 \end{figure}
 
-Esta carga puede estar asociada tanto a cargas externas como a cargas internas producidas por el resto del elemento de viga. %
-%
-Se calcula el torsor equivalente en el baricentro de la sección, esto es, fuerza y momentos equivalentes:
+El punto A tiene coordenadas $(y_A,z_A)$ las cuales pueden ser calculadas como
 %
 \begin{equation}
-N(x) = N, \qquad  M_z(x) = -N y_A \quad  \text{y} \quad M_y(x) = N z_A.
+y_A = -\frac{M_z(x)}{N(x)}  \quad  \text{y} \quad 
+z_A = \frac{M_y(x)}{N(x)}
 \end{equation}
 %
-Estas tres solicitaciones representan las solicitaciones internas correspondientes.
-
+por lo que las solicitaciones pueden ser escritas como
+\begin{equation}
+	N(x) = N, \quad M_z(x) = -N(x) y_A,\quad  \text{y} \quad 
+	My(x) = N(x) z_A.
+\end{equation}
+%
 
 Sustituyendo las expresiones de las solicitaciones en la Ecuación~\eqref{eqn:tensaxiflexesv} y desarrollando se obtiene:
 %
@@ -162,10 +164,12 @@ En cada punto del contorno se puede definir una LN tangente, la cual se correspo
 	\label{fig:NCesquema2}
 \end{figure}
 
-Se desea obtener la curva paramétrica de los puntos de aplicación $(y_A(t),z_A(t))$, asociadas a las líneas neutras tangentes a la sección transversal en cada punto $y(t),z(t)$ y que no cortan a la sección. Por lo tanto, para dichos puntos de aplicación, existe al menos un punto del contorno de la sección correspondiente a la LN en que $\sigma(x,y(t),z(t)) = 0$. Utilizando la expresión de la Ecuación~\eqref{eqn:AptoLN} se tiene:
+Se desea obtener en forma paramétrica las coordenadas de los puntos de aplicación $(y_A,z_A)$, asociadas a las líneas neutras tangentes a la sección transversal en cada punto $y(t),z(t)$ y que no cortan a la sección. %
+%
+Por lo tanto, para dichos puntos de aplicación, existe al menos un punto del contorno de la sección correspondiente a la LN en que $\sigma(x,y(t),z(t)) = 0$. Utilizando la expresión de la Ecuación~\eqref{eqn:AptoLN} se tiene:
 %
 \begin{equation}
-1 +  \frac{ y_A(t)}{\rho_z^2} y(t) +  \frac{ z_A(t)}{\rho_y^2} z(t) = 0
+1 +  \frac{ y_A}{\rho_z^2} y(t) +  \frac{ z_A}{\rho_y^2} z(t) = 0
 \end{equation}
 
 Se ha encontrado entonces un punto de aplicación $(y_A(t),z_A(t))$ en el que la expresión de la tensión axial para los distintos puntos del contorno es,
