@@ -12,11 +12,11 @@ for j=1:hiperdegree
 end
 
 ForceIndepTerm
-x = Meqred \ ForceIndepTerm 
+x = Meqred \ ForceIndepTerm
 
 supportreactions = zeros(nfixeddofs, hiperdegree+1) ;
 
-supportreactions( isostaticsupports , : ) = x( 1:length(isostaticsupports) ,:) 
+supportreactions( isostaticsupports , : ) = x( 1:length(isostaticsupports) ,:)
 if length(virtualforcessupports)>0
   aux = find( fixeddofs == virtualforcessupports) ;
   for j=1:hiperdegree
@@ -29,8 +29,8 @@ supportreactions
 
 Ns = zeros(nelems,hiperdegree+1) ;
 
-%~ Ns(  isostaticforceselem-length(isostaticsupports) , : ) = x( isostaticforceselem, : ) ; 
-Ns(  isostaticforceselem- nfixeddofs , : ) = x( (length(isostaticsupports)+1):end, : ) ; 
+%~ Ns(  isostaticforceselem-length(isostaticsupports) , : ) = x( isostaticforceselem, : ) ;
+Ns(  isostaticforceselem- nfixeddofs , : ) = x( (length(isostaticsupports)+1):end, : ) ;
 if length( virtualforceselements ) > 0
   for i=1:length(virtualforceselements)
     Ns(virtualforceselements,i+1) = 1 ;
@@ -43,6 +43,7 @@ Ns
 Kf = zeros( hiperdegree, hiperdegree) ;
 Ff = zeros( hiperdegree,           1) ;
 
+hiperdegree
 for i=1:hiperdegree
   for j = 1:hiperdegree
     Kf(i,j) = sum( Ns(:,1+i).*Ns(:,1+j) ./ ( Youngs .* Areas ) .* Lengths ) ;
@@ -51,11 +52,14 @@ for i=1:hiperdegree
   Ff(i) = - sum( Ns(:,1) .* Ns(:,1+i) ./ ( Youngs .* Areas ) .* Lengths ) ;
 end
 
-X = Kf \ Ff 
+Kf
+Ff
+
+X = Kf \ Ff
 
 
 ResultReactions = supportreactions * [ 1; X]
-ResultNormalForces = Ns * [ 1 ; X ] 
+ResultNormalForces = Ns * [ 1 ; X ]
 
 Rext = zeros( 2*nnodes,1) ;
 Rext(fixeddofs) = ResultReactions ;

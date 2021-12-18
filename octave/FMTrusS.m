@@ -9,7 +9,8 @@ addpath( [ pwd '/sources'] );
 %% 1- Input data
 % Input parameters for geometry and material definition of all the trusses.
 % Applied loads and fixed degrees of freedom (supports) are also set here.
-FMTrusSInput_ej1UT2
+#FMTrusSInput_ej1UT2
+FMTrusSInput_ej1Examen202112
 
 %% 2- Pre-process
 % Computation and storage of length, angle, E and A of all truss elements.

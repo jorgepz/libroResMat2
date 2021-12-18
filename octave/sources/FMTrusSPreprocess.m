@@ -1,9 +1,9 @@
 % --- compute lengths and inclination of undeformed elements ---
 Lengths   =  sqrt ( sum( (  NodsCoord( ElemConec(:,2),:) - ...
-                            NodsCoord( ElemConec(:,1),:) ).^2 , 2 ) ) ;
+                            NodsCoord( ElemConec(:,1),:) ).^2 , 2 ) )
 
 Angles = atan2( ( NodsCoord( ElemConec(:,2),2) - NodsCoord( ElemConec(:,1),2) ) , ...
-                ( NodsCoord( ElemConec(:,2),1) - NodsCoord( ElemConec(:,1),1) ) ) ;
+                ( NodsCoord( ElemConec(:,2),1) - NodsCoord( ElemConec(:,1),1) ) ) 
 
 Areas   = As( ElemConec(:,4) ) ;
 Youngs  = Es( ElemConec(:,3) ) ;
@@ -24,16 +24,16 @@ nforceunknowns = nfixeddofs + nelems ;
 # assembles the vector of virtual force states, first the fixed dofs and after the truss elements normal forces.
 if length(virtualforcessupports)>0
   virtualforces  = [ find( fixeddofs == virtualforcessupports) ...
-  virtualforceselements+nfixeddofs ] ;  
+  virtualforceselements+nfixeddofs ] ;
 else
-  virtualforces  = [ virtualforceselements+nfixeddofs ] ;  
+  virtualforces  = [ virtualforceselements+nfixeddofs ] ;
 end
 
 # row vector with the indexes of the dofs of the supports left in the isostatic structure
 isostaticsupports = 1:nfixeddofs ;
 
 if length(virtualforcessupports)>0
-  # deletes the entries corresponding to the supports which are replaced by virtual forces 
+  # deletes the entries corresponding to the supports which are replaced by virtual forces
   isostaticsupports( find( fixeddofs == virtualforcessupports) ) = [] ;
 end
 
@@ -60,14 +60,14 @@ for i=1:nelems
   l   = Lengths(i) ;
   ang = Angles(i);
 
-  nodi = ElemConec(i,1);  
-  nodj = ElemConec(i,2);  
+  nodi = ElemConec(i,1);
+  nodj = ElemConec(i,2);
 
   elemdofs = nodes2dofs ( [ nodi nodj ]' ,2) ;
 
   ca = cos(ang); sa = sin(ang);
   auxproj = [ -ca; -sa; ca; sa] ;
-  
+
   Meq( elemdofs , i+nfixeddofs ) = - auxproj ;
 end
 

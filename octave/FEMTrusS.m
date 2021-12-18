@@ -17,7 +17,8 @@ clear all, close all
 % Applied loads and fixed degrees of freedom (supports)
 %%
 
-FMTrusSInput_ej1UT2
+%FMTrusSInput_ej1UT2
+FMTrusSInput_ej1Examen202112
 
 %% 2- Previous calculations and stiffness matrix assembly
 % Assembles the global stiffness matrix KG and computes the matrix for each element.
