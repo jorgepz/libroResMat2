@@ -33,11 +33,12 @@ Sea una barra con un extremo empotrado sometida a un momento torsor $M_t$ se ver
 \begin{equation}
 M_t = G J \Theta
 \end{equation}
-donde $G$ es el módulo de corte, dado por
-\begin{equation}
-G=\frac{E}{2(1+\nu)},
-\end{equation}
-$\Theta$ es el barrenado dado por el cociente entre el ángulo de giro del extremo libre y el largo  $\Theta = \theta / \ell$, y $J$ es la inercia torsional de la sección dada por:
+%
+donde $G$ es la letra usualmente considerada en torsión para el módulo de corte. %
+%
+El módulo de corte es el segundo parámetro de Lamé $G=\mu$, donde $\mu$ está dado en la Ecuación~\eqref{eqn:lamePars}. %
+%
+$\Theta$ es el \textit{barrenado}, dado por el cociente entre el ángulo de giro del extremo libre y el largo  $\Theta = \theta / \ell$, y $J$ es la inercia torsional de la sección dada por:
 %
 \begin{equation}
 J = \int_{A} \psi_P \dif A.
@@ -56,6 +57,8 @@ La función de \emph{Prandtl}, puede ser obtenida como la solución del siguient
 \right.
 \end{equation} 
 %
+u obtenida de fórmulas para algunos casos particulares \citep{Young2001}.
+
 
 Si se considera un elemento con giros nodales $\theta_1$ y $\theta_2$ se tiene:
 %
@@ -382,7 +385,7 @@ En este curso se realizar un especial énfasis en el análisis de estructuras de
 \section{Ejercicios}
 \setcounter{ejercicio}{0}
 
-\subsection{}
+\ejercicio
 
 Sea la estructura mostrada en la figura, construida con caños de acero ($E=210$ GPa y $\nu =0.3$) de $\phi_{ext} = 100$ mm y $t=8$ mm.
 
