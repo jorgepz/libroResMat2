@@ -13,6 +13,7 @@
 % You should have received a copy of the GNU General Public License
 % along with this program.  If not, see <http://www.gnu.org/licenses/>.
 %
+
 \chapter[Introducción]{Introducción}
 
 En esta unidad se presentan definiciones y conceptos básicos a ser utilizados en unidades posteriores. %
@@ -23,9 +24,7 @@ Se presentan criterios de clasificación de estructuras y definiciones de análi
 %
 Se repasa el desarrollo de las principales ecuaciones de la teoría de vigas como lo hace \cite{Timoshenko1940a} y se recuerdan los conceptos más importantes de la teoría de Elasticidad Lineal, tomando como referencia los materiales de la Unidad Curricular dictada por \cite{CanelasElasticidad}. %
 %
-Se presenta también, brevemente, la aplicación del principio de trabajos virtuales al desarrollo de las ecuaciones de elementos estructurales.
-%
-Finalmente se recuerdan y reafirman los conceptos de indeterminación cinemática y estática adoptando una notación y enfoque similar al de \citep{CerveraRuiz2002,CerveraRuiz2002ii}. %
+Finalmente se presenta, brevemente, la aplicación del principio de trabajos virtuales al desarrollo de las ecuaciones de elementos estructurales, en particular para el elemento de barra.
 %
 
 \section{Análisis y modelado estructural}
@@ -41,7 +40,9 @@ El estudiante interesado puede profundizar en la historia del análisis de estru
 
 En el siglo XX fueron desarrollados métodos prácticos útiles para el análisis de estructuras de gran tamaño como el Método de los Elementos Finitos (MEF) \citep{Zienkiewicz1972}. %
 %
-En el siglo XXI las herramientas de análisis numérico de estructuras están integradas al proceso de diseño a través de nuevos formatos de información como BIM.
+En el siglo XXI las herramientas de análisis numérico de estructuras están totalmente integradas al proceso de diseño a través de diversas herramientas. Un ejemplo de esto se ve en el paradigma BIM (\emph{Building information modeling}) y sus formatos correspondientes (como el formato abierto IFC). 
+
+Por último se debe indicar que el desarrollo de métodos numéricos para análisis estructural sigue siendo un área de activa investigación, integrando nuevos enfoques desde otras disciplinas, con el objetivo de lograr análisis más precisos y de forma más eficientes \citep{forets}
 % -----------------------------
 
 
@@ -51,8 +52,6 @@ En el siglo XXI las herramientas de análisis numérico de estructuras están in
 Para poder utilizar un lenguaje común al referirse a las estructuras es necesario y útil establecer definiciones y criterios de clasificación de estructuras. %
 %
 En el curso se considerará la siguiente definición de \textit{estructura}.
-
-%\vspace{3mm}
 
 \cajaconcepto{Definición: Estructura}
 {Una estructura es un \textbf{sistema de componentes} o elementos estructurales, utilizado para soportar un conjunto de \textbf{cargas} con el objetivo de cumplir una \textbf{función}.}
@@ -67,15 +66,15 @@ Una estructura puede ser clasificada de acuerdo a su función, o la disciplina e
 %
 \begin{itemize}
   %
-  \item \textbf{Civiles}: estructuras destinadas a cumplir funciones vinculadas a la población civil. %
+  \item \textbf{Civiles}: estructuras destinadas a cumplir funciones vinculadas a la población civil (como vivienda, comercial o industrial). %
   %
-  Con geometrías restringidas por materiales y métodos constructivos disponibles. %
+  Los elementos que componen estas estructuras cuentan con geometrías diseñadas de manera óptima para soportar cada tipo de carga, así como también están limitados por los materiales y métodos constructivos disponibles. %
   %
   Las cargas principales consideradas son: peso propio, sobrecarga de uso y viento. Ejemplos: universidades, carreteras, puentes, sistemas de transmisión de energía eléctrica, vías férreas (ver Figura~\ref{fig:viacorc}), muelles, etc.
   %
   \item \textbf{Mecánicas}: estructuras vinculadas a máquinas o algún componente de equipamientos mecánicos. Presentan gran diversidad de geometrías y tipos de cargas. Ejemplos: estructuras de automóviles (carrocería, motores, etc.), atracciones mecánicas (ver Figura~\ref{fig:barco}).
   %
-  \item \textbf{Aeroespaciales}: estructuras de vehículos aeroespaciales. Las cargas suelen estar vinculadas a condiciones extremas o exigentes como altas presiones o temperaturas, o cargas repetitivas que producen fatiga. Ejemplos: aviones, satélites \citep{Yoshiaki1992}
+  \item \textbf{Aeroespaciales}: estructuras de vehículos aeroespaciales. Las cargas suelen estar vinculadas a condiciones extremas o exigentes como altas presiones o temperaturas, o cargas repetitivas que producen fatiga. Ejemplos: aviones, satélites \citep{Yoshiaki1992}.
   %
   \item \textbf{Navales}: estructuras vinculadas a actividades navales, como por ejemplo, componentes de barcos. Las cargas tienen una componente dinámica importante, así como también una complejidad elevada debido a la interacción con fluidos.
   %
@@ -120,31 +119,31 @@ Las estructuras civiles están formadas por \textit{componentes estructurales}, 
 	%
 	\item \textbf{viga } (de eje recto): elemento con geometría de barra en su configuración natural (sin cargas), que puede ser sometido a fuerzas según su eje (normales) o transversales (cortantes) así como también a momentos según su eje (torsores) o transversales (flectores).
 	%
-	\item \textbf{pilar}: elemento con geometría de barra que se encuentra sometido a flexión y compresión según su eje siendo la compresión preponderante.
+	\item \textbf{pilar}: elemento con geometría de barra que se encuentra sometido a flexión y compresión según su eje, siendo la compresión preponderante.
 	%
 	\item \textbf{cable}: también utilizado como \textbf{tensor}, son elementos de barra sometidos principalmente a tracción que no soportan considerable flexión o compresión según su eje.
 	%
-	\item \textbf{losa y cáscara}: elementos con dos dimensiones (formando su plano o superficie media) mayores que la otra dimensión. %
+	\item \textbf{losa y cáscara}: elementos con una geometría tal que una dimensión es considerablemente menor que las otras dos. La dimensión menor define el espesor, mientras que las otras dos definen el plano medio (o superficie media) de la losa (o cáscara). %
 	%
 	Soportan flexión o tensión con vector contenido en el plano medio. %
 	%
-	Las losas tienen un plano medio plano, mientras que en las cáscaras este se encuentra dado por una superficie con curvatura no nula.
+	Las losas tienen un plano medio plano, mientras que en las cáscaras, este se encuentra dado por una superficie con curvatura no nula.
 	%
 	\item \textbf{membrana}: elementos superficiales muy flexibles de pequeño espesor que no son capaces de soportar compresión o flexión. %
 	%
 	En la Figura~\ref{fig:termmadero} se observa la cubierta exterior, de la Terminal Madero de la Ciudad de Buenos Aires, formada y soportada por componentes de membrana, barras, vigas y cables.
 	%
-	\item \textbf{otros}: existen otros elementos estructurales cuya geometría más compleja no asociados directamente a un estado tensional de los anteriores, por ejemplo: zapatas, cabezales, muros de contención (trabajando como losa o bajo estados planos de deformación) y arcos o vigas de eje curvo.
+	\item \textbf{otros}: existen otros elementos estructurales con geometrías más complejas no asociados directamente a un estado tensional como los anteriores. Algunos ejemplos de estas estructuras son: zapatas, cabezales, muros de contención (trabajando como losa o bajo estados planos de deformación) y arcos, o vigas de eje curvo.
 \end{itemize}
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=\textwidth]{terminalmadero}
+	\includegraphics[width=.95\textwidth]{terminalmaderoB}
   \caption{Foto exterior de las cubiertas de la Terminal Madero Ciudad de Buenos Aires, Argentina.}
 \label{fig:termmadero}
 \end{figure}
 
-Un tipo de estructura frecuentemente analizada es el pórtico, o estructura aporticada, la cual está formada por pilares y vigas vinculados por al menos un nudos rígidos o uniones que transmiten momentos. %
+Un tipo de estructura frecuentemente analizada es el pórtico, o estructura aporticada, la cual está formada por pilares y vigas vinculados por al menos un nudo rígido o uniones que transmiten momentos. %
 %
 A continuación se presentan criterios de clasificación de estructuras de acuerdo a los vínculos existentes entre sus componentes.
 
@@ -215,9 +214,9 @@ El análisis es una etapa crucial en el proceso de diseño y verificación de cu
 \cajaconcepto{Definición: Análisis estructural}
 {El \textit{análisis} de una estructura consiste en la determinación de los \textbf{efectos} (solicitaciones y movimientos) que un sistema de \textbf{cargas} dado produce sobre la \textbf{estructura} y cada uno de los elementos estructurales que la componen.}
 
-El proceso de analizar una estructura puede ser también llamado \textit{resolver} una estructura. %
+El proceso de analizar una estructura y obtener todas las solicitaciones de sus elementos estructurales, es usualmente llamado \textit{resolver} una estructura. %
 
-Las fuerzas aplicadas a los elementos estructuras y la vinculación existente entre estos elementos determinan las deformaciones y solicitaciones de la estructura. %
+Las fuerzas aplicadas a los elementos estructurales y la vinculación existente entre estos elementos determinan las deformaciones y solicitaciones de la estructura. %
 %
 Para definir el tipo de análisis a realizar se deberá categorizar las cargas y vínculos entre componentes. %
 
@@ -231,11 +230,11 @@ En este material se considera que toda carga es de tipo \textit{estática} o \te
 %
 Estas cargas son provocadas por acciones cuya magnitud o sentido no varía en el tiempo, como por ejemplo el peso propio de cada elemento estructural. %
 
-Las cargas o esfuerzos producidos por otras acciones como viento, sismos, impactos, etc., deben ser analizadas de forma diferente aplicando modelos numéricos o criterios de diseño específicos definidos por normativas correspondientes.
-%
+Las cargas o esfuerzos producidos por otras acciones como viento, sismos, impactos, etc., deben ser analizadas de forma diferente aplicando modelos numéricos o criterios de diseño específicos definidos por normativas correspondientes. Como ejemplo, se puede ver la  forma en que se definen cargas en la norma europea\footnote{Eurocódigo 1: UNE-EN 1991-1-2:2019 \href{https://www.une.org/encuentra-tu-norma/busca-tu-norma/norma?c=N0061459}{https://www.une.org/encuentra-tu-norma/busca-tu-norma/norma?c=N0061459}}.
+
 En este texto se asume que, sea cual fuere su origen, toda carga podrá ser considerada como estática. %
 %
-Existe una importante rama del en la Ingeniería Estructural, enfocada al análisis dinámico de estructuras, en la cual se destacan referencias bibliográficas como \citep{clough1993dynamics}.
+Existe una importante rama de la Ingeniería Estructural, enfocada al análisis dinámico de estructuras, en la cual se destacan referencias bibliográficas como \citep{clough1993dynamics}.
 %
 % ------------------------
 
@@ -259,7 +258,7 @@ Los \textit{vínculos a tierra}, o condiciones de apoyo, de cada nodo de una est
 %
 \end{itemize}
 
-En la Figura~\ref{fig:membr} se muestra parte de la estructura de soporte de la cubierta de la terminal de Madero en Bs. As.. %
+En la Figura~\ref{fig:membr} se muestra parte de la estructura de soporte de la cubierta de la terminal de Madero en Buenos Aires. %
 %
 En la Figura~\ref{fig:artic} se puede ser una materialización de un vínculo que podría considerarse como un apoyo fijo que restringe el desplazamiento de un punto. %
 %
@@ -392,6 +391,7 @@ En la Figura~\ref{fig:raila} se muestra una foto de un puente metálico, que ser
 	\subfloat[Diagrama de deformada con factor de escala 10 y escala de colores de tensiones axiales.]%
 	{
 	  \includegraphics[width=0.9\textwidth]{reticRailDeform}\label{fig:railc}}
+  \caption{Ejemplo simplificado de las principales componentes en el proceso de diseño o verificación de una estructura.}
 \end{figure} 
 
 
@@ -419,19 +419,14 @@ Se modela cada barra con un elemento de barra plano de dos nodos, con funciones 
 Luego de resolver el sistema de ecuaciones lineales correspondiente, se obtienen los desplazamientos y luego de utilizar un factor de escala adecuado (10 en este caso) se obtiene una estructura deformada dada por la Figura~\ref{fig:railc}. La escala de colores representa los valores de tensiones axiales. %
 %
 
-En este caso para resolver el Modelo Numérico se utilizó la herramienta de elementos finitos ONSAS \footnote{Código abierto disponible en: \href{https://github.com/onsas}{https://github.com/onsas}}. %
+En este caso para resolver el Modelo Numérico se utilizó la herramienta de elementos finitos ONSAS \footnote{Código abierto disponible en: \href{http://www.onsas.org}{www.onsas.org}}. %
 %
-El archivo de entrada usado para resolver el reticulado es presentado en el Código~\ref{cod:reticejUT1}.
+El archivo de entrada usado para resolver el reticulado, con la geometría y conectividad de la estructura, está disponible en el repositorio de este libro.
 
 
 En este texto nos concentraremos en el estudio de métodos para la resolución del Esquema Básico de Cálculo, a través de la resolución del Modelo Numérico o del uso de soluciones analíticas. %
 %
 De aquí en adelante se podrá utilizar la palabra estructura para hacer referencia al Esquema Básico de Cálculo.
-
-
-
-
-
 
 
 
@@ -522,7 +517,7 @@ por lo tanto se cumple:
 \frac{ds}{dx} (x) = \sqrt{1+ \left( \frac{ d v}{d x}(x)  \right) ^2}.
 \end{equation}
 
-Por otra parte, para obtener una expresión del segundo factor del miembro derecho de la Ecuación~\eqref{eqn:dsdtheta}, se sabe que se cumple:
+Por otra parte, se busca obtener una expresión del segundo factor del miembro derecho de la Ecuación~\eqref{eqn:dsdtheta}. Se sabe que se cumple:
 %
 \begin{equation}
 \tan(\theta(x) ) = \frac{d v}{d x} (x)
@@ -555,7 +550,7 @@ por lo tanto se obtiene
 \frac{d x}{d\theta}(\theta(x)) =  \left( 1 + \left( \frac{dv}{dx} (x)\right)^2 \right)  \frac{1}{  \frac{d^2 v}{d x^2}(x)}
 \end{equation}
 %
-sustituyendo las ecuaciones \eqref{eqn:dsdx} y \eqref{eqn:dxdtheta} en la Ecuación~\ref{eqn:dsdtheta} y aplicando la definición de la curvatura se obtiene la expresión:
+sustituyendo las ecuaciones \eqref{eqn:dsdx} y \eqref{eqn:dxdtheta} en la Ecuación~\eqref{eqn:dsdtheta} y aplicando la definición de la curvatura se obtiene la expresión:
 %
 \begin{equation}
 \kappa(x) = \frac{d^2 v}{d x^2} \frac{1}{\left( 1+ \left( \frac{dv}{d x}\right)^2 \right)^{3/2}}.
@@ -588,9 +583,11 @@ aproximación que será útil para el desarrollo del elemento finito de viga.
 
 \section{Conceptos básicos de Elasticidad Lineal}
 
-La teoría de la mecánica del continuo permite formular y aplicar modelos numérico-matemáticos para estimar la deformación de cuerpos sólidos, al ser sometidos a esfuerzos conocidos considerando condiciones de apoyo adecuadas. %
+La teoría de la Mecánica del Continuo permite formular y aplicar modelos numérico-matemáticos para estimar la deformación de cuerpos sólidos, al ser sometidos a esfuerzos conocidos considerando condiciones de apoyo adecuadas. %
 %
-En esta sección se presentan esquemáticamente algunos conceptos de la teoría de Elasticidad Lineal importantes para el posterior desarrollo de los conceptos del texto.
+En esta sección se presentan esquemáticamente algunos conceptos de la teoría de Elasticidad Lineal importantes para el posterior desarrollo de los conceptos del texto. %
+%
+Si bien estos contenidos pueden encontrarse en infinidad de libros, entre los que se destaca \citep{Gurtin1981}, en este material tomaremos como referencia el apunte del curso de Elasticidad Lineal \citep{CanelasElasticidad}, conocido para los estudiantes.
 
 
 \subsection{Problema de Elasticidad Lineal}
@@ -920,225 +917,9 @@ Durante el curso se abordarán las teorías de vigas y pórticos así como tambi
 
 
 
-\section{Grados de indeterminación}
-
-Existen diversos métodos disponibles para el análisis de una estructura, por lo tanto, es útil identificar qué tipo de métodos son los más adecuados antes de iniciar el análisis estructural. %
-En esta sección se presentan propiedades geométricas (valores numéricos) que pueden ser calculados antes del análisis para tomar una mejor decisión sobre el método a utilizar.
-
-Los grados de indeterminación estática y cinemática son valores dados por la geometría y los vínculos entre componentes de la estructura. %
-%
-Estos valores numéricos permiten estimar la complejidad de la resolución usando dos métodos analíticos presentados el curso: el \textit{Método de las Fuerzas} y el \textit{Método de los Desplazamientos}. %
-%
 
 
-\subsection{Grado de indeterminación estática}
-
-% -------------------------
-El grado de indeterminación estática (también llamado \textit{grado de hiperestaticidad}) es un valor numérico definido por la diferencia entre: el número de incógnitas de fuerza y el número de ecuaciones de equilibrio. %
-%
-La metodología de cálculo presentada en esta sección está basada en \citep{CerveraRuiz2002ii}. %
-%
-En esta metodología se parte de un EBC, opcionalmente se pueden considerar componentes separadas de la estructura y se aplica una ecuación para el cálculo.
-
-Las \textbf{incógnitas de fuerza} son aquellas necesarias para determinar completamente el \textit{\textbf{estado tensional}} de toda la estructura. En las estructuras consideradas en este texto, estas incógnitas son:
-%
-\begin{itemize}
-	\item $n_S$: solicitaciones a determinar y fuerzas debidas a \textit{vínculos internos} de cada componente,
-	\item $n_R$: reacciones dadas por \textit{vínculos externos}.
-\end{itemize}
-
-
-Por otra parte para calcular el número de ecuaciones con que se cuenta se define:
-%
-\begin{itemize}
-	\item $n_C$: es el número de componentes o partes en la que se separa la estructura para el cálculo,
-	\item $n_E$: el número de ecuaciones de equilibrio para cada parte.
-	\end{itemize}
-
-La expresión matemática del grado de indeterminación estática puede ser presentada como:
-%
-\begin{equation} \label{eqn:gradoh}
-gh = n_R + n_S - n_C \, n_{E}.
-\end{equation}
-
-Como ejemplo se presentan las estructuras de la Figura~\ref{fig:ejemghSimp}, formadas por un único componente y con diferente cantidad de reacciones externas. Dado que no se cortan o liberan vínculos internos de la estructura no hay $n_S$.
-
-\begin{figure}[htb]
-\centering
- \def\svgwidth{0.95\textwidth}
-  \input{figs/UT1/ejemplos_basicosGradoHiper.pdf_tex}
-  \caption{Ejemplos simples de cálculo de grado de hiperestaticidad.}
-  \label{fig:ejemghSimp}
-\end{figure}
-
-En la Figura~\ref{fig:ejemghMed}. se muestra un reticulado, donde nuevamente si se desacopla en $n_C=3$ componentes una por barra, se tiene que cada articulación introduce dos vínculos a determinar. Por lo tanto $gh = 2+1+2+2+2-3\times 3 = 0$.
-
-\begin{figure}[htb]
-	\centering
-	\def\svgwidth{0.6\textwidth}
-	\input{figs/UT1/ejemplos_mediosGradoHiper.pdf_tex}
-	\caption{Ejemplo de cálculo de grado de hiperestaticidad en reticulado.}
-	\label{fig:ejemghMed}
-\end{figure}
-
-Este cálculo también puede ser realizado considerando la estructura como una única componente. Más adelante se mostrará una ecuación práctica para el cálculo de $gh$ en reticulados planos.
-
-\paragraph{Analogía con cálculo a partir de grados de libertad} %
-El cálculo presentado es análogo al utilizado en otros cursos, en los cuales se considera el número de grados de libertad total de las estructuras (en el ejemplo $3\times 3$) y se van restando los vínculos que restringen el movimiento entre barras y a tierra ($-2-1-2-2-2$) por lo que se obtiene un valor opuesto al $gh$.
-
-\paragraph{Clasificación de estructuras según grado de hiperestaticidad} %
-Las estructuras pueden ser clasificadas según su grado de hiperestaticidad:
-\begin{itemize}
-	\item \textit{estáticamente determinada} (o isostática): es aquella estructura cuyo estado tensional puede ser determinado usando únicamente ecuaciones de equilibrio, por lo tanto:
-	$$
-	gh = 0
-	$$
-	
-	\item \textit{hiperestáticas}: es aquella estructura para la cual no es posible determinar el estado tensional usando únicamente equilibrio, es decir:
-	$$
-	gh > 0.
-	$$
-	En este caso deben ser utilizadas oras ecuaciones como por ejemplo compatibilidad de desplazamientos. %
-	
-	\item \textit{hipoestáticas} (o mecanismos): este último caso corresponde a estructuras en las cuales se tienen más ecuaciones que incógnitas por lo tanto
-	$$
-	gh <0.
-	$$
-\end{itemize}
-
-
-
-\subsubsection{Grado de hiperestaticidad externa}
-%
-Si se considera a la estructura como un conjunto donde solamente se desea determinar las reacciones, es posible definir el grado de hiperestaticidad externa como
-%
-\begin{equation}
-gh_E = n_{R} - 1 \times n_{E}
-\end{equation}
-%
-donde $n_R$ es nuevamente el número de reacciones y $n_E$ es el número de ecuaciones del conjunto de la estructura. %
-%
-En el ejemplo visto en la Figura~\ref{fig:ejemghSimp} a la derecha, se tiene: $gh_E = 4 - 3 = 1$. %
-
-
-%\cajaactividad{
-%	Demostrar que: todo reticulado con $gh_E = 0$  y sin barras cruzadas, cumple: tiene $gh\leq 0$.}
-
-Finalmente, se puede usar los valores $gh_E$ y $gh$ para formular una condición \textbf{necesaria} que una estructura \textit{isostática} debe cumplir. %
-%
-Se dice que:
-%
-$$
-\boxed{
-\text{Estructura isostática} \quad \Rightarrow \quad gh_E = 0 \, \textbf{y} \, gh = 0.
-}%
-$$
-% -------------------------
-
-
-Existen casos de particulares, de estructuras en las cuales aún siendo isostáticas el grado de hiperestaticidad externa es mayor que cero, como por ejemplo la mostrada en la Figura~\ref{fig:hipereje}. %
-%
-Esto se debe a que la estructura está conformada por barras no conectadas entre sí como ocurre en la mostrada en las Figuras \ref{fig:ejemghMed} o \ref{fig:retic_gh}. %
-%
-Esta peculiaridad teórica no será relevante al momento de aplicación práctica del Método de las Fuerzas como se verá en la UT siguiente.
-
-
-\subsubsection{Cálculo general de grado de hiperestaticidad en pórticos/vigas/barras planos}
-
-En el caso de estructuras de pórticos planos, la determinación del estado tensional requiere conocer 3 solicitaciones en todo punto: directa, cortante y momento. %
-%
-A modo de ejemplo se considera la estructura mostrada en la Figura~\ref{fig:gerb}: en la parte superior se muestra el esquema básico con la carga aplicada, mientras que en la parte inferior se muestra una de las formas en que la estructura puede ser separada en componentes. 
-%
-\begin{figure}[htb]
-	\centering
-	%
-	\def\svgwidth{0.7\textwidth}
-	\input{figs/UT1/ejemplo_grado_hiper.pdf_tex}
-	%
-	\caption{Ejemplo de grado de indeterminación estática: estructura con cargas aplicadas (superior) y estructura con componentes separadas y cantidad de reacciones incógnita (inferior).}
-	\label{fig:gerb}
-\end{figure}
-
-La cantidad de solicitaciones a determinar en cada vínculo es indicado con un círculo y el cálculo del grado de hiperestaticidad usando la Ecuación~\eqref{eqn:gradoh} está dado por:
-%
-\begin{equation}
-n_R = 3+1+1 \quad n_S = 2+2 \quad n_C = 3 \quad n_E = 3 \quad \Rightarrow \quad gh = 0
-\end{equation}
-%
-por lo tanto la estructura es isostática.
-
-El $gh$ es un parámetro útil para estimar la complejidad de la aplicación del Método de las Fuerzas. %
-%
-Dado que en este texto dicho método es desarrollado únicamente para reticulados, el cálculo del $gh$ para pórticos no es abordado de forma extensiva. %
-%
-En la Sección 1.6 de \citep{CerveraRuiz2002ii} se presenta un desarrollo más extenso sobre la determinación del grado de hiperestaticidad así como también se muestran diversos ejemplos.
-
-
-\subsubsection{Cálculo simplificado de grado de hiperestaticidad para reticulados}
-
-En el caso particular de reticulados es posible considerar una forma alternativa y simplificada de cálculo. %
-% 
-El estado tensional de estructuras formadas por barras articuladas queda definido a partir de los valores de tensiones axiales, como se ve en la Ecuación~\ref{eqn:sigmaBarra}. %
-%
-Los valores de tensión axial están relacionados directamente con la directa de cada barra. %
-%
-Considerando esto, entonces cada barra bi-articulada introduce una única incógnita solicitación $n_S$.
-
-En la Figura~\ref{fig:retic_gh} se muestra un reticulado formado por 6 barras con dos apoyos fijos, por lo tanto se tienen $n_S=6$ solicitaciones y $n_R=4$ reacciones. %
-
-\begin{figure}[htb]
-	\centering
-	\def\svgwidth{0.6\textwidth}
-	\input{figs/UT1/retic_gh.pdf_tex}
-	\caption{Ejemplo reticulado plano hiperestático.}
-	\label{fig:retic_gh}
-\end{figure}
-
-Por otra parte, si se considera cada nodo de la estructura como un componente aislado se pueden plantear dos ecuaciones de equilibrio de fuerzas a cada componente, por lo tanto se tiene $n_E = 2$ y $n_C =4$. %
-%
-De esta forma, sustituyendo en la Ecuación~\ref{eqn:gradoh} el grado de hiperestaticidad queda determinado como:
-%
-\begin{equation}
-gh = 4 + 6 - 2 \times 4 = 2.
-\end{equation}
-
-Esto quiere decir que si se aplican las ecuaciones de equilibrio tendríamos un sistema compatible indeterminado. El subespacio de soluciones del sistema es de dimensión 2.
-
-\cajaconcepto{Para práctico}{
-El cálculo simplificado de $gh$ en reticulados está dado por:
-$$
-\boxed{
-gh = n_R + n_{Barras} - 2 \times n_{Nodos}
-}
-$$ 
-}
-
-
-
-\subsection{Grado de indeterminación cinemática}
-
-El grado de indeterminación cinemática permite establecer la cantidad de incógnitas cinemáticas que se deben determinar para conocer el desplazamiento de todos los puntos de la estructura.
-%
-Una posible expresión matemática de este parámetro es:
-%
-\begin{equation}
-gk = g_l \, n_n - c_a,
-\end{equation}
-%
-donde $g_l$ es el número de grados de libertad por nodo, $n_n$ es el número de nodos de la estructura y $c_a$ el número de grados de libertad conocidos por las condiciones de apoyo o vínculo a tierra. %
-%
-En algunos casos es posible resolver sistemas de menor cantidad de incógnitas al utilizar información adicional como por ejemplo por simetría.
-
-En estructuras articuladas planas $g_l$ es 2, en estructuras aporticadas planas $g_l=3$ y en aporticadas tridimensionales $g_l=6$.
-
-El grado de indeterminación cinemática permite conocer el número de incógnitas de los sistemas de ecuaciones planteados al usar el Método de los Desplazamientos o sus variantes computacionales como el Método de los Elementos Finitos.
-
-
-
-
-
-
-
+\newpage
 
 
 \section{Ejercicios}

@@ -323,6 +323,9 @@ En el Código~\ref{cod:emparrillados} en la Sección~\ref{sec:codut5} se present
 %
 El código ha recibido aportes y modificaciones de estudiantes del curso 2019, los nombres de los autores fueron agregados al código y los cambios están visibles en el repositorio del código fuente de este documento.
 
+\lstinputlisting[caption = {Archivo: {emparrillados.m}.}\label{cod:emparrillados}]{../octave/emparrillados.m}
+
+
 Para validar los resultados obtenidos con el Código~\ref{cod:emparrillados} se realiza otro modelo usando la herramienta ONSAS. Se realiza un primer modelo con análisis lineal y la misma geometría, luego otro modelo con la geometría completa y finalmente un modelo con la geometría completa y análisis no lineal para una carga máxima 20 veces superior a $P$. El archivo del modelo está disponible en el repositorio de ONSAS\footnote{\href{https://github.com/ONSAS/ONSAS/blob/master/examples/onsasExample_emparrillado.m}{github.com/ONSAS/ONSAS/blob/master/examples/onsasExample\_emparrillado.m}} La figura deformada para el estado de cargas máximo con el análisis no lineal es mostrado en la Figura~\ref{fig:empa}.
 
 \begin{figure}[htb]
@@ -346,7 +349,7 @@ En el caso de estructuras tridimensionales, los elementos de barra pueden estar 
 
 El caso de flexión esviada corresponde a vigas sometidas a momentos flectores con componentes no nulas en los dos ejes de coordenadas locales transversales (siendo estos los ejes de los momentos de inercial principales). %
 
-El desarrollo de las ecuaciones para vigas sometidas a esfuerzos axiales y transversales es equivalente al presentado en la Sección~\ref{sec:teoviga}, considerando que los giros de las secciones son no nulos tanto en el eje $y$ como el eje $z$, esto es $\theta_z \neq 0$ y $\theta_y \neq 0$. %
+El desarrollo de las ecuaciones para vigas sometidas a esfuerzos axiales y transversales es equivalente al presentado en la Sección~\ref{sec:analiMatPort}, considerando que los giros de las secciones son no nulos tanto en el eje $y$ como el eje $z$, esto es $\theta_z \neq 0$ y $\theta_y \neq 0$. %
 %
 Al mismo tiempo se tiene que ambos desplazamientos transversales $v$ y $w$ son no nulos.
 
