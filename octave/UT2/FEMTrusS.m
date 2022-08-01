@@ -16,11 +16,6 @@
 % along with FMTS.  If not, see <https://www.gnu.org/licenses/>.
 
 
-%% 2- Previous calculations and stiffness matrix assembly
-% Assembles the global stiffness matrix KG and computes the matrix for each element.
-% The resulting global displacements vector is stored in UG.
-%%
-
 % --- compute lengths and inclination of undeformed elements ---
 Lengths   =  sqrt ( sum( ( NodsCoord( ElemConec(:,2),:) ...
                          - NodsCoord( ElemConec(:,1),:) ).^2 , 2 ) ) ;
