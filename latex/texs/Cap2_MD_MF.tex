@@ -561,19 +561,15 @@ N^e = E^e A^e \bfB_L^e (\bfR^e)^T \bfu^e.
 \end{equation}
 
 
-
-\subsection{Apoyos elásticos}
-
-Para incluir apoyos elásticos (resortes nodales) es posible adicionar a las ecuaciones los correspondientes términos de energía potencial elástica. %
+Finalmente se menciona que también es posible analizar reticulados con resortes elásticos en sus nodos. Para esto se puede adicionar a las ecuaciones los correspondientes términos de energía potencial elástica. %
 %
-En el caso de un resorte lineal de constante elástica $k$ colocado en el grado de libertad $j$ la energía potencial está dada por
+En el caso de un resorte lineal de constante elástica $k$ colocado en el grado de libertad $j$, la energía potencial está dada por
 %
 \begin{equation}
 \Pi_{res}(\bfu) = \frac{1}{2} k u_j^2,
 \end{equation}
 %
 que puede ser sumada a la energía potencial de deformación $\Pi_{int}$.
-
 
 
 
@@ -599,7 +595,7 @@ En caso de detectar errores en el FEMTrusS se agradece notificarlo creando un \t
 
 
 
-\subsection{Ejemplo} \label{sec:ejemplobarra}
+\subsection{Ejemplo de Método de los Desplazamientos} \label{sec:ejemplobarra}
 
 Sea la estructura mostrada en la Figura~\ref{fig:ejejmMDUT2}, formada por barras de material con módulo de Young $E=210 $ GPa, con $\ell= 10$ m, y secciones transversales  de áreas $A^1 = A^3 = 0.001$ m$^2$ y $A^2 = 0.01 $ m$^2$. %
 %
@@ -814,14 +810,15 @@ lo cual resultaría en, como es esperado, un menor valor de desplazamiento nodal
 \section{Método de las Fuerzas}
 
 
-El Método de las Fuerzas (MF) utiliza un enfoque de resolución complementario al MD. El MF considera las ecuaciones de equilibrio y tiene como objetivo primario determinar las incógnitas de fuerzas indeterminadas por esas ecuaciones. %
+El Método de las Fuerzas (MF) utiliza un enfoque de resolución complementario al MD. El MF considera las ecuaciones de equilibrio de fuerzas y tiene como objetivo primario determinar las incógnitas de fuerzas indeterminadas por esas ecuaciones. %
 %
 En el MD se utilizan principalmente ecuaciones constitutiva y de  compatibilidad cinemática, con el objetivo de obtener los desplazamientos.
 
 
 En esta sección (y en el curso) se presenta el método orientado únicamente al análisis de reticulados, utilizando un enfoque similar al usado en \citep{Reddy2002b}. %
-El MF puede ser aplicado al análisis de cualquier estructura hiperestática, los estudiantes interesados en la aplicación del MF a estructuras como pórticos pueden acudir a textos como \citep{Krenk2013,Fuchs2016} disponibles en la colección \textit{Springer} en \href{http://timbo.org.uy/}{timbo.org.uy}.
+El MF puede ser aplicado al análisis de cualquier estructura hiperestática, los estudiantes interesados en la aplicación del MF a estructuras como pórticos pueden acudir a textos como \citep{Krenk2013,Fuchs2016} disponibles\footnote{Acceso variable año a año, definido por el financiamiento destinado a la ANII.} en la colección \textit{Springer} en \href{http://timbo.org.uy/}{timbo.org.uy}.
 %
+
 
 Tal como fue visto, los desplazamientos son la incógnita principal del MD. %
 En el caso del MF los valores de las directas en las barras y las reacciones de los vínculos son la incógnita principal a determinar. %
@@ -899,7 +896,7 @@ Si se considera que las directas $\bfN$ y las reacciones $\bfR$ son las incógni
 
 \subsection{Principios energéticos}
 
-Hasta ahora se han presentado las fuerzas de los factores $X_j$ asociados a incógnitas de fuerza de los vínculos liberados del problema. %
+Hasta aquí se han presentado las fuerzas de los factores $X_j$ asociados a incógnitas de fuerza de los vínculos liberados del problema. %
 %
 Los valores de directas usados para calcular la energía de deformación complementaria, son obtenidos a partir de las relaciones directas-fuerzas externas del equilibrio de fuerzas. %
 %
@@ -1090,18 +1087,28 @@ Si en el estado canónico $E_0$ existe una única fuerza aplicada de magnitud $P
 \end{equation}
 %
 
-\section{Aplicaciones}
+
+
+\subsection{Implementación computacional}
+
+La implementación computacional del procedimiento del Método de las Fuerzas no es tan directa como la del Método de los Desplazamientos. %
+%
+A pesar de esto, se brinda un ejemplo de implementación, que puede ser también estudiado por los estudiantes interesados en entender el procedimiento planteado por el método. %
+
+Los códigos están disponibles en el repositorio \href{https://github.com/jorgepz/FDMTrusS}{github.com/jorgepz/FDMTrusS}, y se aclara que el código es una versión minimal, en proceso de revisión, que aspira simplemente a mostrar una posible forma de automatizar el proceso del Método y  \textbf{no forma parte de los contenidos} centrales \textbf{del curso} y no será evaluado directamente. %
+%
 
 
 
 \subsection{Ejemplo de Método de las Fuerzas}
 
-Se presenta la resolución del ejemplo que de la sección anterior, en este caso usando el MF. %
+Se presenta la resolución del mismo problema de la Sección~\ref{sec:ejemplobarra}, en este caso usando el MF. %
 %
-Se comienza calculando el grado de hiperestaticidad de la estructura. Aplicando las definiciones vistas en la UT1 se obtiene que $gh= 3 + 6 - 2 \times 4 = 1$.
+Se comienza calculando el grado de hiperestaticidad como $gh= 3 + 6 - 2 \times 4 = 1$.
 
-En la Figura~\ref{fig:hipereje} se muestran los estados canónicos correspondientes al ejemplo considerando un corte en la barra 2-4.
-%
+
+En este problema existen más de una posibilidad de estados canónicos a considerar. En la Figura~\ref{fig:hipereje} se muestran los estados canónicos elegidos, considerando un corte en la barra 2-4.
+
 \begin{figure}[htb]
 \centering
 \def\svgwidth{\textwidth}
@@ -1129,7 +1136,7 @@ Usando las ecuaciones del segundo teorema de Castigliano  se obtiene:
 X_1 \cdot  1.44 \times 10^{-7} = -1.02 \times 10^{-3} \Rightarrow \boxed{ X_1 = -7071 \, \text{N} }.
 \end{equation}
 
-La directa en las barras son calculadas usando la ecuación Ecuación~\eqref{eqn:estadosdirectas}:
+Las directas en las barras son calculadas usando la ecuación Ecuación~\eqref{eqn:estadosdirectas}:
 %
 \begin{equation}
 N^1 = - N^3 =7.07 \, \text{kN} \quad \text{y} \quad N^2 = 0.
@@ -1163,27 +1170,6 @@ resultado que también coincide con el obtenido usando el MD.
 
 
 En el caso de desear determinar otro desplazamiento se debe considerar un estado de fuerzas correspondiente siempre considerados sobre la estructura ísostática fundamental.
-
-\subsection{Implementación computacional}
-
-La implementación computacional del procedimiento del Método de las Fuerzas no es tan directa como la del Método de los Desplazamientos. %
-%
-A pesar de esto, se brinda un ejemplo de implementación, que puede ser también estudiado por los estudiantes interesados en entender el procedimiento planteado por el método. %
-
-Los códigos están disponibles en el repositorio \href{https://github.com/jorgepz/FDMTrusS}{github.com/jorgepz/FDMTrusS}, y se reitera que el código es una versión minimal, en proceso de revisión, que aspira simplemente a mostrar una posible forma de automatizar el proceso del Método y  \textbf{no forma parte de los contenidos} centrales \textbf{del curso} y no será evaluado directamente. %
-%
-
-
-
-
-\cajaconcepto{Para práctico}{
-	El $gh$ en reticulados se calcula:
-	$$
-	\boxed{
-		gh = n_R + n_{Barras} - 2 \times n_{Nodos}
-	}
-	$$ 
-}
 
 
 \newpage
