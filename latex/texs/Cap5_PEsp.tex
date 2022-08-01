@@ -323,14 +323,15 @@ En el Código~\ref{cod:emparrillados} se presenta una implementación en GNU-Oct
 %
 El código ha recibido aportes y modificaciones de estudiantes del curso 2019, los nombres de los autores fueron agregados al código y los cambios están visibles en el repositorio del código fuente de este documento.
 
-\lstinputlisting[caption = {Archivo: {emparrillados.m}.}\label{cod:emparrillados}]{../octave/emparrillados.m}
+\lstinputlisting[caption = {Archivo: {emparrillados.m}.}\label{cod:emparrillados}]{../octave/UT5/emparrillados.m}
 
+Para validar los resultados obtenidos con el código se realiza otro modelo usando la herramienta ONSAS. Se realiza un primer modelo con análisis lineal y la misma geometría y el resultado es verificado.
 
-Para validar los resultados obtenidos con el Código~\ref{cod:emparrillados} se realiza otro modelo usando la herramienta ONSAS. Se realiza un primer modelo con análisis lineal y la misma geometría, luego otro modelo con la geometría completa y finalmente un modelo con la geometría completa y análisis no lineal para una carga máxima 20 veces superior a $P$. El archivo del modelo está disponible en el repositorio de ONSAS\footnote{\href{https://github.com/ONSAS/ONSAS/blob/master/examples/onsasExample_emparrillado.m}{github.com/ONSAS/ONSAS/blob/master/examples/onsasExample\_emparrillado.m}} La figura deformada para el estado de cargas máximo con el análisis no lineal es mostrado en la Figura~\ref{fig:empa}.
+Finalmente para comprender la deformación de la estructura se realizada un análisis no lineal para una carga máxima 20 veces superior a $P$. La deformada para el estado de cargas máximo con el análisis no lineal es mostrado en la Figura~\ref{fig:empa}, donde el factor de escala es 1.
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.65\textwidth]{defONSASemparrillado}
+	\includegraphics[width=0.6\textwidth]{defONSASemparrillado}
 	\caption{Deformada emparrillado, con análisis no lineal y estado de carga 20 $P$ (factor de esacala: 1).}
 	\label{fig:empa}
 \end{figure}
