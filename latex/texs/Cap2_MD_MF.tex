@@ -19,14 +19,14 @@ En esta unidad temática se presentan los conceptos básicos necesarios para abo
 %
 Se comienza presentando los conceptos de indeterminación cinemática e indeterminación estática  para reticulados planos. %
 %
-Luego se presenta brevemente el Método de los desplazamientos y finalmente, para realizar el desarrollo del Método de las Fuerzas se toma como referencias principal \citep{Reddy2002b}.
+Luego se presenta brevemente el Método de los desplazamientos y finalmente, para realizar el desarrollo del Método de las Fuerzas, se toma como referencias principal \citep{Reddy2002b}.
 
 
 \section{Grados de indeterminación}
 
 Existen diversos métodos disponibles para el análisis de una estructura, por lo tanto, es útil identificar qué tipo de métodos son los más adecuados \textit{antes} de iniciar el análisis estructural. %
 %
-En esta sección se presentan propiedades geométricas que pueden ser calculados antes del análisis para tomar una mejor decisión sobre el método a utilizar.
+En esta sección se presentan propiedades geométricas que pueden ser calculadas \textit{antes} del análisis, para, de esta forma, tomar una mejor decisión sobre el método a utilizar.
 
 Los grados de indeterminación estática y cinemática son valores dados por la geometría y los vínculos existentes entre componentes de la estructura. %
 %
@@ -41,18 +41,16 @@ El grado de indeterminación cinemática permite establecer la cantidad de incó
 Una posible expresión matemática de este parámetro es:
 %
 \begin{equation}
-	gk = g_l \, n_n - c_a,
+	gk = g_l \, n_N - c_a,
 \end{equation}
 %
-donde $g_l$ es el número de grados de libertad por nodo, $n_n$ es el número de nodos de la estructura y $c_a$ el número de grados de libertad conocidos por las condiciones de apoyo o vínculo a tierra. %
+donde $g_l$ es el número de grados de libertad por nodo, $n_N$ es el número de nodos de la estructura y $c_a$ el número de grados de libertad conocidos por las condiciones de apoyo o vínculo a tierra. %
 %
-
 En estructuras articuladas planas $g_l$ es 2, en estructuras aporticadas planas $g_l=3$ y en aporticadas tridimensionales $g_l=6$.
 
 El grado de indeterminación cinemática permite conocer el número de incógnitas de los sistemas de ecuaciones planteados al usar el Método de los Desplazamientos o sus variantes computacionales como el Método de los Elementos Finitos.
 
-
-
+En el caso de la estructura mostrada en la Figura~\ref{fig:retic_gh}, se puede ver que $gk=2\times 4 - 4=4$.
 
 
 \subsection{Grado de indeterminación estática}
@@ -65,19 +63,21 @@ El grado de indeterminación estática (también llamado \textit{grado de hipere
 
 En el caso particular de reticulados planos es posible obtener una forma simplificada de cálculo. %
 % 
-El estado tensional de las estructuras formadas por barras articuladas queda definido a partir de los valores de tensiones axiales o las directas de las barras, y por las reacciones nodales. %
+El estado tensional de las estructuras formadas por barras articuladas queda definido a partir de los valores de tensiones axiales o las directas de las barras (una incógnita por barra), y por las reacciones en cada uno de los vínculos a tierra. %
 %
-Cada barra introduce una directa como incógnita, mientras que cada componente de fuerzas de reacción también debe ser considerado.
+Cada barra introduce una directa como incógnita, mientras que cada componente de fuerzas de reacción también debe ser considerado (una incógnita por cada dirección).
 
-Por otra parte, para las ecuaciones de equilibrio, en problemas planos, se cuenta con dos ecuaciones de equilibrio por cada nodo (cuerpo libre), por lo que el grado de hiperestaticidad puede ser escrito como
+Para las ecuaciones de equilibrio, en problemas planos, se cuenta con dos ecuaciones de equilibrio por cada nodo (cuerpo libre), por lo que el grado de hiperestaticidad puede ser escrito como
+%
 \begin{equation}
 	\boxed{
-	gh = n_R + n_{Barras} - 2 \times n_{Nodos}
+	gh = n_R + n_{B} - 2 \times n_{N}
 }
 \end{equation}
+%
+donde $n_R$ es el número de reacciones a determinar, $n_B$ es el número de barras de la estructura y $n_N$ es el número de nodos.
 
-
-Como ejemplo, en la Figura~\ref{fig:retic_gh} se muestra un reticulado formado por 6 barras con dos apoyos fijos. Se tienen $n_S=6$ solicitaciones por tener 6 barras, y $n_R=4$ por tener 2 reacciones en cada nodo apoyado fijo. %
+En la estructura de la Figura~\ref{fig:retic_gh} se puede ver un reticulado formado por 6 barras con dos apoyos fijos. Se tienen $n_B=6$ solicitaciones por tener 6 barras, y $n_R=4$ por tener 2 reacciones en cada nodo apoyado fijo. %
 
 \begin{figure}[htb]
 	\centering
@@ -158,7 +158,7 @@ $$
 
 \subsubsection{Grado de hiperestaticidad para estructuras aporticadas}
 
-Al considerar estructuras aporticadas, las ecuaciones deben ser modificadas y la complejidad en el cálculo aumenta. Este tipo de cálculo de $gh$ puede ser necesario si el Ingeniero analista cuanta con el Método de las Fuerzas como una de las opciones a aplicar en su análisis. Los estudiantes interesados en los métodos más generales de cálculo pueden consultar referencias como \citep{CerveraRuiz2002ii}. %
+Al considerar estructuras aporticadas, las ecuaciones deben ser modificadas y la complejidad en el cálculo aumenta. Este tipo de cálculo de $gh$ puede ser necesario si el Ingeniero analista cuenta con el Método de las Fuerzas como una de las opciones a aplicar en su análisis. Los estudiantes interesados en los métodos más generales de cálculo pueden consultar referencias como \citep{CerveraRuiz2002ii}. %
 %
 
 
@@ -480,6 +480,15 @@ La energía potencial de estas fuerzas es representada por $\Pi_{ext}$ y está d
 \end{equation}
 %
 
+La energía potencial total estará dada por lo tanto, por la suma de ambas energías:
+%
+\begin{equation}
+\boxed{
+\Pi(\bfu) = \frac{1}{2} \bfu^T \bfK \bfu - \bfu^T \bff .
+}
+\end{equation}
+
+
 
 \subsection{Desarrollo del método}
 
@@ -519,6 +528,8 @@ Este conjunto de condiciones o ecuaciones representa el Primer Teorema de Castig
 
 
 
+
+
 \subsubsection{ Ecuación de rigidez }
 
 Sustituyendo la expresión matricial $\Pi_{int}$ de la Ecuación~\eqref{eqn:matU} en las condiciones del Teorema de Castigliano dadas por la Ecuación~\eqref{eqn:castiguno}, se obtiene el siguiente sistema de ecuaciones lineales:
@@ -550,12 +561,9 @@ N^e = E^e A^e \bfB_L^e (\bfR^e)^T \bfu^e.
 \end{equation}
 
 
-
-\subsection{Apoyos elásticos}
-
-Para incluir apoyos elásticos (resortes nodales) es posible adicionar a las ecuaciones los correspondientes términos de energía potencial elástica. %
+Finalmente se menciona que también es posible analizar reticulados con resortes elásticos en sus nodos. Para esto se puede adicionar a las ecuaciones los correspondientes términos de energía potencial elástica. %
 %
-En el caso de un resorte lineal de constante elástica $k$ colocado en el grado de libertad $j$ la energía potencial está dada por
+En el caso de un resorte lineal de constante elástica $k$ colocado en el grado de libertad $j$, la energía potencial está dada por
 %
 \begin{equation}
 \Pi_{res}(\bfu) = \frac{1}{2} k u_j^2,
@@ -565,28 +573,17 @@ que puede ser sumada a la energía potencial de deformación $\Pi_{int}$.
 
 
 
+
+
+
+
 \subsection{Implementación computacional}
 
-Este método puede ser programado para resolver problemas de mayor dimensión de forma automática usando herramientas de cálculo numérico como GNU-Octave \citep{Eaton2015}, Python o Julia.  %
+Este método puede ser programado para resolver problemas de mayor dimensión de forma automática usando herramientas de cálculo numérico de alto nivel como GNU-Octave \citep{Eaton2015}, Python o Julia.  %
 
-En el repositorio \href{https://github.com/jorgepz/FDMTrusS}{¸github.com/jorgepz/FDMTrusS} se presenta un ejemplo de implementación del método y su aplicación para resolver el ejemplo de la Sección~\ref{sec:ejemplobarra}. En la Figura~\ref{fig:ejbarraDef} se muestra el diagrama de deformada. y en la Figura~\ref{fig:ejbarraDir} se muestra el diagrama de directas, ambas figuras generadas con ese código.  %
+En el mismo repositorio en el que se encuentran los contenidos de este material, se puede encontrar una carpeta \textit{UT2} dentro de la carpeta \textit{octave}. Allí se puede explorar el archivo \textit{FEMTrusS.m} el cual hay una implementación del método para reticulados planos
 
-\begin{figure}[htb!]
-	\centering
-	\includegraphics[width=0.75\textwidth]{deformed}
-	\caption{Gráficos de deformada generado por el código FEMTrusS para el ejemplo presentado.}
-	\label{fig:ejbarraDef}
-\end{figure}
 
-\begin{figure}[htb!]
-	\centering
-	\includegraphics[width=0.75\textwidth]{normalforces}
-	\caption{Gráficos de directas generado por el código FEMTrusS para el ejemplo presentado.}
-	\label{fig:ejbarraDir}
-\end{figure}
-
-El código es llamado FEMTrusS y está disponible como parte del repositorio público \href{https://gitlab.fing.edu.uy/jorgepz/codigosLibroR2}{gitlab.fing.edu.uy/jorgepz/codigosLibroR2}. %
-%
 El objetivo del código es mostrar a los estudiantes la aplicación directa de los conceptos vistos, así como también permitir un espacio para el desarrollo propio incluyendo nuevas funcionalidades como por ejemplo la capacidad de resolver reticulados tridimensionales. %
 
 Este código está en proceso continuo de revisión por lo que, para la resolución de los ejercicios prácticos, se recomienda usar los otros programas recomendados en el curso. %
@@ -594,29 +591,234 @@ Este código está en proceso continuo de revisión por lo que, para la resoluci
 En caso de detectar errores en el FEMTrusS se agradece notificarlo creando un \textit{issue} en el sitio del repositorio.
 
 
-\cajaactividad{
-	Modifique el código para poder resolver un reticulado como el mostrado en la Figura~\ref{fig:railb}, eligiendo los valores de longitudes, cargas y materiales de los componentes estructurales.
-}
 
 
 
 
+\subsection{Ejemplo de Método de los Desplazamientos} \label{sec:ejemplobarra}
+
+Sea la estructura mostrada en la Figura~\ref{fig:ejejmMDUT2}, formada por barras de material con módulo de Young $E=210 $ GPa, con $\ell= 10$ m, y secciones transversales  de áreas $A^1 = A^3 = 0.001$ m$^2$ y $A^2 = 0.01 $ m$^2$. %
+%
+Para la fuerza aplicada $P= 10 $ kN, se desea determinar desplazamientos y solicitaciones de la estructura. Utilizando el método de los desplazamientos matricial.
+
+\begin{figure}[htb]
+\centering
+\begin{center}
+	\def\svgwidth{0.6\textwidth}
+	\input{figs/UT2/ejRetic.pdf_tex}
+\end{center}
+\caption{Ejemplo Método de los Desplazamientos.}
+\label{fig:ejejmMDUT2}
+\end{figure}
+
+
+El grado de indeterminación cinemática de la estructura es $gk = 2 \cdot 4 - 2 \cdot 3 = 2$. %
+%
+Se continúa determinando los grados de libertad correspondientes a cada elemento de barra. Se define la matriz de conectividad y se calculan los ángulos $\alpha^e$.
+%
+\begin{center}
+	\begin{tabular}{cccc}
+		\hline
+		Elemento & nodo inicial $\rightarrow$ nodo final & grados de libertad & $\alpha^e$\\
+		\hline
+		1 & 1 $\rightarrow$ 2 & 1 2 3 4 & 45$^\circ$\\
+		2 & 2 $\rightarrow$ 3 & 3 4 5 6 & -90$^\circ$\\
+		3 & 2 $\rightarrow$ 4 & 3 4 7 8 & -45$^\circ$\\
+		\hline
+	\end{tabular}
+\end{center}
+
+Se calculan las matrices de rigidez en coordenadas globales:
+\begin{equation}
+\bfK^1 = \frac{ 210 \times10^9 \cdot 1 \times 10^{-3} }{ \sqrt{2}  \cdot 10} \frac{1}{2}
+\left[
+\begin{matrix}
+1 & 1 & -1 & -1 \\
+1 & 1 & -1 & -1\\
+-1 & -1 &  1 & 1\\
+-1 & -1 & 1 & 1
+\end{matrix}
+\right]
+\text{N/m}
+\end{equation}
+
+Operando se tiene
+\begin{equation}
+\bfK^1 = 7.425 \times 10^6
+\left[
+\begin{matrix}
+1 & 1 & -1 & -1 \\
+1 & 1 & -1 & -1\\
+-1 & -1 &  1 & 1\\
+-1 & -1 & 1 & 1
+\end{matrix}
+\right]
+\text{N/m}
+\end{equation}
+
+Para el elemento 2 se tiene
+\begin{equation}
+\bfK^2 = 210 \times 10^6
+\left[
+\begin{matrix}
+0 & 0 & 0 & 0 \\
+0 & 1 & 0 & -1\\
+0 & 0 &  0 & 0\\
+0 & -1 & 0 & 1
+\end{matrix}
+\right]
+\text{N/m}
+\end{equation}
+
+Para el elemento 3 se tiene
+\begin{equation}
+\bfK^3 = 7.425 \times 10^6
+\left[
+\begin{matrix}
+1 & -1 & -1 & 1 \\
+-1 & 1 & 1 & -1\\
+-1 & 1 &  1 & -1\\
+1 & -1 & -1 & 1
+\end{matrix}
+\right]
+\text{N/m}
+\end{equation}
+
+
+
+Se observa que el elemento 2 tiene una rigidez mayor (dada por su sección transversal) aunque esta rigidez solamente vincula los desplazamientos verticales de los nodos 2 y 3.
+
+Considerando que los grados de libertad fijos o de desplazamiento nulo son 1, 2, 5, 6, 7 y 8 y ensamblando las matrices en los grados de libertad restantes (3 y 4) se tiene.
+%
+\begin{equation}
+\bfK =
+7.425 \times 10^6
+\left[
+\begin{matrix}
+1 & 1 \\
+1 & 1 
+\end{matrix}
+\right]
+\text{N/m}
++
+210 \times 10^6
+\left[
+\begin{matrix}
+0 & 0 \\
+0 & 1 
+\end{matrix}
+\right]
+\text{N/m}
++
+7.425 \times 10^6
+\left[
+\begin{matrix}
+1 & -1 \\
+-1 & 1 
+\end{matrix}
+\right]
+\text{N/m}
+\end{equation}
+
+
+Se obtiene entonces el sistema de ecuaciones a resolver
+\begin{equation}
+\quad 10^6
+\left[
+\begin{matrix}
+14.84 & 0 \\
+0 & 224.84 
+\end{matrix}
+\right]
+\text{N/m}
+\,
+\bfu = 
+\left[
+\begin{matrix}
+10^4 \\
+0 
+\end{matrix}
+\right] \text{N}.
+\end{equation}
+%
+Cuya resolución brinda los desplazamientos solución:
+%
+\begin{equation}
+\boxed{
+	u_{2} = 6.74 \times 10^{-4} \text{m}  \qquad v_{2} = 0.
+}\end{equation}
+
+Ahora que están determinados los desplazamientos de todos los nodos de la estructura es posible determinar la directa $N^e$ en todas las barras usando la Ecuación~\eqref{eqn:expSolic}:
+%
+\begin{equation}
+N^1 = - N^3 =7.07 \, \text{kN} \quad \text{y} \quad N^2 = 0.
+\end{equation}
+
+
+Las directas también pueden ser obtenidas usando la ecuación de rigidez para cada elemento de barra, dada por:
+%
+$$
+\bfK^e \bfu^e = \bff^e.
+$$
+
+
+Los resultados obtenidos pueden ser verificados utilizando el código mencionado en la sección anterior. En la Figura~\ref{fig:ejbarraDef} se muestra el diagrama de deformada con factor de escala 1000.
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=0.65\textwidth]{deformed}
+	\caption{Gráficos de deformada generado por el código FEMTrusS para el ejemplo presentado usando un factor de escala 1000.}
+	\label{fig:ejbarraDef}
+\end{figure}
+
+
+En la Figura~\ref{fig:ejbarraDir} se muestra el diagrama de directas, también generado usando FEMTrusS.  %
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=0.65\textwidth]{normalforces}
+	\caption{Gráficos de directas generado por el código FEMTrusS para el ejemplo presentado.}
+	\label{fig:ejbarraDir}
+\end{figure}
+
+
+
+Finalmente, se menciona que si se considerara un resorte horizontal de constante elástica $k$ en el nodo 2 entonces se agregaría el término de energía potencial de deformación: $\frac{1}{2} k u_2^2$. %
+%%
+Luego de realizar las derivadas establecidas por Castigliano se obtendría $k u_2$, término que es considerado en el sistema lineal reducido como
+%
+\begin{equation}
+\bfK =
+\left[
+\begin{matrix}
+14.84 \times10^6 +k & 0 \\
+0 & 224.84 \times10^6 
+\end{matrix}
+\right]
+\end{equation}
+%
+lo cual resultaría en, como es esperado, un menor valor de desplazamiento nodal.
 
 
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% metodo de las fuerzas
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Método de las Fuerzas}
 
 
-El Método de las Fuerzas (MF) utiliza un enfoque de resolución complementario al MD. El MF considera las ecuaciones de equilibrio y tiene como objetivo primario determinar las incógnitas de fuerzas indeterminadas por esas ecuaciones. %
+El Método de las Fuerzas (MF) utiliza un enfoque de resolución complementario al MD. El MF considera las ecuaciones de equilibrio de fuerzas y tiene como objetivo primario determinar las incógnitas de fuerzas indeterminadas por esas ecuaciones. %
 %
 En el MD se utilizan principalmente ecuaciones constitutiva y de  compatibilidad cinemática, con el objetivo de obtener los desplazamientos.
 
 
 En esta sección (y en el curso) se presenta el método orientado únicamente al análisis de reticulados, utilizando un enfoque similar al usado en \citep{Reddy2002b}. %
-El MF puede ser aplicado al análisis de cualquier estructura hiperestática, los estudiantes interesados en la aplicación del MF a estructuras como pórticos pueden acudir a textos como \citep{Krenk2013,Fuchs2016} disponibles en la colección \textit{Springer} en \href{http://timbo.org.uy/}{timbo.org.uy}.
+El MF puede ser aplicado al análisis de cualquier estructura hiperestática, los estudiantes interesados en la aplicación del MF a estructuras como pórticos pueden acudir a textos como \citep{Krenk2013,Fuchs2016} disponibles\footnote{Acceso variable año a año, definido por el financiamiento destinado a la ANII.} en la colección \textit{Springer} en \href{http://timbo.org.uy/}{timbo.org.uy}.
 %
+
 
 Tal como fue visto, los desplazamientos son la incógnita principal del MD. %
 En el caso del MF los valores de las directas en las barras y las reacciones de los vínculos son la incógnita principal a determinar. %
@@ -694,7 +896,7 @@ Si se considera que las directas $\bfN$ y las reacciones $\bfR$ son las incógni
 
 \subsection{Principios energéticos}
 
-Hasta ahora se han presentado las fuerzas de los factores $X_j$ asociados a incógnitas de fuerza de los vínculos liberados del problema. %
+Hasta aquí se han presentado las fuerzas de los factores $X_j$ asociados a incógnitas de fuerza de los vínculos liberados del problema. %
 %
 Los valores de directas usados para calcular la energía de deformación complementaria, son obtenidos a partir de las relaciones directas-fuerzas externas del equilibrio de fuerzas. %
 %
@@ -885,201 +1087,28 @@ Si en el estado canónico $E_0$ existe una única fuerza aplicada de magnitud $P
 \end{equation}
 %
 
-\section{Aplicaciones}
 
-\subsection{Ejemplo del Método de los Desplazamientos} \label{sec:ejemplobarra}
 
-Sea la estructura mostrada en la figura, formada por barras de material con módulo de Young $E=210 $ GPa, con $\ell= 10$ m, y secciones transversales  de áreas $A^1 = A^3 = 0.001$ m$^2$ y $A^2 = 0.01 $ m$^2$. %
+\subsection{Implementación computacional}
+
+La implementación computacional del procedimiento del Método de las Fuerzas no es tan directa como la del Método de los Desplazamientos. %
 %
-Para la fuerza aplicada $P= 10 $ kN, se desea determinar desplazamientos y solicitaciones de la estructura. Utilizando el método de los desplazamientos matricial.
+A pesar de esto, se brinda un ejemplo de implementación, que puede ser también estudiado por los estudiantes interesados en entender el procedimiento planteado por el método. %
 
-%\begin{definicion}
-%	Hola
-\begin{center}
-	\def\svgwidth{0.6\textwidth}
-	\input{figs/UT2/ejRetic.pdf_tex}
-\end{center}
-
-
-El grado de indeterminación cinemática de la estructura es $gk = 2 \cdot 4 - 2 \cdot 3 = 2$. %
+Los códigos están disponibles en el repositorio \href{https://github.com/jorgepz/FDMTrusS}{github.com/jorgepz/FDMTrusS}, y se aclara que el código es una versión minimal, en proceso de revisión, que aspira simplemente a mostrar una posible forma de automatizar el proceso del Método y  \textbf{no forma parte de los contenidos} centrales \textbf{del curso} y no será evaluado directamente. %
 %
-Se continúa determinando los grados de libertad correspondientes a cada elemento de barra. Se define la matriz de conectividad y se calculan los ángulos $\alpha^e$.
-%
-\begin{center}
-	\begin{tabular}{cccc}
-		\hline
-		Elemento & nodo inicial $\rightarrow$ nodo final & grados de libertad & $\alpha^e$\\
-		\hline
-		1 & 1 $\rightarrow$ 2 & 1 2 3 4 & 45$^\circ$\\
-		2 & 2 $\rightarrow$ 3 & 3 4 5 6 & -90$^\circ$\\
-		3 & 2 $\rightarrow$ 4 & 3 4 7 8 & -45$^\circ$\\
-		\hline
-	\end{tabular}
-\end{center}
-
-Se calculan las matrices de rigidez en coordenadas globales:
-\begin{equation}
-	\bfK^1 = \frac{ 210 \times10^9 \cdot 1 \times 10^{-3} }{ \sqrt{2}  \cdot 10} \frac{1}{2}
-	\left[
-	\begin{matrix}
-		1 & 1 & -1 & -1 \\
-		1 & 1 & -1 & -1\\
-		-1 & -1 &  1 & 1\\
-		-1 & -1 & 1 & 1
-	\end{matrix}
-	\right]
-	\text{N/m}
-\end{equation}
-
-Operando se tiene
-\begin{equation}
-	\bfK^1 = 7.425 \times 10^6
-	\left[
-	\begin{matrix}
-		1 & 1 & -1 & -1 \\
-		1 & 1 & -1 & -1\\
-		-1 & -1 &  1 & 1\\
-		-1 & -1 & 1 & 1
-	\end{matrix}
-	\right]
-	\text{N/m}
-\end{equation}
-
-Para el elemento 2 se tiene
-\begin{equation}
-	\bfK^2 = 210 \times 10^6
-	\left[
-	\begin{matrix}
-		0 & 0 & 0 & 0 \\
-		0 & 1 & 0 & -1\\
-		0 & 0 &  0 & 0\\
-		0 & -1 & 0 & 1
-	\end{matrix}
-	\right]
-	\text{N/m}
-\end{equation}
-
-Para el elemento 3 se tiene
-\begin{equation}
-	\bfK^3 = 7.425 \times 10^6
-	\left[
-	\begin{matrix}
-		1 & -1 & -1 & 1 \\
-		-1 & 1 & 1 & -1\\
-		-1 & 1 &  1 & -1\\
-		1 & -1 & -1 & 1
-	\end{matrix}
-	\right]
-	\text{N/m}
-\end{equation}
-
-
-
-Se observa que el elemento 2 tiene una rigidez mayor (dada por su sección transversal) aunque esta rigidez solamente vincula los desplazamientos verticales de los nodos 2 y 3.
-
-Considerando que los grados de libertad fijos o de desplazamiento nulo son 1, 2, 5, 6, 7 y 8 y ensamblando las matrices en los grados de libertad restantes (3 y 4) se tiene.
-%
-\begin{equation}
-	\bfK =
-	7.425 \times 10^6
-	\left[
-	\begin{matrix}
-		1 & 1 \\
-		1 & 1 
-	\end{matrix}
-	\right]
-	\text{N/m}
-	+
-	210 \times 10^6
-	\left[
-	\begin{matrix}
-		0 & 0 \\
-		0 & 1 
-	\end{matrix}
-	\right]
-	\text{N/m}
-	+
-	7.425 \times 10^6
-	\left[
-	\begin{matrix}
-		1 & -1 \\
-		-1 & 1 
-	\end{matrix}
-	\right]
-	\text{N/m}
-\end{equation}
-
-
-Se obtiene entonces el sistema de ecuaciones a resolver
-\begin{equation}
-	\quad 10^6
-	\left[
-	\begin{matrix}
-		14.84 & 0 \\
-		0 & 224.84 
-	\end{matrix}
-	\right]
-	\text{N/m}
-	\,
-	\bfu = 
-	\left[
-	\begin{matrix}
-		10^4 \\
-		0 
-	\end{matrix}
-	\right] \text{N}.
-\end{equation}
-%
-Cuya resolución brinda los desplazamientos solución:
-%
-\begin{equation}
-	\boxed{
-		u_{2} = 6.74 \times 10^{-4} \text{m}  \qquad v_{2} = 0.
-}\end{equation}
-
-Ahora que están determinados los desplazamientos de todos los nodos de la estructura es posible determinar la directa $N^e$ en todas las barras usando la Ecuación~\eqref{eqn:expSolic}:
-%
-\begin{equation}
-	N^1 = - N^3 =7.07 \, \text{kN} \quad \text{y} \quad N^2 = 0.
-\end{equation}
-
-
-Las directas también pueden ser obtenidas usando la ecuación de rigidez para cada elemento de barra, dada por:
-%
-$$
-\bfK^e \bfu^e = \bff^e.
-$$
-
-
-Si se considera el ejemplo anterior, y un resorte horizontal de constante elástica $k$ en el nodo 2 entonces se agrega el término de energía potencial de deformación: $\frac{1}{2} k u_2^2$. %
-%%
-Luego de realizar las derivadas establecidas por Castigliano se obtiene $k u_2$ que es considerado en el sistema lineal reducido como
-%
-\begin{equation}
-	\bfK =
-	\left[
-	\begin{matrix}
-		14.84 \times10^6 +k & 0 \\
-		0 & 224.84 \times10^6 
-	\end{matrix}
-	\right]
-\end{equation}
-%
-lo cual resultará en un menor valor de desplazamiento nodal.
-
-
-
 
 
 
 \subsection{Ejemplo de Método de las Fuerzas}
 
-Se presenta la resolución del ejemplo que de la sección anterior, en este caso usando el MF. %
+Se presenta la resolución del mismo problema de la Sección~\ref{sec:ejemplobarra}, en este caso usando el MF. %
 %
-Se comienza calculando el grado de hiperestaticidad de la estructura. Aplicando las definiciones vistas en la UT1 se obtiene que $gh= 3 + 6 - 2 \times 4 = 1$.
+Se comienza calculando el grado de hiperestaticidad como $gh= 3 + 6 - 2 \times 4 = 1$.
 
-En la Figura~\ref{fig:hipereje} se muestran los estados canónicos correspondientes al ejemplo considerando un corte en la barra 2-4.
-%
+
+En este problema existen más de una posibilidad de estados canónicos a considerar. En la Figura~\ref{fig:hipereje} se muestran los estados canónicos elegidos, considerando un corte en la barra 2-4.
+
 \begin{figure}[htb]
 \centering
 \def\svgwidth{\textwidth}
@@ -1107,7 +1136,7 @@ Usando las ecuaciones del segundo teorema de Castigliano  se obtiene:
 X_1 \cdot  1.44 \times 10^{-7} = -1.02 \times 10^{-3} \Rightarrow \boxed{ X_1 = -7071 \, \text{N} }.
 \end{equation}
 
-La directa en las barras son calculadas usando la ecuación Ecuación~\eqref{eqn:estadosdirectas}:
+Las directas en las barras son calculadas usando la ecuación Ecuación~\eqref{eqn:estadosdirectas}:
 %
 \begin{equation}
 N^1 = - N^3 =7.07 \, \text{kN} \quad \text{y} \quad N^2 = 0.
@@ -1141,27 +1170,6 @@ resultado que también coincide con el obtenido usando el MD.
 
 
 En el caso de desear determinar otro desplazamiento se debe considerar un estado de fuerzas correspondiente siempre considerados sobre la estructura ísostática fundamental.
-
-\subsection{Implementación computacional}
-
-La implementación computacional del procedimiento del Método de las Fuerzas no es tan directa como la del Método de los Desplazamientos. %
-%
-A pesar de esto, se brinda un ejemplo de implementación, que puede ser también estudiado por los estudiantes interesados en entender el procedimiento planteado por el método. %
-
-Los códigos están disponibles en el repositorio \href{https://github.com/jorgepz/FDMTrusS}{github.com/jorgepz/FDMTrusS}, y se reitera que el código es una versión minimal, en proceso de revisión, que aspira simplemente a mostrar una posible forma de automatizar el proceso del Método y  \textbf{no forma parte de los contenidos} centrales \textbf{del curso} y no será evaluado directamente. %
-%
-
-
-
-
-\cajaconcepto{Para práctico}{
-	El $gh$ en reticulados se calcula:
-	$$
-	\boxed{
-		gh = n_R + n_{Barras} - 2 \times n_{Nodos}
-	}
-	$$ 
-}
 
 
 \newpage
