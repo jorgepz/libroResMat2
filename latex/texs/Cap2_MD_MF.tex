@@ -17,36 +17,42 @@
 
 En esta unidad temática se presentan los conceptos básicos necesarios para abordar el Método de los Desplazamientos (MD) y el Método de las Fuerzas (MF), en ambos casos, aplicados al análisis de estructuras reticuladas. %
 %
-Una de las referencias consideradas para el desarrollo de esta unidad temática es \citep{Reddy2002b}. %
-% ---------------
-
-
-
-
-
-Finalmente se recuerdan y reafirman los conceptos de indeterminación cinemática y estática adoptando una notación y enfoque similar al de \citep{CerveraRuiz2002,CerveraRuiz2002ii}. %
-
-
-
-
-
-
-
-
-
-
-
+Se comienza presentando los conceptos de indeterminación cinemática e indeterminación estática  para reticulados planos. %
+%
+Luego se presenta brevemente el Método de los desplazamientos y finalmente, para realizar el desarrollo del Método de las Fuerzas se toma como referencias principal \citep{Reddy2002b}.
 
 
 \section{Grados de indeterminación}
 
-Existen diversos métodos disponibles para el análisis de una estructura, por lo tanto, es útil identificar qué tipo de métodos son los más adecuados antes de iniciar el análisis estructural. %
-En esta sección se presentan propiedades geométricas (valores numéricos) que pueden ser calculados antes del análisis para tomar una mejor decisión sobre el método a utilizar.
+Existen diversos métodos disponibles para el análisis de una estructura, por lo tanto, es útil identificar qué tipo de métodos son los más adecuados \textit{antes} de iniciar el análisis estructural. %
+%
+En esta sección se presentan propiedades geométricas que pueden ser calculados antes del análisis para tomar una mejor decisión sobre el método a utilizar.
 
-Los grados de indeterminación estática y cinemática son valores dados por la geometría y los vínculos entre componentes de la estructura. %
+Los grados de indeterminación estática y cinemática son valores dados por la geometría y los vínculos existentes entre componentes de la estructura. %
 %
 Estos valores numéricos permiten estimar la complejidad de la resolución usando dos métodos analíticos presentados el curso: el \textit{Método de las Fuerzas} y el \textit{Método de los Desplazamientos}. %
 %
+
+
+\subsection{Grado de indeterminación cinemática}
+
+El grado de indeterminación cinemática permite establecer la cantidad de incógnitas cinemáticas que se deben determinar para conocer el desplazamiento de todos los puntos de la estructura.
+%
+Una posible expresión matemática de este parámetro es:
+%
+\begin{equation}
+	gk = g_l \, n_n - c_a,
+\end{equation}
+%
+donde $g_l$ es el número de grados de libertad por nodo, $n_n$ es el número de nodos de la estructura y $c_a$ el número de grados de libertad conocidos por las condiciones de apoyo o vínculo a tierra. %
+%
+
+En estructuras articuladas planas $g_l$ es 2, en estructuras aporticadas planas $g_l=3$ y en aporticadas tridimensionales $g_l=6$.
+
+El grado de indeterminación cinemática permite conocer el número de incógnitas de los sistemas de ecuaciones planteados al usar el Método de los Desplazamientos o sus variantes computacionales como el Método de los Elementos Finitos.
+
+
+
 
 
 \subsection{Grado de indeterminación estática}
@@ -54,58 +60,48 @@ Estos valores numéricos permiten estimar la complejidad de la resolución usand
 % -------------------------
 El grado de indeterminación estática (también llamado \textit{grado de hiperestaticidad}) es un valor numérico definido por la diferencia entre: el número de incógnitas de fuerza y el número de ecuaciones de equilibrio. %
 %
-La metodología de cálculo presentada en esta sección está basada en \citep{CerveraRuiz2002ii}. %
-%
-En esta metodología se parte de un EBC, opcionalmente se pueden considerar componentes separadas de la estructura y se aplica una ecuación para el cálculo.
 
-Las \textbf{incógnitas de fuerza} son aquellas necesarias para determinar completamente el \textit{\textbf{estado tensional}} de toda la estructura. En las estructuras consideradas en este texto, estas incógnitas son:
-%
-\begin{itemize}
-	\item $n_S$: solicitaciones a determinar y fuerzas debidas a \textit{vínculos internos} de cada componente,
-	\item $n_R$: reacciones dadas por \textit{vínculos externos}.
-\end{itemize}
+\subsubsection{Grado de hiperestaticidad de reticulados}
 
-
-Por otra parte para calcular el número de ecuaciones con que se cuenta se define:
+En el caso particular de reticulados planos es posible obtener una forma simplificada de cálculo. %
+% 
+El estado tensional de las estructuras formadas por barras articuladas queda definido a partir de los valores de tensiones axiales o las directas de las barras, y por las reacciones nodales. %
 %
-\begin{itemize}
-	\item $n_C$: es el número de componentes o partes en la que se separa la estructura para el cálculo,
-	\item $n_E$: el número de ecuaciones de equilibrio para cada parte.
-\end{itemize}
+Cada barra introduce una directa como incógnita, mientras que cada componente de fuerzas de reacción también debe ser considerado.
 
-La expresión matemática del grado de indeterminación estática puede ser presentada como:
-%
-\begin{equation} \label{eqn:gradoh}
-	gh = n_R + n_S - n_C \, n_{E}.
+Por otra parte, para las ecuaciones de equilibrio, en problemas planos, se cuenta con dos ecuaciones de equilibrio por cada nodo (cuerpo libre), por lo que el grado de hiperestaticidad puede ser escrito como
+\begin{equation}
+	\boxed{
+	gh = n_R + n_{Barras} - 2 \times n_{Nodos}
+}
 \end{equation}
 
-Como ejemplo se presentan las estructuras de la Figura~\ref{fig:ejemghSimp}, formadas por un único componente y con diferente cantidad de reacciones externas. Dado que no se cortan o liberan vínculos internos de la estructura no hay $n_S$.
+
+Como ejemplo, en la Figura~\ref{fig:retic_gh} se muestra un reticulado formado por 6 barras con dos apoyos fijos. Se tienen $n_S=6$ solicitaciones por tener 6 barras, y $n_R=4$ por tener 2 reacciones en cada nodo apoyado fijo. %
 
 \begin{figure}[htb]
 	\centering
-	\def\svgwidth{0.95\textwidth}
-	\input{figs/UT1/ejemplos_basicosGradoHiper.pdf_tex}
-	\caption{Ejemplos simples de cálculo de grado de hiperestaticidad.}
-	\label{fig:ejemghSimp}
+	\def\svgwidth{0.5\textwidth}
+	\input{figs/UT1/retic_gh.pdf_tex}
+	\caption{Ejemplo reticulado plano hiperestático.}
+	\label{fig:retic_gh}
 \end{figure}
 
-En la Figura~\ref{fig:ejemghMed}. se muestra un reticulado, donde nuevamente si se desacopla en $n_C=3$ componentes una por barra, se tiene que cada articulación introduce dos vínculos a determinar. Por lo tanto $gh = 2+1+2+2+2-3\times 3 = 0$.
+Por otra parte, si se considera cada nodo de la estructura como un componente aislado se pueden plantear dos ecuaciones de equilibrio de fuerzas a cada componente, por lo tanto se tiene:
+%
+\begin{equation}
+	gh = 4 + 6 - 2 \times 4 = 2.
+\end{equation}
 
-\begin{figure}[htb]
-	\centering
-	\def\svgwidth{0.6\textwidth}
-	\input{figs/UT1/ejemplos_mediosGradoHiper.pdf_tex}
-	\caption{Ejemplo de cálculo de grado de hiperestaticidad en reticulado.}
-	\label{fig:ejemghMed}
-\end{figure}
+Tener una estructura con grado de hiperestacidad 2, es equivalente a decir que si se aplican las ecuaciones de equilibrio únicamente, tendríamos un sistema \textbf{compatible indeterminado}. El subespacio de soluciones del sistema será de dimensión 2.
 
-Este cálculo también puede ser realizado considerando la estructura como una única componente. Más adelante se mostrará una ecuación práctica para el cálculo de $gh$ en reticulados planos.
 
-\paragraph{Analogía con cálculo a partir de grados de libertad} %
-El cálculo presentado es análogo al utilizado en otros cursos, en los cuales se considera el número de grados de libertad total de las estructuras (en el ejemplo $3\times 3$) y se van restando los vínculos que restringen el movimiento entre barras y a tierra ($-2-1-2-2-2$) por lo que se obtiene un valor opuesto al $gh$.
 
-\paragraph{Clasificación de estructuras según grado de hiperestaticidad} %
-Las estructuras pueden ser clasificadas según su grado de hiperestaticidad:
+
+\subsubsection{Clasificación de estructuras según grado de hiperestaticidad} %
+
+Las estructuras pueden ser clasificadas según su grado de hiperestaticidad de la siguiente manera:
+
 \begin{itemize}
 	\item \textit{estáticamente determinada} (o isostática): es aquella estructura cuyo estado tensional puede ser determinado usando únicamente ecuaciones de equilibrio, por lo tanto:
 	$$
@@ -126,21 +122,17 @@ Las estructuras pueden ser clasificadas según su grado de hiperestaticidad:
 
 
 
+
 \subsubsection{Grado de hiperestaticidad externa}
 %
-Si se considera a la estructura como un conjunto donde solamente se desea determinar las reacciones, es posible definir el grado de hiperestaticidad externa como
+Si la estructura puede ser considerada como un conjunto (sin mecanismos internos)  es posible definir el concepto de grado de hiperestaticidad externa como:
 %
 \begin{equation}
-	gh_E = n_{R} - 1 \times n_{E}
+	gh_E = n_{R} - 3
 \end{equation}
 %
-donde $n_R$ es nuevamente el número de reacciones y $n_E$ es el número de ecuaciones del conjunto de la estructura. %
+donde $n_R$ es nuevamente el número de reacciones. %
 %
-En el ejemplo visto en la Figura~\ref{fig:ejemghSimp} a la derecha, se tiene: $gh_E = 4 - 3 = 1$. %
-
-
-%\cajaactividad{
-	%	Demostrar que: todo reticulado con $gh_E = 0$  y sin barras cruzadas, cumple: tiene $gh\leq 0$.}
 
 Finalmente, se puede usar los valores $gh_E$ y $gh$ para formular una condición \textbf{necesaria} que una estructura \textit{isostática} debe cumplir. %
 %
@@ -148,111 +140,115 @@ Se dice que:
 %
 $$
 \boxed{
-	\text{Estructura isostática} \quad \Rightarrow \quad gh_E = 0 \, \textbf{y} \, gh = 0.
+	\text{Estructura isostática} \quad \Rightarrow \quad gh_E = 0 \quad \textbf{y} \quad gh = 0.
 }%
 $$
 % -------------------------
 
 
-Existen casos de particulares, de estructuras en las cuales aún siendo isostáticas el grado de hiperestaticidad externa es mayor que cero, como por ejemplo la mostrada en la Figura~\ref{fig:hipereje}. %
+%Existen casos de particulares, de estructuras en las cuales aún siendo isostáticas el grado de hiperestaticidad externa es mayor que cero, como por ejemplo la mostrada en la Figura~\ref{fig:hipereje}. %
+%%
+%Esto se debe a que la estructura está conformada por barras no conectadas entre sí como ocurre en la mostrada en las Figuras \ref{fig:ejemghMed} o \ref{fig:retic_gh}. %
+%%
+%Esta peculiaridad teórica no será relevante al momento de aplicación práctica del Método de las Fuerzas como se verá en la UT siguiente.
+
+
+
+
+
+\subsubsection{Grado de hiperestaticidad para estructuras aporticadas}
+
+Al considerar estructuras aporticadas, las ecuaciones deben ser modificadas y la complejidad en el cálculo aumenta. Este tipo de cálculo de $gh$ puede ser necesario si el Ingeniero analista cuanta con el Método de las Fuerzas como una de las opciones a aplicar en su análisis. Los estudiantes interesados en los métodos más generales de cálculo pueden consultar referencias como \citep{CerveraRuiz2002ii}. %
 %
-Esto se debe a que la estructura está conformada por barras no conectadas entre sí como ocurre en la mostrada en las Figuras \ref{fig:ejemghMed} o \ref{fig:retic_gh}. %
+
+
+%En esta metodología se parte de un EBC, opcionalmente se pueden considerar componentes separadas de la estructura y se aplica una ecuación para el cálculo.
 %
-Esta peculiaridad teórica no será relevante al momento de aplicación práctica del Método de las Fuerzas como se verá en la UT siguiente.
-
-
-\subsubsection{Cálculo general de grado de hiperestaticidad en pórticos/vigas/barras planos}
-
-En el caso de estructuras de pórticos planos, la determinación del estado tensional requiere conocer 3 solicitaciones en todo punto: directa, cortante y momento. %
+%Las \textbf{incógnitas de fuerza} son aquellas necesarias para determinar completamente el \textit{\textbf{estado tensional}} de toda la estructura. En las estructuras consideradas en este texto, estas incógnitas son:
+%%
+%\begin{itemize}
+%	\item $n_S$: solicitaciones a determinar y fuerzas debidas a \textit{vínculos internos} de cada componente,
+%	\item $n_R$: reacciones dadas por \textit{vínculos externos}.
+%\end{itemize}
 %
-A modo de ejemplo se considera la estructura mostrada en la Figura~\ref{fig:gerb}: en la parte superior se muestra el esquema básico con la carga aplicada, mientras que en la parte inferior se muestra una de las formas en que la estructura puede ser separada en componentes. 
 %
-\begin{figure}[htb]
-	\centering
-	%
-	\def\svgwidth{0.7\textwidth}
-	\input{figs/UT1/ejemplo_grado_hiper.pdf_tex}
-	%
-	\caption{Ejemplo de grado de indeterminación estática: estructura con cargas aplicadas (superior) y estructura con componentes separadas y cantidad de reacciones incógnita (inferior).}
-	\label{fig:gerb}
-\end{figure}
-
-La cantidad de solicitaciones a determinar en cada vínculo es indicado con un círculo y el cálculo del grado de hiperestaticidad usando la Ecuación~\eqref{eqn:gradoh} está dado por:
+%Por otra parte para calcular el número de ecuaciones con que se cuenta se define:
+%%
+%\begin{itemize}
+%	\item $n_C$: es el número de componentes o partes en la que se separa la estructura para el cálculo,
+%	\item $n_E$: el número de ecuaciones de equilibrio para cada parte.
+%\end{itemize}
 %
-\begin{equation}
-	n_R = 3+1+1 \quad n_S = 2+2 \quad n_C = 3 \quad n_E = 3 \quad \Rightarrow \quad gh = 0
-\end{equation}
+%La expresión matemática del grado de indeterminación estática puede ser presentada como:
+%%
+%\begin{equation} \label{eqn:gradoh}
+%	gh = n_R + n_S - n_C \, n_{E}.
+%\end{equation}
 %
-por lo tanto la estructura es isostática.
-
-El $gh$ es un parámetro útil para estimar la complejidad de la aplicación del Método de las Fuerzas. %
+%Como ejemplo se presentan las estructuras de la Figura~\ref{fig:ejemghSimp}, formadas por un único componente y con diferente cantidad de reacciones externas. Dado que no se cortan o liberan vínculos internos de la estructura no hay $n_S$.
 %
-Dado que en este texto dicho método es desarrollado únicamente para reticulados, el cálculo del $gh$ para pórticos no es abordado de forma extensiva. %
+%\begin{figure}[htb]
+%	\centering
+%	\def\svgwidth{0.95\textwidth}
+%	\input{figs/UT1/ejemplos_basicosGradoHiper.pdf_tex}
+%	\caption{Ejemplos simples de cálculo de grado de hiperestaticidad.}
+%	\label{fig:ejemghSimp}
+%\end{figure}
 %
-En la Sección 1.6 de \citep{CerveraRuiz2002ii} se presenta un desarrollo más extenso sobre la determinación del grado de hiperestaticidad así como también se muestran diversos ejemplos.
-
-
-\subsubsection{Cálculo simplificado de grado de hiperestaticidad para reticulados}
-
-En el caso particular de reticulados es posible considerar una forma alternativa y simplificada de cálculo. %
-% 
-El estado tensional de estructuras formadas por barras articuladas queda definido a partir de los valores de tensiones axiales, como se ve en la Ecuación~\ref{eqn:sigmaBarra}. %
+%En la Figura~\ref{fig:ejemghMed}. se muestra un reticulado, donde nuevamente si se desacopla en $n_C=3$ componentes una por barra, se tiene que cada articulación introduce dos vínculos a determinar. Por lo tanto $gh = 2+1+2+2+2-3\times 3 = 0$.
 %
-Los valores de tensión axial están relacionados directamente con la directa de cada barra. %
+%\begin{figure}[htb]
+%	\centering
+%	\def\svgwidth{0.6\textwidth}
+%	\input{figs/UT1/ejemplos_mediosGradoHiper.pdf_tex}
+%	\caption{Ejemplo de cálculo de grado de hiperestaticidad en reticulado.}
+%	\label{fig:ejemghMed}
+%\end{figure}
 %
-Considerando esto, entonces cada barra bi-articulada introduce una única incógnita solicitación $n_S$.
-
-En la Figura~\ref{fig:retic_gh} se muestra un reticulado formado por 6 barras con dos apoyos fijos, por lo tanto se tienen $n_S=6$ solicitaciones y $n_R=4$ reacciones. %
-
-\begin{figure}[htb]
-	\centering
-	\def\svgwidth{0.6\textwidth}
-	\input{figs/UT1/retic_gh.pdf_tex}
-	\caption{Ejemplo reticulado plano hiperestático.}
-	\label{fig:retic_gh}
-\end{figure}
-
-Por otra parte, si se considera cada nodo de la estructura como un componente aislado se pueden plantear dos ecuaciones de equilibrio de fuerzas a cada componente, por lo tanto se tiene $n_E = 2$ y $n_C =4$. %
+%Este cálculo también puede ser realizado considerando la estructura como una única componente. Más adelante se mostrará una ecuación práctica para el cálculo de $gh$ en reticulados planos.
 %
-De esta forma, sustituyendo en la Ecuación~\ref{eqn:gradoh} el grado de hiperestaticidad queda determinado como:
+%\paragraph{Analogía con cálculo a partir de grados de libertad} %
+%El cálculo presentado es análogo al utilizado en otros cursos, en los cuales se considera el número de grados de libertad total de las estructuras (en el ejemplo $3\times 3$) y se van restando los vínculos que restringen el movimiento entre barras y a tierra ($-2-1-2-2-2$) por lo que se obtiene un valor opuesto al $gh$.
 %
-\begin{equation}
-	gh = 4 + 6 - 2 \times 4 = 2.
-\end{equation}
-
-Esto quiere decir que si se aplican las ecuaciones de equilibrio tendríamos un sistema compatible indeterminado. El subespacio de soluciones del sistema es de dimensión 2.
-
-\cajaconcepto{Para práctico}{
-	El cálculo simplificado de $gh$ en reticulados está dado por:
-	$$
-	\boxed{
-		gh = n_R + n_{Barras} - 2 \times n_{Nodos}
-	}
-	$$ 
-}
-
-
-
-\subsection{Grado de indeterminación cinemática}
-
-El grado de indeterminación cinemática permite establecer la cantidad de incógnitas cinemáticas que se deben determinar para conocer el desplazamiento de todos los puntos de la estructura.
 %
-Una posible expresión matemática de este parámetro es:
 %
-\begin{equation}
-	gk = g_l \, n_n - c_a,
-\end{equation}
 %
-donde $g_l$ es el número de grados de libertad por nodo, $n_n$ es el número de nodos de la estructura y $c_a$ el número de grados de libertad conocidos por las condiciones de apoyo o vínculo a tierra. %
 %
-En algunos casos es posible resolver sistemas de menor cantidad de incógnitas al utilizar información adicional como por ejemplo por simetría.
-
-En estructuras articuladas planas $g_l$ es 2, en estructuras aporticadas planas $g_l=3$ y en aporticadas tridimensionales $g_l=6$.
-
-El grado de indeterminación cinemática permite conocer el número de incógnitas de los sistemas de ecuaciones planteados al usar el Método de los Desplazamientos o sus variantes computacionales como el Método de los Elementos Finitos.
-
-
-
+%
+%
+%
+%\subsubsection{Cálculo general de grado de hiperestaticidad en pórticos/vigas/barras planos}
+%
+%En el caso de estructuras de pórticos planos, la determinación del estado tensional requiere conocer 3 solicitaciones en todo punto: directa, cortante y momento. %
+%%
+%A modo de ejemplo se considera la estructura mostrada en la Figura~\ref{fig:gerb}: en la parte superior se muestra el esquema básico con la carga aplicada, mientras que en la parte inferior se muestra una de las formas en que la estructura puede ser separada en componentes. 
+%%
+%\begin{figure}[htb]
+%	\centering
+%	%
+%	\def\svgwidth{0.7\textwidth}
+%	\input{figs/UT1/ejemplo_grado_hiper.pdf_tex}
+%	%
+%	\caption{Ejemplo de grado de indeterminación estática: estructura con cargas aplicadas (superior) y estructura con componentes separadas y cantidad de reacciones incógnita (inferior).}
+%	\label{fig:gerb}
+%\end{figure}
+%
+%La cantidad de solicitaciones a determinar en cada vínculo es indicado con un círculo y el cálculo del grado de hiperestaticidad usando la Ecuación~\eqref{eqn:gradoh} está dado por:
+%%
+%\begin{equation}
+%	n_R = 3+1+1 \quad n_S = 2+2 \quad n_C = 3 \quad n_E = 3 \quad \Rightarrow \quad gh = 0
+%\end{equation}
+%%
+%por lo tanto la estructura es isostática.
+%
+%El $gh$ es un parámetro útil para estimar la complejidad de la aplicación del Método de las Fuerzas. %
+%%
+%Dado que en este texto dicho método es desarrollado únicamente para reticulados, el cálculo del $gh$ para pórticos no es abordado de forma extensiva. %
+%%
+%En la Sección 1.6 de \citep{CerveraRuiz2002ii} se presenta un desarrollo más extenso sobre la determinación del grado de hiperestaticidad así como también se muestran diversos ejemplos.
+%
+%
+%
 
 
 
@@ -270,8 +266,9 @@ De forma general se puede decir que los desplazamientos de todos los puntos de u
 u(P) = \sum_{i=1}^{n_d} u_i \phi_i(P),
 \end{equation}
 %
-donde $P$ representa un punto cualquiera de la estructura y $n_d$ es el número de desplazamientos de referencia de la estructura. %
-%
+donde $P$ representa un punto cualquiera de la estructura y $n_d$ es el número de desplazamientos de referencia de la estructura (o número de incógnitas cinemáticas). %
+
+
 El vector de todos los desplazamientos de referencia $\bfu \in \bbR^{n_d}$ brinda toda la información necesaria para construir la función de desplazamiento de toda la estructura (con el grado de aproximación brindado por las funciones $\phi$). %
 %
 Las funciones $\phi$ pueden ser tales que el desplazamiento de cada punto es una combinación lineal de los desplazamientos de los nodos extremos correspondientes.
@@ -298,13 +295,13 @@ Se considera ahora elementos de barra como el mostrado en la Figura~\ref{fig:ele
 %
 \begin{figure}[htb]
 	\centering
-  \def\svgwidth{0.7\textwidth}
+  \def\svgwidth{0.6\textwidth}
   \input{figs/UT2/sistcord.pdf_tex}
 	\caption{Esquema de sistemas de coordenadas de elemento de barra en el plano.}
 	\label{fig:eleplabar}
 \end{figure}
 
-El desplazamiento según el eje axial de la barra, coincidente con el eje de coordenadas $x$ local, está dado por:
+El desplazamiento según el eje de la barra, coincidente con el eje de coordenadas $x$ local, está dado por:
 %
 \begin{equation}
 u_L^e(x^e) = N_1^e(x^e) u_{1,L}^e  + N_2^e(x^e) u_{2,L}^e,
@@ -334,7 +331,7 @@ B_{1,L}^e(x^e) = \frac{- 1}{\ell^e}
 \end{equation}
 son las derivadas de las funciones de interpolación respecto a la coordenada local. %
 %
-Se observa que para esta interpolación la deformación axial es uniforme en todo el elemento (es decir que no depende de $x^e$) y vale 
+Se observa que, para esta interpolación, la deformación axial es uniforme en todo el elemento (es decir que no depende de $x^e$) y vale 
 %
 \begin{equation}
 \varepsilon^e  =  \frac{ u_{2,L}^e - u_{1,L}^e } {\ell^e}.
@@ -378,7 +375,7 @@ La energía potencial de deformación de cada barra está dada únicamente por l
 %
 \end{equation}
 %
-donde $\Omega^e$ representa el volumen ocupado por la barra. %
+donde $\Omega^e$ representa el volumen ocupado por la barra $e$. %
 %
 Sustituyendo la relación de la Ecuación~\eqref{eqn:expreps} y operando se obtiene:
 %
@@ -479,11 +476,9 @@ Las fuerzas externas aplicadas son representadas por el vector $\bff_{ext}$ o si
 La energía potencial de estas fuerzas es representada por $\Pi_{ext}$ y está dada por:
 %
 \begin{equation}
- \Pi_{ext}(\bfu) = - \sum_{i=1}^{n_d} u_i f_i = - \bfu^T \bff 
+ \Pi_{ext}(\bfu) = - \sum_{i=1}^{n_d} u_i f_i = - \bfu^T \bff .
 \end{equation}
 %
-donde $n_d$ es el número de desplazamientos nodales de referencia de la estructura.
-
 
 
 \subsection{Desarrollo del método}
@@ -497,7 +492,7 @@ Dada una estructura con condiciones de desplazamiento impuesto en un cierto conj
 %
 
 
-Considerando un cierto conjunto de cargas externas nodales dadas por el vector $\bff$, el Principio de mínima energía potencial establece que: entre todos los desplazamientos compatibles $\bfu \in \mcU$, los desplazamientos que están en equilibrio con las fuerzas externas son aquellos que verifican:
+Considerando un cierto conjunto de cargas externas nodales dadas por el vector $\bff$, el Principio de mínima energía potencial establece que: entre todos los desplazamientos compatibles $\bfv \in \mcU$, los desplazamientos que están en equilibrio con las fuerzas externas son aquellos que verifican:
 %
 \begin{equation}
 \bfu = \arg\min_{\bfv \in \, \mcU} \Pi(\bfv).
@@ -570,203 +565,9 @@ que puede ser sumada a la energía potencial de deformación $\Pi_{int}$.
 
 
 
-
-
-
-
-
-
-
-
-\section{Aplicaciones}
-
-\subsection{Ejemplo} \label{sec:ejemplobarra}
-
-Sea la estructura mostrada en la figura, formada por barras de material con módulo de Young $E=210 $ GPa, con $\ell= 10$ m, y secciones transversales  de áreas $A^1 = A^3 = 0.001$ m$^2$ y $A^2 = 0.01 $ m$^2$. %
-%
-Para la fuerza aplicada $P= 10 $ kN, se desea determinar desplazamientos y solicitaciones de la estructura. Utilizando el método de los desplazamientos matricial.
-
-%\begin{definicion}
-%	Hola
-	\begin{center}
-   \def\svgwidth{0.6\textwidth}
-   \input{figs/UT2/ejRetic.pdf_tex}
-	\end{center}
-
-
-El grado de indeterminación cinemática de la estructura es $gk = 2 \cdot 4 - 2 \cdot 3 = 2$. %
-%
-Se continúa determinando los grados de libertad correspondientes a cada elemento de barra. Se define la matriz de conectividad y se calculan los ángulos $\alpha^e$.
-%
-\begin{center}
-\begin{tabular}{cccc}
-  \hline
-  Elemento & nodo inicial $\rightarrow$ nodo final & grados de libertad & $\alpha^e$\\
-  \hline
-	1 & 1 $\rightarrow$ 2 & 1 2 3 4 & 45$^\circ$\\
-	2 & 2 $\rightarrow$ 3 & 3 4 5 6 & -90$^\circ$\\
-	3 & 2 $\rightarrow$ 4 & 3 4 7 8 & -45$^\circ$\\
-  \hline
-\end{tabular}
-\end{center}
-
-Se calculan las matrices de rigidez en coordenadas globales:
-\begin{equation}
-\bfK^1 = \frac{ 210 \times10^9 \cdot 1 \times 10^{-3} }{ \sqrt{2}  \cdot 10} \frac{1}{2}
-\left[
-\begin{matrix}
-1 & 1 & -1 & -1 \\
-1 & 1 & -1 & -1\\
--1 & -1 &  1 & 1\\
--1 & -1 & 1 & 1
-\end{matrix}
-\right]
-\text{N/m}
-\end{equation}
-
-Operando se tiene
-\begin{equation}
-\bfK^1 = 7.425 \times 10^6
-\left[
-\begin{matrix}
-1 & 1 & -1 & -1 \\
-1 & 1 & -1 & -1\\
--1 & -1 &  1 & 1\\
--1 & -1 & 1 & 1
-\end{matrix}
-\right]
-\text{N/m}
-\end{equation}
-
-Para el elemento 2 se tiene
-\begin{equation}
-\bfK^2 = 210 \times 10^6
-\left[
-\begin{matrix}
-0 & 0 & 0 & 0 \\
-0 & 1 & 0 & -1\\
-0 & 0 &  0 & 0\\
-0 & -1 & 0 & 1
-\end{matrix}
-\right]
-\text{N/m}
-\end{equation}
-
-Para el elemento 3 se tiene
-\begin{equation}
-\bfK^3 = 7.425 \times 10^6
-\left[
-\begin{matrix}
-1 & -1 & -1 & 1 \\
--1 & 1 & 1 & -1\\
--1 & 1 &  1 & -1\\
-1 & -1 & -1 & 1
-\end{matrix}
-\right]
-\text{N/m}
-\end{equation}
-
-
-
-Se observa que el elemento 2 tiene una rigidez mayor (dada por su sección transversal) aunque esta rigidez solamente vincula los desplazamientos verticales de los nodos 2 y 3.
-
-Considerando que los grados de libertad fijos o de desplazamiento nulo son 1, 2, 5, 6, 7 y 8 y ensamblando las matrices en los grados de libertad restantes (3 y 4) se tiene.
-%
-\begin{equation}
-\bfK =
-7.425 \times 10^6
-\left[
-\begin{matrix}
-1 & 1 \\
-1 & 1 
-\end{matrix}
-\right]
-\text{N/m}
-+
-210 \times 10^6
-\left[
-\begin{matrix}
-0 & 0 \\
-0 & 1 
-\end{matrix}
-\right]
-\text{N/m}
-+
-7.425 \times 10^6
-\left[
-\begin{matrix}
-1 & -1 \\
--1 & 1 
-\end{matrix}
-\right]
-\text{N/m}
-\end{equation}
-
-
-Se obtiene entonces el sistema de ecuaciones a resolver
-\begin{equation}
-\quad 10^6
-\left[
-\begin{matrix}
-14.84 & 0 \\
-0 & 224.84 
-\end{matrix}
-\right]
-\text{N/m}
-\,
-\bfu = 
-\left[
-\begin{matrix}
-10^4 \\
-0 
-\end{matrix}
-\right] \text{N}.
-\end{equation}
-%
-Cuya resolución brinda los desplazamientos solución:
-%
-\begin{equation}
-\boxed{
-u_{2} = 6.74 \times 10^{-4} \text{m}  \qquad v_{2} = 0.
-}\end{equation}
-
-Ahora que están determinados los desplazamientos de todos los nodos de la estructura es posible determinar la directa $N^e$ en todas las barras usando la Ecuación~\eqref{eqn:expSolic}:
-%
-\begin{equation}
-N^1 = - N^3 =7.07 \, \text{kN} \quad \text{y} \quad N^2 = 0.
-\end{equation}
-
-
-Las directas también pueden ser obtenidas usando la ecuación de rigidez para cada elemento de barra, dada por:
-%
-$$
-\bfK^e \bfu^e = \bff^e.
-$$
-
-
-
-
-
-
-Si se considera el ejemplo anterior, y un resorte horizontal de constante elástica $k$ en el nodo 2 entonces se agrega el término de energía potencial de deformación: $\frac{1}{2} k u_2^2$. %
-%%
-Luego de realizar las derivadas establecidas por Castigliano se obtiene $k u_2$ que es considerado en el sistema lineal reducido como
-%
-\begin{equation}
-\bfK =
-\left[
-\begin{matrix}
-14.84 \times10^6 +k & 0 \\
-0 & 224.84 \times10^6 
-\end{matrix}
-\right]
-\end{equation}
-%
-lo cual resultará en un menor valor de desplazamiento nodal.
-
 \subsection{Implementación computacional}
 
-Este método puede ser fácilmente programado para resolver problemas de mayor dimensión de forma automática usando una herramienta numérica como por ejemplo GNU-Octave \citep{Eaton2015}.  %
+Este método puede ser programado para resolver problemas de mayor dimensión de forma automática usando herramientas de cálculo numérico como GNU-Octave \citep{Eaton2015}, Python o Julia.  %
 
 En el repositorio \href{https://github.com/jorgepz/FDMTrusS}{¸github.com/jorgepz/FDMTrusS} se presenta un ejemplo de implementación del método y su aplicación para resolver el ejemplo de la Sección~\ref{sec:ejemplobarra}. En la Figura~\ref{fig:ejbarraDef} se muestra el diagrama de deformada. y en la Figura~\ref{fig:ejbarraDir} se muestra el diagrama de directas, ambas figuras generadas con ese código.  %
 
@@ -794,8 +595,15 @@ En caso de detectar errores en el FEMTrusS se agradece notificarlo creando un \t
 
 
 \cajaactividad{
-Modifique el código para poder resolver un reticulado como el mostrado en la Figura~\ref{fig:railb}, eligiendo los valores de longitudes, cargas y materiales de los componentes estructurales.
+	Modifique el código para poder resolver un reticulado como el mostrado en la Figura~\ref{fig:railb}, eligiendo los valores de longitudes, cargas y materiales de los componentes estructurales.
 }
+
+
+
+
+
+
+
 
 
 \section{Método de las Fuerzas}
@@ -1078,7 +886,193 @@ Si en el estado canónico $E_0$ existe una única fuerza aplicada de magnitud $P
 %
 
 \section{Aplicaciones}
-\subsection{Ejemplo}
+
+\subsection{Ejemplo del Método de los Desplazamientos} \label{sec:ejemplobarra}
+
+Sea la estructura mostrada en la figura, formada por barras de material con módulo de Young $E=210 $ GPa, con $\ell= 10$ m, y secciones transversales  de áreas $A^1 = A^3 = 0.001$ m$^2$ y $A^2 = 0.01 $ m$^2$. %
+%
+Para la fuerza aplicada $P= 10 $ kN, se desea determinar desplazamientos y solicitaciones de la estructura. Utilizando el método de los desplazamientos matricial.
+
+%\begin{definicion}
+%	Hola
+\begin{center}
+	\def\svgwidth{0.6\textwidth}
+	\input{figs/UT2/ejRetic.pdf_tex}
+\end{center}
+
+
+El grado de indeterminación cinemática de la estructura es $gk = 2 \cdot 4 - 2 \cdot 3 = 2$. %
+%
+Se continúa determinando los grados de libertad correspondientes a cada elemento de barra. Se define la matriz de conectividad y se calculan los ángulos $\alpha^e$.
+%
+\begin{center}
+	\begin{tabular}{cccc}
+		\hline
+		Elemento & nodo inicial $\rightarrow$ nodo final & grados de libertad & $\alpha^e$\\
+		\hline
+		1 & 1 $\rightarrow$ 2 & 1 2 3 4 & 45$^\circ$\\
+		2 & 2 $\rightarrow$ 3 & 3 4 5 6 & -90$^\circ$\\
+		3 & 2 $\rightarrow$ 4 & 3 4 7 8 & -45$^\circ$\\
+		\hline
+	\end{tabular}
+\end{center}
+
+Se calculan las matrices de rigidez en coordenadas globales:
+\begin{equation}
+	\bfK^1 = \frac{ 210 \times10^9 \cdot 1 \times 10^{-3} }{ \sqrt{2}  \cdot 10} \frac{1}{2}
+	\left[
+	\begin{matrix}
+		1 & 1 & -1 & -1 \\
+		1 & 1 & -1 & -1\\
+		-1 & -1 &  1 & 1\\
+		-1 & -1 & 1 & 1
+	\end{matrix}
+	\right]
+	\text{N/m}
+\end{equation}
+
+Operando se tiene
+\begin{equation}
+	\bfK^1 = 7.425 \times 10^6
+	\left[
+	\begin{matrix}
+		1 & 1 & -1 & -1 \\
+		1 & 1 & -1 & -1\\
+		-1 & -1 &  1 & 1\\
+		-1 & -1 & 1 & 1
+	\end{matrix}
+	\right]
+	\text{N/m}
+\end{equation}
+
+Para el elemento 2 se tiene
+\begin{equation}
+	\bfK^2 = 210 \times 10^6
+	\left[
+	\begin{matrix}
+		0 & 0 & 0 & 0 \\
+		0 & 1 & 0 & -1\\
+		0 & 0 &  0 & 0\\
+		0 & -1 & 0 & 1
+	\end{matrix}
+	\right]
+	\text{N/m}
+\end{equation}
+
+Para el elemento 3 se tiene
+\begin{equation}
+	\bfK^3 = 7.425 \times 10^6
+	\left[
+	\begin{matrix}
+		1 & -1 & -1 & 1 \\
+		-1 & 1 & 1 & -1\\
+		-1 & 1 &  1 & -1\\
+		1 & -1 & -1 & 1
+	\end{matrix}
+	\right]
+	\text{N/m}
+\end{equation}
+
+
+
+Se observa que el elemento 2 tiene una rigidez mayor (dada por su sección transversal) aunque esta rigidez solamente vincula los desplazamientos verticales de los nodos 2 y 3.
+
+Considerando que los grados de libertad fijos o de desplazamiento nulo son 1, 2, 5, 6, 7 y 8 y ensamblando las matrices en los grados de libertad restantes (3 y 4) se tiene.
+%
+\begin{equation}
+	\bfK =
+	7.425 \times 10^6
+	\left[
+	\begin{matrix}
+		1 & 1 \\
+		1 & 1 
+	\end{matrix}
+	\right]
+	\text{N/m}
+	+
+	210 \times 10^6
+	\left[
+	\begin{matrix}
+		0 & 0 \\
+		0 & 1 
+	\end{matrix}
+	\right]
+	\text{N/m}
+	+
+	7.425 \times 10^6
+	\left[
+	\begin{matrix}
+		1 & -1 \\
+		-1 & 1 
+	\end{matrix}
+	\right]
+	\text{N/m}
+\end{equation}
+
+
+Se obtiene entonces el sistema de ecuaciones a resolver
+\begin{equation}
+	\quad 10^6
+	\left[
+	\begin{matrix}
+		14.84 & 0 \\
+		0 & 224.84 
+	\end{matrix}
+	\right]
+	\text{N/m}
+	\,
+	\bfu = 
+	\left[
+	\begin{matrix}
+		10^4 \\
+		0 
+	\end{matrix}
+	\right] \text{N}.
+\end{equation}
+%
+Cuya resolución brinda los desplazamientos solución:
+%
+\begin{equation}
+	\boxed{
+		u_{2} = 6.74 \times 10^{-4} \text{m}  \qquad v_{2} = 0.
+}\end{equation}
+
+Ahora que están determinados los desplazamientos de todos los nodos de la estructura es posible determinar la directa $N^e$ en todas las barras usando la Ecuación~\eqref{eqn:expSolic}:
+%
+\begin{equation}
+	N^1 = - N^3 =7.07 \, \text{kN} \quad \text{y} \quad N^2 = 0.
+\end{equation}
+
+
+Las directas también pueden ser obtenidas usando la ecuación de rigidez para cada elemento de barra, dada por:
+%
+$$
+\bfK^e \bfu^e = \bff^e.
+$$
+
+
+Si se considera el ejemplo anterior, y un resorte horizontal de constante elástica $k$ en el nodo 2 entonces se agrega el término de energía potencial de deformación: $\frac{1}{2} k u_2^2$. %
+%%
+Luego de realizar las derivadas establecidas por Castigliano se obtiene $k u_2$ que es considerado en el sistema lineal reducido como
+%
+\begin{equation}
+	\bfK =
+	\left[
+	\begin{matrix}
+		14.84 \times10^6 +k & 0 \\
+		0 & 224.84 \times10^6 
+	\end{matrix}
+	\right]
+\end{equation}
+%
+lo cual resultará en un menor valor de desplazamiento nodal.
+
+
+
+
+
+
+\subsection{Ejemplo de Método de las Fuerzas}
 
 Se presenta la resolución del ejemplo que de la sección anterior, en este caso usando el MF. %
 %
@@ -1156,6 +1150,18 @@ A pesar de esto, se brinda un ejemplo de implementación, que puede ser también
 
 Los códigos están disponibles en el repositorio \href{https://github.com/jorgepz/FDMTrusS}{github.com/jorgepz/FDMTrusS}, y se reitera que el código es una versión minimal, en proceso de revisión, que aspira simplemente a mostrar una posible forma de automatizar el proceso del Método y  \textbf{no forma parte de los contenidos} centrales \textbf{del curso} y no será evaluado directamente. %
 %
+
+
+
+
+\cajaconcepto{Para práctico}{
+	El $gh$ en reticulados se calcula:
+	$$
+	\boxed{
+		gh = n_R + n_{Barras} - 2 \times n_{Nodos}
+	}
+	$$ 
+}
 
 
 \newpage
