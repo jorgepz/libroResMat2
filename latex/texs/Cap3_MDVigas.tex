@@ -1,18 +1,19 @@
 
+
 \chapter[Métodos de Desplazamientos para pórticos]{Métodos de Desplazamientos para pórticos}
 
 % intro e hipotesis
-En esta Unidad Temática se presentan métodos de análisis de estructuras planas de barras en base a desplazamientos como incógnita principal. %
+En esta Unidad Temática se presentan métodos de análisis de estructuras planas formadas por barras en base a desplazamientos como incógnita principal. %
 %
-Este tema es presentado en los libros con dos grandes enfoques, por una parte un enfoque más clásico o analítico, basado en principios de superposición y razonamientos conceptuales como se puede ver en \citep{Timoshenko1940a} o \citep{CerveraRuiz2002ii}, por otra parte, un enfoque más orientado a métodos numéricos para análisis estructural en general como se ve en \citep{Onate2013}, \citep{Pilkey2002,Wunderlich2002}. %
+Este tema es presentado en los libros con dos grandes enfoques: por una parte un enfoque más clásico o analítico, basado en principios de superposición y razonamientos conceptuales, como se puede ver en \citep{Timoshenko1940a,CerveraRuiz2002ii}, y por otra parte, un enfoque más orientado a métodos numéricos para análisis estructural general, como se ve en \citep{Onate2013,Pilkey2002,Wunderlich2002}. %
 %
 Para maximizar la uniformidad de criterios en los temas abordados en el curso para el análisis de distintas estructuras, se opta por el segundo enfoque. %
 
-En la Sección~\ref{sec:analiMatPort} donde las ecuaciones son derivadas utilizando los principios energéticos ya vistos en la Unidad Temática 2 y de forma similar a como es realizado en \citep{Reddy2002b}. %
+En la Sección~\ref{sec:analiMatPort} las ecuaciones son derivadas utilizando los principios energéticos ya vistos en la Unidad Temática 2 y de forma similar a como es realizado en \citep{Reddy2002b}. %
 %
 Luego, en la Sección~\ref{sec:metSDPort}, las ecuaciones del método del clásico \textit{Slope-Deflection} (o Método de Equilibrio en \citep{CerveraRuiz2002ii}) son presentadas, como un caso particular del desarrollo general, en el cual se asume que la energía de deformación axial es despreciable respecto a la de flexión. %
 %
-Se invita a la o el lector a leer los materiales complementarios para entender las diferencias de enfoque y también ver las similitudes en las ecuaciones obtenidas.
+Se invita al estudiante a leer los materiales complementarios para entender las diferencias de enfoque y ver también las similitudes en las ecuaciones obtenidas.
 % ----------------------------
 
 
@@ -30,14 +31,14 @@ Se utiliza un enfoque usualmente utilizado tanto en libros de resistencia de mat
 
 Para el análisis de pórticos es necesario abordar el estudio de vigas sometidas a cargas transversales y axiales, esto será llamado \textit{flexión compuesta}. %
 %
-Para esto, un posible camino es agregar el efecto de la directa a las ecuaciones de la teoría de vigas a flexión pura, presentadas en la sección \ref{sec:teovigastimo}. %
+Para esto, un posible camino es agregar el efecto de la directa a las ecuaciones de la teoría de vigas a flexión pura, presentadas en la Sección~\ref{sec:teovigastimo}. %
 %
-Sin embargo se optará por otro camino orientado a deducir las ecuaciones a partir de algunas hipótesis de la teoría de vigas integradas con la Teoría de la Elasticidad. %
+Sin embargo se optará por otro camino orientado a deducir las ecuaciones a partir de algunas hipótesis de la Teoría de Vigas integradas con la Teoría de la Elasticidad. %
 %
 Este enfoque es utilizado en literatura de referencia \citep{Wunderlich2002,Onate2013} y permite llegar a los mismos resultados.
 
 \subsubsection{Hipótesis}
-Sea el campo de desplazamientos de los puntos de la viga, dados por el vector formado por las funciones: $u(x,y,z)$, $v(x,y,z)$ y $w(x,y,z)$, representando desplazamientos en $x$, $y$ y $z$ respectivamente. %
+Se considera un sólido con una geometría como la mostrada en la Figura~\ref{fig:viga3d}, es decir una viga. Se considera que el campo de desplazamientos de los puntos de la viga, están dados por el vector formado por las funciones: $u(x,y,z)$, $v(x,y,z)$ y $w(x,y,z)$, representando desplazamientos en $x$, $y$ y $z$ respectivamente. %
 %
 Asumiendo que la flexión se produce en el plano $x-y$, se consideran las siguientes hipótesis:
 %
@@ -46,9 +47,11 @@ Asumiendo que la flexión se produce en el plano $x-y$, se consideran las siguie
 	$$
 	v(x,y,z) =  v(x).
 	$$
+	%
 	\item Las secciones transversales permanecen planas y perpendiculares al eje deformado durante la deformación y los giros $\theta$ son pequeños. %
 	%
-	Los desplazamientos axiales por tanto están dados por:
+	%
+	Los desplazamientos axiales están, por lo tanto, dados por:
 	\begin{equation} \label{eqn:despaxi}
 	u(x,y,z) = u_G(x) - y \theta(x),
 	\end{equation}
@@ -65,7 +68,7 @@ $$
 
 Respecto a la hipótesis de desplazamientos perpendiculares al plano, esta hipótesis representa una simplificación del comportamiento real de la estructura y el efecto de Poisson, sin embargo simplifica la aplicación de la ecuación constitutiva y el cálculo del tensor de deformaciones y permite llegar a las ecuaciones de la teoría de vigas de forma directa.
 
-Respecto a la no consideración de energía de deformación por cortante, se recomienda al estudiante interesado libros como \citep{Onate2013} donde se describen los elementos de viga de Timoshenko o  artículos recientes en los que se muestra la utilidad de este tipo de enfoques para simular el comportamiento real de estructuras \citep{Bui2014}. %
+Respecto a la no consideración de energía de deformación por cortante, se recomienda al estudiante interesado consultar libros como \citep{Onate2013} donde se describen los elementos de viga de Timoshenko o  artículos recientes en los que se muestra la utilidad de este tipo de enfoques para simular el comportamiento real de estructuras \citep{Bui2014}. %
 %
 En este curso no se considerará deformación por cortante, hipótesis que puede ser razonable para vigas cuya relación entre largo y altura de sección transversal sea superior a 10: $\ell/h > 10$ (este número es adoptado como criterio para este curso, otros estudios numérico/experimentales pueden sugerir otros valores).
 
@@ -108,7 +111,7 @@ Finalmente la expresión de la deformación axial está dada por:
 \varepsilon_x(x,y) =  \varepsilon_G (x) -y \frac{\partial^2 v}{\partial x^2}(x).
 }
 \end{equation}
-lo que representa una extensión de la expresión obtenida en la Ecuación~\eqref{eqn:epstimo} para el caso de deformación axial.
+lo que representa una extensión de la expresión obtenida en la Ecuación~\eqref{eqn:epstimo} para el caso con deformación axial.
 
 \cajaactividad{
 Demostrar que, considerando las hipótesis de desplazamiento mencionadas, la única componente del tensor de deformaciones no nula, es $\varepsilon_{xx}$.
@@ -128,7 +131,7 @@ o también
 	\sigma_x (x,y) =  E \varepsilon_G(x) - E y \frac{\partial^2 v}{\partial x^2} (x).
 \end{equation}
 
-Esta componente de $\bfsig$ es la única que produce trabajo interno en la expresión de la energía interna de deformación dada por la Ecuación~\eqref{eqn:energbarra}.
+Esta componente de $\bfsig$ es la única que produce trabajo interno en la expresión de la energía de deformación interna dada por la Ecuación~\eqref{eqn:energbarra}.
 
 \subsection{Solicitaciones y convenciones de signo}
 
@@ -143,17 +146,17 @@ Para la directa se tiene
 N (x) = \int_{A(x)} \sigma_x (x,y) \, \dif A
 \end{equation}
 %
-usando que la sección transversal es uniforme, la ecuación constitutiva y la expresión de la deformación axial se tiene:
+usando la ecuación constitutiva y la expresión de la deformación axial se tiene:
 %
 \begin{equation}
-N (x) = \int_{A(x)} \left( E \frac{\partial u_G}{\partial x} - E y \frac{\partial^2 v}{\partial x^2}   \right) \, \dif A.
+N (x) = \int_{A(x)} \left( E \frac{\partial u_G}{\partial x}(x) - E y \frac{\partial^2 v}{\partial x^2}(x)   \right) \, \dif A.
 \end{equation}
 %
 Usando que el vector $\bfe_x$ pasa por el punto $G$, baricentro de la sección transversal, se tiene
 %
 \begin{equation}\label{eqn:direc}
 \boxed{
-N (x) =  E A  \varepsilon_G(x).
+N (x) =  E A(x)  \varepsilon_G(x).
 }
 \end{equation}
 %
@@ -177,7 +180,7 @@ Calculando el producto mixto y usando que el primer momento de inercia respecto 
 M_z (x) = E \int_{A(x)} y^2 \dif A \,  \frac{\partial^2 v}{\partial x^2} (x)
 \end{equation}
 %
-usando que el material tiene sección transversal uniforme y definiendo el segundo momento de inercia respecto de $z$ como $I_z(x) = \int_{A} y^2 dA$ se obtiene:
+usando ahora como hipótesis que la barra tiene sección transversal uniforme $A(x)=A$ y definiendo el segundo momento de inercia respecto de $z$ como $I_z(x) = \int_{A} y^2 dA$ se obtiene:
 %
 \begin{equation}\label{eqn:momen}
 \boxed{
