@@ -494,15 +494,18 @@ $b)$
 
 Los ángulos solución son $\theta_B = -3.89 \times 10^{-3}$ rad y $\theta_C=-1.33   \times 10^{-3}$  rad.\\
 
-% -----------------------------------------
-\textbf{Ejercicio 3.9}
 
-\begin{enumerate}
-	\item aplicando que cada barra restringe su deformación axial, se puede determinar como incógnitas, los giros nodales y el desplazamiento axial del piso C-D.
-	\item los valores normalizados son $\theta_C =-2 .15 \times 10^{-9}  \times $ \, EI rad/(Nm$^2$) , $\theta_D = -4 .12 \times 10^{-9}  \times $ EI \, rad/(Nm$^2$)  y $\Delta_x = -5.09\times 10^{-8}  \times $ EI \, m/(Nm$^2$),
-\end{enumerate}
-%
-donde el valor numérico de EI, debe ser ingresado en Nm$^2$.
+
+% -----------------------------------------
+\vspace{5mm}
+\textbf{Ejercicio 3.9}\\
+
+Aplicando que cada barra restringe su deformación axial, se puede determinar como incógnitas, los giros nodales y el desplazamiento horizontal del piso C-D $\Delta_x$ positivo hacia la derecha. Los valores solución son 
+$$
+\theta_C = -3.588 \times 10^{-3}  \text{ rad}, \theta_D = -6.864 \times 10^{-3}  \text{ rad,  y } \Delta_x = 84.87 \text{ mm}.
+$$
+
+
 
 
 \section{Ejercicios de la UT4}
@@ -978,66 +981,6 @@ Flexión - Mz,local (kN.m) \hfill  Torsor - Mx,local (kN.m)
 \includegraphics[width=.45\textwidth]{ej53Mx}
 
 
-\hrule 
-\vspace{5mm}
-% -----------------------------------------
-\textbf{Ejercicio 5.4}\\
-
-Nodos, sistema de ejes globales y locales iguales a los del Ejercicio 5.2.
-
-
-
-\begin{minipage}{0.45\textwidth}
-	Incógnitas cinemáticas,
-	$$
-	\left[
-	\begin{matrix}
-	\theta_{x,2} \\
-	v_{y,2} \\
-	\theta_{z,2}
-	\end{matrix}
-	\right]
-	=
-	\left[
-	\begin{matrix}
-	 2.26\times 10^{-3} \text{ rad }\\
-	-2.29\times 10^{-2} \text{ m }\\
-	-1.08\times 10^{-2} \text{ rad }
-	\end{matrix}
-	\right]
-	$$
-	
-	$$
-	\left[
-	\begin{matrix}
-	\theta_{x,3} \\
-	v_{y,3} \\
-	\theta_{z,3}
-	\end{matrix}
-	\right]
-	=
-	\left[
-	\begin{matrix}
-	2.26\times 10^{-3} \text{ rad }\\
-	-5.85\times 10^{-3} \text{ m }\\
-	-3.61\times 10^{-3} \text{ rad }
-	\end{matrix}
-	\right]
-	$$
-\end{minipage}
-~
-\begin{minipage}{0.45\textwidth}
-	Cortante $V_y$ (N)
-	
-	\includegraphics[width=\textwidth]{ej54Vy}
-\end{minipage}
-
-
-Flexión - Mz,local (kN.m) \hfill  Torsor - Mx,local (kN.m)
-
-\includegraphics[width=.45\textwidth]{ej54Mz}
-\includegraphics[width=.45\textwidth]{ej54Mx}
-
 
 
 
@@ -1135,6 +1078,141 @@ Torsor - Mx,local (kN.m)
 \includegraphics[width=.3\textwidth]{ej56My}
 \includegraphics[width=.3\textwidth]{ej56Mx}
 
+
+
+
+
+
+
+
+
+\hrule
+\vspace{5mm}
+\textbf{Ejercicio 5.8}\\
+
+
+
+\textbf{Parte a)}
+
+Verdadero. Dado que la estructura es isostática, las solicitaciones no dependen de la  sección.
+
+\vspace{5mm}
+
+\textbf{Parte b)}
+
+Diagramas de solicitaciones en coordenadas locales y en unidades kN y kNm para fuerzas y momentos respectivamente.
+
+
+\begin{center}
+	\def\svgwidth{0.65\textwidth}
+	\input{figs/UT5/ej2Sol.pdf_tex}
+\end{center}
+
+\vspace{5mm}
+
+\textbf{Parte c)}
+
+Las componentes de fuerzas de las reacciones son:
+$$
+F_x = 0 \qquad F_y = -45 \text{ kN} \qquad F_z = 1.8 \text{ kN},
+$$
+%
+mientras que las componentes de momentos son:
+$$
+M_x = 225  \text{ kNm} \qquad M_y = -2.7 \text{ kNm} \qquad M_z = -67.5 \text{ kNm},
+$$
+%
+todas expresadas en el sistema de coordenadas globales.
+
+
+
+
+
+\hrule
+\vspace{5mm}
+\textbf{Ejercicio 5.8}\\
+
+\begin{center}
+	\def\svgwidth{0.8\textwidth}
+	\input{./figs/UT5/UT5_solEjGrua.pdf_tex}
+\end{center}
+
+
+
+
+
+
+
+
+
+
+\hrule 
+\vspace{5mm}
+% -----------------------------------------
+\textbf{Ejercicio 5.4}\\
+
+Nodos, sistema de ejes globales y locales iguales a los del Ejercicio 5.2.
+
+
+
+\begin{minipage}{0.45\textwidth}
+	Incógnitas cinemáticas,
+	$$
+	\left[
+	\begin{matrix}
+		\theta_{x,2} \\
+		v_{y,2} \\
+		\theta_{z,2}
+	\end{matrix}
+	\right]
+	=
+	\left[
+	\begin{matrix}
+		2.26\times 10^{-3} \text{ rad }\\
+		-2.29\times 10^{-2} \text{ m }\\
+		-1.08\times 10^{-2} \text{ rad }
+	\end{matrix}
+	\right]
+	$$
+	
+	$$
+	\left[
+	\begin{matrix}
+		\theta_{x,3} \\
+		v_{y,3} \\
+		\theta_{z,3}
+	\end{matrix}
+	\right]
+	=
+	\left[
+	\begin{matrix}
+		2.26\times 10^{-3} \text{ rad }\\
+		-5.85\times 10^{-3} \text{ m }\\
+		-3.61\times 10^{-3} \text{ rad }
+	\end{matrix}
+	\right]
+	$$
+\end{minipage}
+~
+\begin{minipage}{0.45\textwidth}
+	Cortante $V_y$ (N)
+	
+	\includegraphics[width=\textwidth]{ej54Vy}
+\end{minipage}
+
+
+Flexión - Mz,local (kN.m) \hfill  Torsor - Mx,local (kN.m)
+
+\includegraphics[width=.45\textwidth]{ej54Mz}
+\includegraphics[width=.45\textwidth]{ej54Mx}
+
+
+
+
+
+
+
+
 \hrule
 \vspace{5mm}
 % -----------------------------------------
@@ -1164,29 +1242,19 @@ Flexión - Mz,local (kN.m)
 \includegraphics[width=.45\textwidth]{ej57MzConRigTor}
 
 \begin{center}
-
-Torsor - Mx,local (kN.m)
-
-\includegraphics[width=.45\textwidth]{ej57Mx}
-
+	
+	Torsor - Mx,local (kN.m)
+	
+	\includegraphics[width=.45\textwidth]{ej57Mx}
+	
 \end{center}
 
 
-% -----------------------------------------
-\textbf{Ejercicio 5.8}\\
 
-\begin{center}
-	\def\svgwidth{0.8\textwidth}
-	\input{./figs/UT5/UT5_solEjGrua.pdf_tex}
-\end{center}
 
 
 \hrule
 \vspace{5mm}
-
-
-
-% -----------------------------------------
 \textbf{Ejercicio 5.9}\\
 
 

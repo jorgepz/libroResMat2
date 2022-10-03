@@ -428,19 +428,16 @@ Considerando $q=2$ kN/m y $L=1$ m, se pide:
 %
 \parte Trazar diagramas de solicitaciones y comparar con los obtenidos con un modelo computacional de la estructura.
 
-\vspace{1cm}
-El emparrillado analizado es ahora usado como parte de la estructura de una hamaca con su respectivo esquema básico de cálculo como se muestra en las figuras. %
+\parte El emparrillado analizado es ahora usado como parte de la estructura de una hamaca con su respectivo esquema básico de cálculo como se muestra en las figuras. %
 Las cargas $q$ consideradas en las partes anteriores se aplican únicamente en la barra EF.
 
 \begin{center}
-	\includegraphics[width=0.5\linewidth]{UT5ej2c}
-	\hspace{0.05\linewidth}
-	\includegraphics[width=0.4\linewidth]{UT5ej2d}
+	\includegraphics[width=0.42\linewidth]{UT5ej2d}
+	\hspace{0.02\linewidth}
+	\includegraphics[width=0.48\linewidth]{UT5ej2c}
 \end{center}
 
-Considerando que todas las barras están compuestas por el mismo tubular que el emparrillado, se pide:
-%
-\parte Modelar la estructura con un programa computacional y comparar los resultados con los obtenidos en las partes anteriores en la zona del emparrillado. 
+Considerando que todas las barras están compuestas por el mismo tubular que el emparrillado, \textbf{se pide: } Modelar la estructura con un programa computacional y comparar los resultados con los obtenidos en las partes anteriores en la zona del emparrillado. 
 
 
 \ejercicio
@@ -454,22 +451,6 @@ Sea un emparrillado modificado con respecto al del Ejercicio 2, en el cual se ag
 Se pide:
 \parte Resolver mediante análisis matricial. Trazar diagramas de solicitaciones.
 \parte Comparar resultados obtenidos en a) con los obtenidos utilizando alguna herramienta computacional.
-
-
-\ejercicio
-
-Sea la estructura mostrada en la figura, construida con barras de acero (E=210 GPa, $\nu=0.3$) de sección circular maciza de diámetro $\phi_{ext}=105$ mm. 
-
-\begin{center}
-	\includegraphics[width=0.6\linewidth]{UT5ej4}
-\end{center}
-
-Considerando P=4 kN y L=3.0 m, se pide:
-
-\parte Modificar el código presentado en clase para resolución de emparrillados y obtener desplazamientos y giros nodales. Con los resultados obtenidos trazar diagramas de solicitaciones.
-\parte Utilizar algún programa computacional para resolver el problema y verificar los resultados.
-\parte Repetir b) descomponiendo en una estructura simétrica y otra antisimétrica.
-
 
 
 
@@ -517,22 +498,6 @@ Se pide: calcular las reacciones en A y los diagramas de solicitaciones.
 \input{figs/UT5/ej56.pdf_tex}
 \end{center}
 
-\ejercicio
-
-Se desea analizar la estructura de un pasamanos considerando un correspondiente Esquema Básico de Cálculo como se muestra en las figuras.
-
-\begin{center}
-	\includegraphics[width=0.85\linewidth]{UT5ej7}
-\end{center}
-
-La estructura está compuesta por tubulares de acero ($E=210$ GPa y $\nu=0.3$) de $\phi_{ext}=80$ mm y $t=6$ mm. %
-%
-Sobre las barras transversales actúa una carga q=3 kN/m y L=1.0 m. Se pide:
-
-	\parte Considerar que las barras no presentan rigidez a torsión y calcular analíticamente las solicitaciones en cada una de las barras.
-\parte Considerar la rigidez a torsión en las barras y obtener resultados de modelar computacionalmente la estructura.
-\parte Comparar resultados obtenidos en a) y b).
-
 
 
 
@@ -553,6 +518,24 @@ Trazar los diagramas de todas las solicitaciones de la estructura, de acuerdo co
 
 
 
+\ejercicio (2do parcial 2021)
+
+En las etapas iniciales del diseño de la estructura de soporte de un cartel, se plantea el esquema básico de cálculo mostrado en la figura con las dos cargas distribuidas mostradas. La sección transversal  considerada inicialmente para las barras es cuadrada  y maciza de lado 15 cm y el material es acero ($E= 200$ GPa).
+
+\begin{center}
+	\def\svgwidth{0.8\textwidth}
+	\input{./figs/UT5/ej2EsquemaA.pdf_tex} 
+\end{center}
+
+\vspace{1mm}
+
+Se pide:
+%
+\parte Indicar si esta afirmación es verdadera o falsa para este problema: \textit{Las solicitaciones en las barras \textbf{no dependen} de la forma de la sección transversal de las barras}.
+%
+\parte Dibujar los diagramas de todas las solicitaciones de las barras considerando los ejes locales de la figura y justificando la obtención de todos los valores numéricos.
+%
+\parte Determinar las reacciones en el empotramiento, indicando el sistema de coordenadas usado.
 
 
 
@@ -564,7 +547,24 @@ Trazar los diagramas de todas las solicitaciones de la estructura, de acuerdo co
 
 
 
-\ejercicio (adicional) 
+
+\ejercicio (adicional)  
+
+Sea la estructura mostrada en la figura, construida con barras de acero (E=210 GPa, $\nu=0.3$) de sección circular maciza de diámetro $\phi_{ext}=105$ mm. 
+
+\begin{center}
+	\includegraphics[width=0.6\linewidth]{UT5ej4}
+\end{center}
+
+Considerando P=4 kN y L=3.0 m, se pide:
+
+\parte Modificar el código presentado en clase para resolución de emparrillados y obtener desplazamientos y giros nodales. Con los resultados obtenidos trazar diagramas de solicitaciones.
+\parte Utilizar algún programa computacional para resolver el problema y verificar los resultados.
+\parte Repetir b) descomponiendo en una estructura simétrica y otra antisimétrica.
+
+
+
+
 
 El emparrillado de la figura simula el entrepiso con vigas de una edificación. 
 
@@ -576,6 +576,25 @@ Considerar que todas las vigas son de hormigón (E=30 GPa, $\nu=0.2$) y su secci
 
 \parte Modelar la estructura computacionalmente. Analizar el comportamiento de las solicitaciones y la deformada.
 \parte Si se desprecia la rigidez a torsión de las vigas, ¿cómo se ven afectadas las solicitaciones y deformaciones de las vigas? Analizar.
+
+
+
+
+\ejercicio (adicional) 
+
+Se desea analizar la estructura de un pasamanos considerando un correspondiente Esquema Básico de Cálculo como se muestra en las figuras.
+
+\begin{center}
+	\includegraphics[width=0.85\linewidth]{UT5ej7}
+\end{center}
+
+La estructura está compuesta por tubulares de acero ($E=210$ GPa y $\nu=0.3$) de $\phi_{ext}=80$ mm y $t=6$ mm. %
+%
+Sobre las barras transversales actúa una carga q=3 kN/m y L=1.0 m. Se pide:
+
+\parte Considerar que las barras no presentan rigidez a torsión y calcular analíticamente las solicitaciones en cada una de las barras.
+\parte Considerar la rigidez a torsión en las barras y obtener resultados de modelar computacionalmente la estructura.
+\parte Comparar resultados obtenidos en a) y b).
 
 
 \ejercicio (adicional) 
