@@ -90,7 +90,7 @@ donde $\varepsilon_G$ es la deformación axial del eje de la viga, y está dada 
 
 
 La distorsión angular $\gamma_{xy}$ está dada por:
-\begin{equation}
+\begin{equation}\label{eq:epsG}
   \gamma_{xy}(x,y) = -\theta(x) + \frac{\partial v}{\partial x} (x).
 \end{equation}
 %
@@ -1239,6 +1239,119 @@ En la \autoref{fig:dia2} se muestran los diagramas de deformada y directas.
 	\caption{Diagramas de deformada (izquierda) y directas (derecha).}
 	\label{fig:dia2}
 \end{figure}
+
+%% Energia de Deformación
+\section{Energía de deformación}
+
+Sea el pórtico mostrado en la \autoref{fig:porticoUdef} formado por barras de hormigón con $E$=30 GPa sometida a una carga puntual en el nodo $B$ de valor $P$= 15 kN y las longitudes que se muestran. Los pilares y la viga tienen sección cuadrada de 0.40 m de lado.
+
+\begin{figure}[htb]
+	\centering
+	\def\svgwidth{0.6\textwidth}
+	\input{figs/UT3/ejemUdef.pdf_tex}
+	\caption{Esquema estructural del pórtico.}
+	\label{fig:porticoUdef}
+\end{figure}
+
+Las incógnitas para resolver la estructura por el Método de Slope Deflection son las siguientes.
+
+\begin{equation}
+	\theta_B \qquad \theta_C \qquad \Delta_{BC}
+\end{equation}
+
+Las condiciones a imponer para resolver la estructura son:
+
+\begin{eqnarray}
+	\begin{array}{l}
+		M_{BA}+M_{BC} = 0 \\
+		M_{CB}+M_{CD} = 0 \\
+		F_{BA}+F_{CD} + P = 0
+	\end{array}
+\end{eqnarray}
+
+Planteando las ecuaciones del método y resolviendo el sistema de ecuaciones, se tiene,
+
+\begin{equation}
+	\theta_B = -4.69\cdot 10^{-4} \qquad \theta_C = -4.69\cdot 10^{-4} \qquad \Delta_{BC} = -1.13\cdot 10^{-2}
+\end{equation}
+
+Conocidos los desplazamientos, a partir de las ecuaciones nodales del Método de Slope Deflection se obtienen los valores de momento flector y cortante y se pueden trazar los diagramas de solicitaciones como fue visto en desarrollos anteriores. La directa en las barras puede determinarse planteando equilibrio en los nudos entre las directas y los cortantes que concurren.  
+
+%%
+%Diagrama momento flector\\
+%%
+\begin{figure}[h!tb]
+	\centering
+	\def\svgwidth{0.4\textwidth}
+	\input{figs/UT3/porticoUdefM.pdf_tex}
+	\caption{Diagrama de momento flector (kNm).}
+\end{figure}
+%% 
+%Diagrama cortante\\
+%%
+\begin{figure}[h!tb]
+	\centering
+	\def\svgwidth{0.4\textwidth}
+	\input{figs/UT3/porticoUdefV.pdf_tex}
+	\caption{Diagrama de cortante (kN).}
+\end{figure}
+
+%%
+%Diagrama directa\\
+%%
+\begin{figure}[h!tb]
+	\centering
+	\def\svgwidth{0.4\textwidth}
+	\input{figs/UT3/porticoUdefN.pdf_tex}
+	\caption{Diagrama de directa (kN).}
+\end{figure}
+
+Interesa calcular la energía de deformación interna de la estructura a flexión y directa y compararlas. La energía de deformación interna $U_{int}$ como ha sido visto, se calcula de acuerdo con la siguiente expresión,
+
+\begin{equation}
+	U_{int} = \iiint_{V}\sigma : \varepsilon dV
+\end{equation}
+
+donde $\sigma$ y $\varepsilon$ corresponden al tensor de tensiones y al tensor de deformaciones. En el caso de vigas, se tiene un problema uniaxial, de donde nos interesa la componente del tensor de tensiones $\sigma_x$ y la componente del tensor de deformaciones $\varepsilon_x$. Recordando, el campo de desplazamientos \bfu(x,y,z) está dado por:
+
+$$
+u(x,y,z) = \frac{N\ell}{EA}(x) - \theta(x) y 
+$$
+
+Derivando respecto a $x$, se tiene la deformación axial en el eje de la barra $\varepsilon_G$ como se expresa en la \autoref{eq:epsG}. La expresión de las tensiones axiales debidas a la directa $N$ y al momento flector $M$ puede obtenerse mediante las expresiones usuales de la teoría de estructuras. 
+
+La energía de deformación interna de directa $U_N$ se calcula elemento a elemento y utilizando que en este caso particular N(x) es uniforme, se tiene,
+
+$$
+U_N = \sum_{e=0}^{e=n}\frac{N^2\ell}{2EA}  
+$$
+
+la cual coincide con la expresión utilizada en el Método de las Fuerzas de la UT2.
+
+La energía de deformación interna de flexión $U_M$ se calcula elemento a elemento mediante tablas de integrales de multiplicación de funciones como las Tablas de Mohr, de donde se tiene, 
+
+$$
+U_{M_z} = \int_{0}^\ell \frac{M_z(x)^2}{2EI_z}dx
+$$
+
+En la \autoref{tab:Udef} se presenta una comparación elemento a elemento de la energía de deformación interna.
+
+%%%
+\begin{table}[htb]
+	\centering
+	\begin{tabular}{cccc}
+		\textbf{Barra} & \textbf{U\_\{N\} (kNm)} & \textbf{U\_\{M\} (kNm)} & \textbf{U\_\{N\}/U\_\{M\} (\%)} \\ \toprule
+		AB             & 3.16E-04                & 3.16E-02                & 1.00                            \\
+		BC             & 2.34E-05                & 2.11E-02                & 0.11                            \\
+		CD             & 3.16E-04                & 3.16E-02                & 1.00                           
+	\end{tabular}
+	\caption{Comparación de energías de deformación interna.}
+	\label{tab:Udef}
+\end{table}
+%%%
+
+Se comprueba entonces, que en el caso usual de barras que se encuentren trabajando a directa y momento flector, es razonable despreciar la energía de deformación interna a directa $U_N$. Sin embargo, debe tenerse presente que éste no es el comportamiento real de la estructura sino una aproximación y que, en el caso de pilares muy comprimidos, donde el acortamiento elástico puede ser importante y aúnmás agravado por el caso de materiales como el hormigón con envejecimiento, esta hipótesis suele comenzar a perder validez. 
+
 
 
 \clearpage
