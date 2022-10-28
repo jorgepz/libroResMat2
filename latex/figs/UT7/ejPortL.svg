@@ -379,9 +379,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="421.88753"
-     inkscape:cy="795.13947"
+     inkscape:zoom="2.8"
+     inkscape:cx="460.34184"
+     inkscape:cy="760.44077"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -421,27 +421,27 @@
          style="font-size:1.84889px;line-height:1.25">$\circled{A}$</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.35643673;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 107.67953,103.45971 c -1.71774,1.71773 -1.71774,1.71773 -1.71774,1.71773"
+       d="m 107.67953,105.72757 c -1.71774,1.71773 -1.71774,1.71773 -1.71774,1.71773"
        id="path4491-6-7-0-9-8-7"
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.35643673;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 106.44157,103.4387 c -1.71774,1.71774 -1.71774,1.71774 -1.71774,1.71774"
+       d="m 106.44157,105.70656 c -1.71774,1.71774 -1.71774,1.71774 -1.71774,1.71774"
        id="path4491-6-7-0-9-3-5-3"
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.35643673;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 105.14109,103.40959 c -1.71774,1.71774 -1.71774,1.71774 -1.71774,1.71774"
+       d="m 105.14109,105.67745 c -1.71774,1.71774 -1.71774,1.71774 -1.71774,1.71774"
        id="path4491-6-7-0-9-6-5-6"
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.35643673;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 108.77725,103.41475 c -1.71774,1.71774 -1.71774,1.71774 -1.71774,1.71774"
+       d="m 108.77725,105.68261 c -1.71774,1.71774 -1.71774,1.71774 -1.71774,1.71774"
        id="path4491-6-7-0-9-0-8-1"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.28222221px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 103.71184,103.44021 c 5.47011,0 5.47011,0 5.47011,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.282;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 106.34766,103.37986 c 2.3853,2.3853 2.3853,2.3853 2.3853,2.3853"
        id="path4755-29"
        inkscape:connector-curvature="0" />
     <path
@@ -463,11 +463,11 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:12px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="131.56519"
+       x="132.50063"
        y="80.454201"
        id="text5189-3-6-4-1-7"><tspan
          sodipodi:role="line"
-         x="131.56519"
+         x="132.50063"
          y="80.454201"
          id="tspan5193-4-5-7-4-4"
          style="font-size:1.84888995px;line-height:1.25;stroke-width:1px">$\circled{C}$</tspan></text>
@@ -504,8 +504,8 @@
        id="path5292"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1182);marker-start:url(#marker1518)"
-       d="m 106.21372,107.6143 c 30.2381,0 30.2381,0 30.2381,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker1518);marker-end:url(#marker1182)"
+       d="m 106.21372,109.2207 c 30.2381,0 30.2381,0 30.2381,0"
        id="path5292-6"
        inkscape:connector-curvature="0" />
     <path
@@ -542,11 +542,11 @@
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:12px;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="120.463"
-       y="106.57597"
+       y="108.18237"
        id="text5189-3-6-4-1-5-9"><tspan
          sodipodi:role="line"
          x="120.463"
-         y="106.57597"
+         y="108.18237"
          id="tspan5193-4-5-7-4-47-63"
          style="font-size:1.84889007px;line-height:1.25;stroke-width:1px">$\ell$</tspan></text>
     <text
@@ -571,5 +571,15 @@
          y="76.337875"
          id="tspan5193-4-5-7-4-41-2"
          style="font-size:1.84889019px;line-height:1.25;stroke-width:1px">$EI_b$</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.28200001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 106.38591,103.41811 c -2.3853,2.3853 -2.3853,2.3853 -2.3853,2.3853"
+       id="path4755-29-1"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 108.73296,105.76516 -4.73235,0.0383"
+       id="path5745"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>
