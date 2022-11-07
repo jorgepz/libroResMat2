@@ -10,8 +10,8 @@
 
 ## Contribuciones posteriores a la apertura del repositorio
 
- * Joaquín Viera ha realizado diversas contribuciones incluyendo aportes al apéndice de tablas, hoja de fórmulas y planteo y resolución de ejercicios: https://gitlab.fing.edu.uy/ResMat2/libroResMat2/-/commits/master?author=Joaquin%20Viera
- * Bruno Bouchard realizó una corrección de una matriz de rigidez en un ejemplo de análisis de emparrillados: https://gitlab.fing.edu.uy/ResMat2/libroResMat2/-/commit/5d017a49ff323a1000e1a7aec6be9686b018fb33
- * Ignacio Suarez agregó la capacidad de ploteo de emparrillados en un código de ejemplo: https://gitlab.fing.edu.uy/ResMat2/libroResMat2/-/commit/1841f827f9096a806c462fc08c145f77e85846fb
- * Guillermo Castro realizó una corrección en la UT5 https://gitlab.fing.edu.uy/ResMat2/libroResMat2/-/commit/5a0503ab7b7600e573fa4865e68eb984dda4e662
+ * Joaquín Viera ha realizado diversas contribuciones relevantes, incluyendo aportes al apéndice de tablas, hoja de fórmulas, ejemplo de comparación de energías de deformación, planteo y resolución de ejercicios: https://gitlab.fing.edu.uy/jorgepz/libroResMat2/-/commits/master?author=Joaquin%20Viera
+ * Bruno Bouchard realizó una corrección de una matriz de rigidez en un ejemplo de análisis de emparrillados: https://gitlab.fing.edu.uy/jorgepz/libroResMat2/-/commit/5d017a49ff323a1000e1a7aec6be9686b018fb33
+ * Ignacio Suarez agregó la capacidad de ploteo de emparrillados en un código de ejemplo: https://gitlab.fing.edu.uy/jorgepz/libroResMat2/-/commit/1841f827f9096a806c462fc08c145f77e85846fb
+ * Guillermo Castro realizó una corrección en la UT5 https://gitlab.fing.edu.uy/jorgepz/libroResMat2/-/commit/5a0503ab7b7600e573fa4865e68eb984dda4e662
 
