@@ -860,7 +860,7 @@ Hallar la ecuación que permite determinar la luz de pandeo en el plano del reso
 %En b), c) y d) indicar como orientar el perfil o escuadría.
 
 \begin{center}
-	\includegraphics[width=0.2\linewidth]{UT7ej8}
+	\includegraphics[width=0.22\linewidth]{UT7ej8}
 \end{center}
 
 %
@@ -889,17 +889,18 @@ Hallar la ecuación que permite determinar la luz de pandeo en el plano del reso
 
 \ejercicio
 
-Sea la siguiente estructura formada por barras de longitud $\ell$ y rigideces a flexión $EI_c$ y $EI_b$ sometida a una carga puntual $P$, como se muestra en la figura. Se asume que las barras tienen rigidez axial tal que no hay deformación axial (barras inextensibles).
+Sea la siguiente estructura formada por barras de longitud $\ell$ y rigideces a flexión $EI_c$ y $EI_b$ sometida a una carga puntual $P$, como se muestra en la \autoref{fig:ejporticopandeo}. Se asume que las barras tienen rigidez axial tal que no hay deformación axial (barras inextensibles).
 
 \begin{figure}[H]
 	\begin{center}
 		\def\svgwidth{0.5\textwidth}
 		\input{figs/UT7/ejPortL.pdf_tex}
 		\caption{Esquema estructural del pórtico.}
+		\label{fig:ejporticopandeo}
 	\end{center}
 \end{figure} 
 
-Se asume que al alcanzar la carga de pandeo, el cortante en la barra BC es despreciable con respecto a $P_{cr}$, es decir que es considerado $V_{BC} \approx 0$, por lo que se puede aplicar SD y obtener el momento $M_{BC}$ en función del giro de B.
+Se asume que al alcanzar la carga de pandeo, el cortante en la barra BC es despreciable con respecto a $P_{cr}$, es decir que es considerado $V_{BC} \approx 0$, por lo que se puede obtener el momento en la barra BC mediante ecuaciones de equilibrio. En las ecuaciones que  relacionan $M_{BC}$ y $\theta_B$, se desprecia el descenso de B. 
 
 Se pide:
 \parte establecer las condiciones de contorno para la flecha de la columna $v(x)$ y obtener la ecuación no lineal que debe cumplir $k$.
