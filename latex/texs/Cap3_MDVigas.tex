@@ -1,5 +1,4 @@
 
-
 \chapter[Métodos de Desplazamientos para pórticos]{Métodos de Desplazamientos para pórticos}
 
 % intro e hipotesis
@@ -861,6 +860,7 @@ Se puede decir que para cierto tipo de diagramas, esta condición se cumple si $
 
 En caso de que esta condición sea asumida, la energía de deformación axial sería despreciada del desarrollo que llevó a la Ecuación~\eqref{eqn:eqrig}, por lo que solo se tendrían los términos de flexión y la barra no tendría desplazamiento relativo, es decir $u_2=u_1$.
 
+En la Sección~\ref{sec:ejenergdef} se presenta un ejemplo de resolución de un pórtico en el cual se calculan las energías de deformación y se verifica la aproximación.
 
 
 \subsection{Ecuaciones para métodos analíticos}
@@ -1100,21 +1100,24 @@ En práctico se aplicarán metódicamente los pasos principales del método los 
 \end{enumerate}
 
 
-\section{Ejemplo}
+\section{Ejemplos}
+
+
+
+\subsection{Ejemplo de aplicación del método de Slope-Deflection}
 
 Sea la estructura mostrada en la \autoref{fig:ejem} donde las barras tienen módulo de Young $E$ y sección transversal de Inercia $I$. %
 %
 Se desea determinar desplazamientos y giros nodales. %
 El procedimiento de resolución es presentado de forma esquemática a continuación.
-%
+
 \begin{figure}[htb]
 	\centering
-\def\svgwidth{0.6\textwidth}
+\def\svgwidth{0.55\textwidth}
 \input{figs/UT3/portic.pdf_tex}
 	\caption{Pórtico de ejemplo.}
 	\label{fig:ejem}
 \end{figure}
-
 
 La estructura es desplazable y el desplazamiento horizontal de $B$ es una incógnita a determinar. %
 %
@@ -1240,10 +1243,15 @@ En la \autoref{fig:dia2} se muestran los diagramas de deformada y directas.
 	\label{fig:dia2}
 \end{figure}
 
-%% Energia de Deformación
-\section{Energía de deformación}
 
-Sea el pórtico mostrado en la \autoref{fig:porticoUdef} formado por barras de hormigón con $E$=30 GPa sometida a una carga puntual en el nodo $B$ de valor $P$= 15 kN y las longitudes que se muestran. Los pilares y la viga tienen sección cuadrada de 0.40 m de lado.
+\clearpage
+
+%% Energia de Deformación
+\subsection{Ejemplo de cálculo de Energías de deformación} \label{sec:ejenergdef}
+
+En esta sección se presenta el cálculo de energías de deformación axial y flexional para \textbf{un} pórtico, a modo de confirmación de la hipótesis establecida por el método de \textit{Slope-Deflection}.
+
+Sea el pórtico mostrado en la \autoref{fig:porticoUdef} formado por barras de hormigón con $E$=30 GPa, sometida a una carga puntual en el nodo $B$ de valor $P$= 15 kN. Los pilares y la viga tienen sección cuadrada de 0.40 m de lado.
 
 \begin{figure}[htb]
 	\centering
@@ -1253,26 +1261,17 @@ Sea el pórtico mostrado en la \autoref{fig:porticoUdef} formado por barras de h
 	\label{fig:porticoUdef}
 \end{figure}
 
-Las incógnitas para resolver la estructura por el Método de Slope Deflection son las siguientes.
-
+Las incógnitas necesarias para resolver la estructura por el Método de \textit{Slope-Deflection} son $\theta_B$,  $\theta_C$ y $\Delta_{BC}$. Las condiciones a imponer para resolver el problema son:
+%
 \begin{equation}
-	\theta_B \qquad \theta_C \qquad \Delta_{BC}
+M_{BA}+M_{BC} = 0, \quad  M_{CB}+M_{CD} = 0, \quad \text{y} \quad 		F_{BA}+F_{CD} + P = 0.
 \end{equation}
-
-Las condiciones a imponer para resolver la estructura son:
-
-\begin{eqnarray}
-	\begin{array}{l}
-		M_{BA}+M_{BC} = 0 \\
-		M_{CB}+M_{CD} = 0 \\
-		F_{BA}+F_{CD} + P = 0
-	\end{array}
-\end{eqnarray}
-
-Planteando las ecuaciones del método y resolviendo el sistema de ecuaciones, se tiene,
-
+%
+Planteando las ecuaciones y resolviendo el sistema de ecuaciones, se obtiene:
+%
 \begin{equation}
-	\theta_B = -4.69\cdot 10^{-4} \qquad \theta_C = -4.69\cdot 10^{-4} \qquad \Delta_{BC} = -1.13\cdot 10^{-2}
+	\boxed{
+	\theta_B = -4.69\cdot 10^{-4} \text{rad} \qquad \theta_C = -4.69\cdot 10^{-4} \text{rad }\qquad \Delta_{BC} = -1.13\cdot 10^{-2} \text{m}}
 \end{equation}
 
 Conocidos los desplazamientos, a partir de las ecuaciones nodales del Método de Slope Deflection se obtienen los valores de momento flector y cortante y se pueden trazar los diagramas de solicitaciones como fue visto en desarrollos anteriores. La directa en las barras puede determinarse planteando equilibrio en los nudos entre las directas y los cortantes que concurren.  
@@ -1280,7 +1279,7 @@ Conocidos los desplazamientos, a partir de las ecuaciones nodales del Método de
 %%
 %Diagrama momento flector\\
 %%
-\begin{figure}[h!tb]
+\begin{figure}[htb]
 	\centering
 	\def\svgwidth{0.4\textwidth}
 	\input{figs/UT3/porticoUdefM.pdf_tex}
@@ -1289,7 +1288,7 @@ Conocidos los desplazamientos, a partir de las ecuaciones nodales del Método de
 %% 
 %Diagrama cortante\\
 %%
-\begin{figure}[h!tb]
+\begin{figure}[htb]
 	\centering
 	\def\svgwidth{0.4\textwidth}
 	\input{figs/UT3/porticoUdefV.pdf_tex}
@@ -1306,7 +1305,9 @@ Conocidos los desplazamientos, a partir de las ecuaciones nodales del Método de
 	\caption{Diagrama de directa (kN).}
 \end{figure}
 
-Interesa calcular la energía de deformación interna de la estructura a flexión y directa y compararlas. La energía de deformación interna $U_{int}$ como ha sido visto, se calcula de acuerdo con la siguiente expresión,
+Interesa calcular la energía de deformación interna a flexión $\Pi_{int,\text{flexión}}$ y axial $\Pi_{int,\text{axial}}$ de la estructura, y compararlas. %
+%
+La energía de deformación interna $\Pi_{int}$ como ha sido visto, se calcula de acuerdo con la siguiente expresión,
 
 \begin{equation}
 	U_{int} = \iiint_{V}\sigma : \varepsilon dV
@@ -1351,6 +1352,8 @@ En la \autoref{tab:Udef} se presenta una comparación elemento a elemento de la 
 %%%
 
 Se comprueba entonces, que en el caso usual de barras que se encuentren trabajando a directa y momento flector, es razonable despreciar la energía de deformación interna a directa $U_N$. Sin embargo, debe tenerse presente que éste no es el comportamiento real de la estructura sino una aproximación y que, en el caso de pilares muy comprimidos, donde el acortamiento elástico puede ser importante y aúnmás agravado por el caso de materiales como el hormigón con envejecimiento, esta hipótesis suele comenzar a perder validez. 
+
+
 
 
 
