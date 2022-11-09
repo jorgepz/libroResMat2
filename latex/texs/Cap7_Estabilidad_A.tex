@@ -116,13 +116,87 @@ Para poder estudiar el fenómeno de inestabilidad, se debe modificar el modelo e
 
 
 
-
 % ---------------------------------------------------
-\section{Teoría de segundo orden para vigas comprimidas}
+\section{Teoría de segundo orden para barras comprimidas}
 
-\subsection{Desarrollo de las ecuaciones}
 
-En esta sección se presentan las condiciones de mínima energía potencial total para vigas considerando desplazamientos no despreciables. Se utiliza un desarrollo basado parcialmente en la Sección 1.6 de \citep{yoo2011}.
+\subsection{Carga crítica para barras articuladas comprimidas}
+En esta sección se presenta de forma simplificada y didáctica el concepto de carga crítica y el fenómeno de inestabilidad en un modelo de segundo orden.
+
+Se considera una barra articulada como se muestra en la \autoref{fig:ejpandbarra}. La barra  es considerada rígida a directa y por lo tanto solo tiene un grado de libertad: la rotación respecto al apoyo fijo. La configuración de referencia es la punteada y la deformada es la de trazo continuo. 
+
+\begin{figure}[htb]
+	\centering
+\def\svgwidth{.55\textwidth}
+\input{figs/UT7/ej_pand_barra.pdf_tex}
+\caption{Esquema barra articulada sometida a compresión.}\label{fig:ejpandbarra}
+\end{figure}
+
+El movimiento es determinado por el desplazamiento horizontal $u$, además, el nodo superior está sometido a una fuerza vertical $P$ y un resorte deslizante de constante elástica $k$.
+
+En este sistema estructural se comienza considerando grandes desplazamientos, para luego obtener una aproximación de segundo orden. La energía potencial total está dada por
+$$
+\Pi(u) = \Pi_{int}(u) + \Pi_{ext}(u),
+$$
+con la energía potencial interna dada por la energía almacenada por el resorte
+$$
+\Pi_{int}(u) = \frac{1}{2} k u^2,
+$$
+y  la energía potencial externa está dada por
+$$
+ \qquad \Pi_{ext}(u) = - P \Delta(u).
+$$
+siendo $\Delta(u)$ el descenso del punto de aplicación de la carga, que usando pitágoras es escrito como
+$$
+\Delta(u) = \ell - \sqrt{\ell^2 - u^2}.
+$$
+
+La energía potencial $\Pi$ es una función no lineal de $u$. Donde el término de energía potencial externa (a diferencia de la teoría lineal) es no lineal. En esta teoría de segundo orden se considera una función aproximada de la energía, de segundo orden para pequeños desplazamientos. %
+
+Aplicando un desarrollo de Taylor para desplazamientos $u \approx 0$ (Mc Laurin), se obtiene:
+%
+$$
+\Delta(u) \approx \frac{1}{2} \frac{u^2}{\ell} ,
+$$
+por lo que la energía potencial total pasa a estar dada por
+$$
+\Pi(u) = \frac{1}{2} k u^2 - P \frac{1}{2} \frac{u^2}{\ell} .
+$$
+
+Aplicando castigliano obtenemos la condición que debe cumplir una deformada $u$ para ser punto crítico de $\Pi$:
+%
+$$
+\frac{\partial \Pi}{\partial u}(u) = k u - \frac{P}{\ell}  u   = 0,
+$$
+por lo tanto
+$$
+u( k - \frac{P}{\ell} ) = 0.
+$$
+
+Podemos ver que esta ecuación tiene dos tipos de solución, por una parte, $u=0$ que coincide con la solución de la teoría lineal, o también, esta ecuación se podría cumplir para cualquier $u$ cuando $P$ alcanza el valor $k\ell$, lo que representa una inestabilidad, por quedar indeterminado el desplazamiento para ese valor de carga, que llamaremos carga crítica:
+\begin{equation}
+P_{crit} = kL.
+\end{equation}
+
+Adicionalmente, se puede calcular la derivada segunda de la energía potencial, lo que indica si el punto crítico está asociado a un mínimo, punto silla o máximo. Se obtiene que:
+$$
+\frac{\partial^2 \Pi}{\partial u^2}(u) = k - \frac{P}{L}
+$$
+%
+por lo tanto:
+\begin{itemize}
+
+\item si $P< kL$ entonces: $u=0$ y min de $\Pi$ (estabilidad).
+
+\item si $P= kL$ entonces: $u$ puede tomar cualquier valor y punto silla.
+
+\item si $P> kL$ entonces: $u=0$ y máximo de $\Pi$ (equilibrio inestable)
+\end{itemize}
+
+
+\subsection{Desarrollo de las ecuaciones de pandeo de vigas o columnas}
+
+En esta sección se presentan las condiciones de mínima energía potencial total para columnas o vigas considerando desplazamientos no despreciables. Se utiliza un desarrollo basado parcialmente en la Sección 1.6 de \citep{yoo2011}.
 
 En el marco del Principio de Mínima Energía Potencial Total, la capacidad de modelar la inestabilidad elástica se reduce a considerar con un mayor nivel de aproximación en la energía potencial externa de las fuerzas externas.
 %
