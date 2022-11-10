@@ -120,7 +120,7 @@ Para poder estudiar el fenómeno de inestabilidad, se debe modificar el modelo e
 \section{Teoría de segundo orden para barras comprimidas}
 
 
-\subsection{Carga crítica para barras articuladas comprimidas}
+\subsection{Carga crítica para barras articuladas comprimidas} \label{sec:pand_barra}
 En esta sección se presenta de forma simplificada y didáctica el concepto de carga crítica y el fenómeno de inestabilidad en un modelo de segundo orden.
 
 Se considera una barra articulada como se muestra en la \autoref{fig:ejpandbarra}. La barra  es considerada rígida a directa y por lo tanto solo tiene un grado de libertad: la rotación respecto al apoyo fijo. La configuración de referencia es la punteada y la deformada es la de trazo continuo. 
@@ -170,27 +170,27 @@ $$
 $$
 por lo tanto
 $$
-u( k - \frac{P}{\ell} ) = 0.
+u \left(  k - \frac{P}{\ell} \right) = 0.
 $$
 
 Podemos ver que esta ecuación tiene dos tipos de solución, por una parte, $u=0$ que coincide con la solución de la teoría lineal, o también, esta ecuación se podría cumplir para cualquier $u$ cuando $P$ alcanza el valor $k\ell$, lo que representa una inestabilidad, por quedar indeterminado el desplazamiento para ese valor de carga, que llamaremos carga crítica:
 \begin{equation}
-P_{crit} = kL.
+P_{crit} = k \ell.
 \end{equation}
 
 Adicionalmente, se puede calcular la derivada segunda de la energía potencial, lo que indica si el punto crítico está asociado a un mínimo, punto silla o máximo. Se obtiene que:
 $$
-\frac{\partial^2 \Pi}{\partial u^2}(u) = k - \frac{P}{L}
+\frac{\partial^2 \Pi}{\partial u^2}(u) = k - \frac{P}{ \ell}
 $$
 %
 por lo tanto:
 \begin{itemize}
-
-\item si $P< kL$ entonces: $u=0$ y min de $\Pi$ (estabilidad).
-
-\item si $P= kL$ entonces: $u$ puede tomar cualquier valor y punto silla.
-
-\item si $P> kL$ entonces: $u=0$ y máximo de $\Pi$ (equilibrio inestable)
+%
+\item si $P< k \ell$ entonces: $u=0$ y min de $\Pi$ (estabilidad).
+%
+\item si $P= k \ell$ entonces: $u$ puede tomar cualquier valor y punto silla.
+%
+\item si $P> k \ell$ entonces: $u=0$ y máximo de $\Pi$ (equilibrio inestable)
 \end{itemize}
 
 
@@ -963,16 +963,12 @@ Hallar la ecuación que permite determinar la luz de pandeo en el plano del reso
 
 \ejercicio
 
-Sea la siguiente estructura formada por barras de longitud $\ell$ y rigideces a flexión $EI_c$ y $EI_b$ sometida a una carga puntual $P$, como se muestra en la \autoref{fig:ejporticopandeo}. Se asume que las barras tienen rigidez axial tal que no hay deformación axial (barras inextensibles).
+Sea la siguiente estructura formada por barras de longitud $\ell$ y rigideces a flexión $EI_c$ y $EI_b$ sometida a una carga puntual $P$, como se muestra en la figura. Se asume que las barras tienen rigidez axial tal que no hay deformación axial (barras inextensibles).
 
-\begin{figure}[H]
-	\begin{center}
+\begin{center}
 		\def\svgwidth{0.5\textwidth}
 		\input{figs/UT7/ejPortL.pdf_tex}
-		\caption{Esquema estructural del pórtico.}
-		\label{fig:ejporticopandeo}
-	\end{center}
-\end{figure} 
+\end{center} 
 
 Se asume que al alcanzar la carga de pandeo, el cortante en la barra BC es despreciable con respecto a $P_{cr}$, es decir que es considerado $V_{BC} \approx 0$, por lo que se puede obtener el momento en la barra BC mediante ecuaciones de equilibrio. En las ecuaciones que  relacionan $M_{BC}$ y $\theta_B$, se desprecia el descenso de B. 
 
@@ -981,3 +977,20 @@ Se pide:
 \parte obtener la carga crítica para el caso $I_b$ = $I_c$ 
 \parte obtener la carga crítica para el caso $I_b$ = $\infty$
 \parte obtener la carga crítica para el caso $I_b$ = 0
+
+
+\ejercicio
+
+Durante etapas preliminares de diseño de un galpón metálico se considera el siguiente esquema básico para los pilares que sostienen las cerchas, donde $\ell=4$ m. Se asume que todos los elementos son inextensibles. Se asume que el perfil PNI22 es orientado de forma tal que aporte mayor rigidez para evitar desplazamientos de la estructura en el plano de la misma. Los PNI20 están articulados en ambos extremos y pueden pandear en ambos planos.
+
+\begin{center}
+	\def\svgwidth{0.85\textwidth}
+	\input{figs/UT7/ejer_pand_barras.pdf_tex}
+\end{center} 
+
+
+Se pide:
+
+\parte Obtener la expresión de la carga crítica $P$ considerando únicamente pandeo \textit{local}.
+
+\parte Realizar un razonamiento similar al de la Sección~\ref{sec:pand_barra} y obtener la carga de inestabilización lateral. Obtener, considerando también el resultado de a), la carga crítica de pandeo \textit{global} de la estructura.

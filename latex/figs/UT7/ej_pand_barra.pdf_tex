@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{139.936588bp}%
+    \setlength{\unitlength}{147.34151541bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,16 +50,14 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.76298508)%
+  \begin{picture}(1,0.70991106)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{ej_pand_barra.pdf}}%
-    \put(0.70818433,0.65071781){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$k$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{ej_pand_barra.pdf}}%
-    \put(0.47465493,0.7341468){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$P$\end{tabular}}}}%
-    \put(0.13871952,0.56338004){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$P$\end{tabular}}}}%
-    \put(0.35246164,0.54660145){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$u$\end{tabular}}}}%
-    \put(-0.00148146,0.35095388){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$\ell$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{ej_pand_barra.pdf}}%
+    \put(0.17851644,0.60772135){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$P$\end{tabular}}}}%
+    \put(0.47688851,0.68445781){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$P$\end{tabular}}}}%
+    \put(0.73655423,0.63946626){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$k$\end{tabular}}}}%
+    \put(0.33439024,0.52505912){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$u$\end{tabular}}}}%
+    \put(-0.00130757,0.32966716){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ell$\end{tabular}}}}%
   \end{picture}%
 \endgroup%
