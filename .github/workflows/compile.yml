@@ -13,7 +13,8 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: tex/libroResMat2.tex
+          root_file: libroResMat2.tex
+          working_directory: tex
       - name: upload
         uses: actions/upload-artifact@v3
         with:
