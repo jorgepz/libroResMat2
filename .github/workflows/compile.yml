@@ -13,11 +13,11 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: tex/libroResMat2.tex
-      - name: subida
+      - name: upload
         uses: actions/upload-artifact@v3
         with:
           name: PDF
-          path: libroResMat2.pdf
+          path: tex/libroResMat2.pdf
 #      - name: Download a Build Artifact
 #        uses: actions/download-artifact@v3
 #        with: 
