@@ -1,6 +1,7 @@
 # yml file for CIs using https://github.com/xu-cheng/latex-action
 name: compile
 on: [push]
+
 jobs:
   compilation:
     # The type of runner that the job will run on
