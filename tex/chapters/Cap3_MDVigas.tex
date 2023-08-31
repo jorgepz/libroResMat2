@@ -636,18 +636,18 @@ Por ejemplo el momento nodal en 1 es
 \end{equation}
 %
 expresión que, factorizando, puede ser reescrita como:
-\begin{equation}
+\begin{equation}\label{eqn:M1eqP}
 	M_1^{eq} = P x_P (\ell-x_P)^2 \frac{1}{\ell^2}.
 \end{equation}
 
 Para el otro momento se tiene
-\begin{equation}
+\begin{equation}\label{eqn:M2eqP}
 	M_2^{eq} = -P x_P^2 (\ell-x_P) \frac{1}{\ell^2},
 \end{equation}
 %
 y para las fuerzas equivalentes se tiene
 %
-\begin{equation}
+\begin{equation}\label{eqn:FyeqP}
 	F_{y,1}^{eq} = P \left(1 - \frac{3 x^{2}}{\ell^{2}} + \frac{2 x^{3}}{\ell^{3}}\right) \qquad
 	F_{y,2}^{eq} =
 	P \left(\frac{3 x^{2}}{\ell^{2}} - \frac{2 x^{3}}{\ell^{3}}\right).
@@ -980,8 +980,42 @@ F_{y,1}^{tr-iso} = - F_{y,1}^{eq} + \frac{M_1^{eq} + M_2^{eq}}{\ell} \nonumber\\
 F_{y,2}^{tr-iso} = -F_{y,2}^{eq}- \frac{M_1^{eq} + M_2^{eq}}{\ell} \nonumber
 \end{eqnarray}
 %
-donde $F_{y,1}^{tr-iso}$ y $F_{y,2}^{tr-iso}$ son las cargas equivalentes correspondientes a las reacciones de una viga simplemente apoyada (cargas de tramo isostáticas). %
+donde se puede mostrar que $F_{y,1}^{tr-iso}$ y $F_{y,2}^{tr-iso}$ son las fuerzas nodales correspondientes a las reacciones de una viga simplemente apoyada. %
 %
+Por ejemplo para una carga puntual aplicada en la posición $x_P$, usando las ecuaciones \eqref{eqn:M1eqP}, \eqref{eqn:M2eqP} y \eqref{eqn:FyeqP}, se tiene:
+%
+$$
+- F_{y,1}^{eq} + \frac{M_1^{eq} + M_2^{eq}}{\ell} = -P \left( 1-\frac{3x_P^2}{\ell^2} + \frac{2x_P^3}{\ell^3} \right) +  P x_P (\ell-x_P)^2 \frac{1}{\ell^3}  -P x_P^2 (\ell-x_P) \frac{1}{\ell^3}
+%\end{equation}
+%
+%Para el otro momento se tiene
+%\begin{equation}\label{eqn:M2eqP}
+%	M_2^{eq} = -P x_P^2 (\ell-x_P) \frac{1}{\ell^2},
+$$
+
+donde simplificando se tiene
+$$
+- F_{y,1}^{eq} + \frac{M_1^{eq} + M_2^{eq}}{\ell} = -P \left( 1-\frac{x}{\ell} \right)
+$$
+es decir, la reacción equivalente a una viga simplemente apoyada, con las convenciones de signos consideradas.
+
+%\begin{equation}\label{eqn:M1eqP}
+%	M_1^{eq} = P x_P (\ell-x_P)^2 \frac{1}{\ell^2}.
+%\end{equation}
+%
+%Para el otro momento se tiene
+%\begin{equation}\label{eqn:M2eqP}
+%	M_2^{eq} = -P x_P^2 (\ell-x_P) \frac{1}{\ell^2},
+%\end{equation}
+%%
+%y para las fuerzas equivalentes se tiene
+%%
+%\begin{equation}\label{eqn:FyeqP}
+%	F_{y,1}^{eq} = P \left(1 - \frac{3 x^{2}}{\ell^{2}} + \frac{2 x^{3}}{\ell^{3}}\right) \qquad
+%	F_{y,2}^{eq} =
+%	P \left(\frac{3 x^{2}}{\ell^{2}} - \frac{2 x^{3}}{\ell^{3}}\right).
+%\end{equation}
+
 Esto se desarrollará con mayor detalle en el momento de aplicación en práctico.
 
 
