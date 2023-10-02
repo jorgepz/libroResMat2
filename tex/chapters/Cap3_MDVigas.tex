@@ -636,18 +636,18 @@ Por ejemplo el momento nodal en 1 es
 \end{equation}
 %
 expresión que, factorizando, puede ser reescrita como:
-\begin{equation}
+\begin{equation}\label{eqn:M1eqP}
 	M_1^{eq} = P x_P (\ell-x_P)^2 \frac{1}{\ell^2}.
 \end{equation}
 
 Para el otro momento se tiene
-\begin{equation}
+\begin{equation}\label{eqn:M2eqP}
 	M_2^{eq} = -P x_P^2 (\ell-x_P) \frac{1}{\ell^2},
 \end{equation}
 %
 y para las fuerzas equivalentes se tiene
 %
-\begin{equation}
+\begin{equation}\label{eqn:FyeqP}
 	F_{y,1}^{eq} = P \left(1 - \frac{3 x^{2}}{\ell^{2}} + \frac{2 x^{3}}{\ell^{3}}\right) \qquad
 	F_{y,2}^{eq} =
 	P \left(\frac{3 x^{2}}{\ell^{2}} - \frac{2 x^{3}}{\ell^{3}}\right).
@@ -980,8 +980,42 @@ F_{y,1}^{tr-iso} = - F_{y,1}^{eq} + \frac{M_1^{eq} + M_2^{eq}}{\ell} \nonumber\\
 F_{y,2}^{tr-iso} = -F_{y,2}^{eq}- \frac{M_1^{eq} + M_2^{eq}}{\ell} \nonumber
 \end{eqnarray}
 %
-donde $F_{y,1}^{tr-iso}$ y $F_{y,2}^{tr-iso}$ son las cargas equivalentes correspondientes a las reacciones de una viga simplemente apoyada (cargas de tramo isostáticas). %
+donde se puede mostrar que $F_{y,1}^{tr-iso}$ y $F_{y,2}^{tr-iso}$ son las fuerzas nodales correspondientes a las reacciones de una viga simplemente apoyada. %
 %
+Por ejemplo para una carga puntual aplicada en la posición $x_P$, usando las ecuaciones \eqref{eqn:M1eqP}, \eqref{eqn:M2eqP} y \eqref{eqn:FyeqP}, se tiene:
+%
+$$
+- F_{y,1}^{eq} + \frac{M_1^{eq} + M_2^{eq}}{\ell} = -P \left( 1-\frac{3x_P^2}{\ell^2} + \frac{2x_P^3}{\ell^3} \right) +  P x_P (\ell-x_P)^2 \frac{1}{\ell^3}  -P x_P^2 (\ell-x_P) \frac{1}{\ell^3}
+%\end{equation}
+%
+%Para el otro momento se tiene
+%\begin{equation}\label{eqn:M2eqP}
+%	M_2^{eq} = -P x_P^2 (\ell-x_P) \frac{1}{\ell^2},
+$$
+
+donde simplificando se tiene
+$$
+- F_{y,1}^{eq} + \frac{M_1^{eq} + M_2^{eq}}{\ell} = -P \left( 1-\frac{x}{\ell} \right)
+$$
+es decir, la reacción equivalente a una viga simplemente apoyada, con las convenciones de signos consideradas.
+
+%\begin{equation}\label{eqn:M1eqP}
+%	M_1^{eq} = P x_P (\ell-x_P)^2 \frac{1}{\ell^2}.
+%\end{equation}
+%
+%Para el otro momento se tiene
+%\begin{equation}\label{eqn:M2eqP}
+%	M_2^{eq} = -P x_P^2 (\ell-x_P) \frac{1}{\ell^2},
+%\end{equation}
+%%
+%y para las fuerzas equivalentes se tiene
+%%
+%\begin{equation}\label{eqn:FyeqP}
+%	F_{y,1}^{eq} = P \left(1 - \frac{3 x^{2}}{\ell^{2}} + \frac{2 x^{3}}{\ell^{3}}\right) \qquad
+%	F_{y,2}^{eq} =
+%	P \left(\frac{3 x^{2}}{\ell^{2}} - \frac{2 x^{3}}{\ell^{3}}\right).
+%\end{equation}
+
 Esto se desarrollará con mayor detalle en el momento de aplicación en práctico.
 
 
@@ -1069,19 +1103,22 @@ M_{res,\theta} = -k_\theta \theta.
 
 \subsection{Método \textit{Slope-deflection}}
 
-El método \textit{Slope-deflection} (MSD) consiste en la aplicación de las ecuaciones de MD de vigas para pórticos despreciando la energía de deformación dada por esfuerzos de directa. %
+El método \textit{Slope-deflection} (MSD) consiste en la aplicación de las ecuaciones de MD de vigas a preso-flexión como partes de un pórtico, despreciando la energía de deformación axial asociada a la solicitación directa cuando hay flexión. %
 %
-Esto hace que cada elemento de viga tiene deformación $\varep_G$ nula, sin embargo obviamente sigue siendo capaz de transmitir o soportar esfuerzos de directa. %
+Esto en la práctica es equivalente a considerar que el elemento tiene deformación $\varep_G$ nula, sin embargo obviamente sigue siendo capaz de transmitir o soportar esfuerzos de directa. %
 
 Para resolver problemas de pórticos es de utilidad aplicar la clasificación de estructura según sus grados de libertad. Se dice que una estructura es \textit{indesplazable} si las incógnitas a determinar por el MSD son únicamente giros nodales, en cambio es \textit{desplazable} si existe al menos una incógnita de desplazamiento. %
 %
 
-En práctico se aplicarán metódicamente los pasos principales del método los cuales son:
+En práctico se aplicarán metódicamente los pasos del método, el cual puede ser sistematizado de la siguiente forma:
 %
 \begin{enumerate}
-	\item Ecuaciones de momentos nodales por barra: dadas por las Ecuaciones~\eqref{eqn:ecmomtr} para barras con nodos rígidos en ambos extremos y la Ecuación~\eqref{eqn:ecmomart} para barras con un extremo articulado. 
-	
-	\item Ecuaciones de cortantes por barra: dadas por las Ecuaciones~\eqref{eqn:eccortrB}.
+	\item aplicar las hipótesis del método e identificar la mínima cantidad de incógnitas del problema
+	%
+	\item definir ejes locales en cada barra, para definir el sentido de las fuerzas $F_y$ nodales,
+	\item calcular momentos nodales para cada barra: dadas por las Ecuaciones~\eqref{eqn:ecmomtr} para barras con nodos rígidos en ambos extremos y la Ecuación~\eqref{eqn:ecmomart} para barras con un extremo articulado, y la Ecuación~\eqref{eqn:eccortrB} para las fuerzas
+	%
+	\item calcular fuerzas nodales por barra: dadas por las Ecuaciones~\eqref{eqn:eccortrB}.
 	%	$$
 	%	EI \left( \dfrac{12}{L^{3}} w_1 + \dfrac{6}{L^{2}} \theta_1 - \dfrac{12}{L^{3}} w_2 + \dfrac{6}{L^{2}} \theta_2 \right)  = V_1 \\
 	%$$
@@ -1089,13 +1126,16 @@ En práctico se aplicarán metódicamente los pasos principales del método los 
 	%	EI \left( -\dfrac{12}{L^{3}} w_1 - \dfrac{6}{L^{2}} \theta_1 +\dfrac{12}{L^{3}} w_2 - \dfrac{6}{L^{2}} \theta_2 \right) = V_2 \\
 	%$$
 	%	
-	\item Ecuaciones de \textbf{equilibrio de momentos} en nodos rígidos. Sea el nodo $i$, conectado a través de vínculo rígido al conjunto de nodos $R_i$, y sea un momento externo aplicado en $i$ $M_i$ también según la convención 2, entonces la ecuación de equilibrio de momento en dicho nodo está dada por:
+	\item plantear ecuaciones de \textbf{equilibrio de momentos} en nodos rígidos. Sea el nodo $i$, conectado a través de vínculo rígido al conjunto de nodos $R_i$, y sea un momento externo aplicado en $i$ $M_i$ también según la convención 2, entonces la ecuación de equilibrio de momento en dicho nodo está dada por:
 	$$
 	M_i -\sum_{j\in R_i} M_{ij} = 0
 	$$
 	donde $M_{ij}$ representa el momento nodal en $i$ de la barra $i-j$.
 	
-	\item Equilibrios de \textbf{equilibrio de pisos}. Para cada \textit{piso} del pórtico se debe verificar el equilibrio de fuerzas horizontales o cortantes. Esto se realiza aislando el elemento o conjunto de elementos horizontales correspondiente de la estructura, considerando las acciones realizadas por las otras barras y planteando el equilibrio de fuerzas.
+	\item plantear ecuaciones de \textbf{equilibrio de pisos}. Para cada \textit{piso} del pórtico se debe verificar el equilibrio de fuerzas horizontales o cortantes. Esto se realiza aislando el elemento o conjunto de elementos horizontales correspondiente de la estructura, considerando las acciones realizadas por las otras barras y planteando el equilibrio de fuerzas.
+	
+	\item resolver el sistema de ecuaciones
+	\item con las incógnitas cinemáticas calculadas, utilizar las ecuaciones de momento y fuerzas nodales para obtener los diagramas de solicitaciones, realizando equilibrios nodales de fuerzas para obtener las directas.
 	
 \end{enumerate}
 

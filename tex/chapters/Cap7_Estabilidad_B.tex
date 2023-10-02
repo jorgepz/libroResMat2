@@ -23,8 +23,8 @@ Un paso clave en la definición de la estructura de una edificación es identifi
 
 \begin{figure}[htb]
   \centering
-  %\width{0.6\textwidth}
-%  \includegraphics[width=0.95\textwidth]{figs/UT7/Esquema_de_nucleos.png}
+  \def\svgwidth{\textwidth}
+\input{figs/UT7/esquemanucleos.pdf_tex}
 	\caption{Sistemas Resistentes de Esfuerzos Laterales. Izquierda: esquema en planta de planos resistentes. Derecha: Alzados de distintas opciones de planos resistentes.}
 	\label{fig:EsqNucleos}
 \end{figure}
@@ -100,119 +100,121 @@ $$u=\frac{u^{(0)}}{1 - P_{tot}/P_{tot,cr}}$$
 
 Es decir, el sistema resistente lateral se desplazará lateralemente más cuanto mayor sean las cargas verticales totales relativas a la carga vertical crítica total de la estructura.
 
-La norma EN 1992-1-1 presenta en el anexo H las siguientes expresiones equivalentes a las deducidas en esta sección:
+La norma EN 1992-1-1 presenta en el anexo H las expresiones equivalentes a las deducidas en esta sección, en términos de fuerza en lugar de desplazamientos.
 
-\begin{figure}[htb]
-	\centering
-	%\width{0.6\textwidth}
-	AGREGAR FIGURA
-%	\includegraphics[width=0.7\textwidth]{EN_Pcrit.png}
-	\caption{EN 1992-1-1, Anexo H. Carga crítica Global para sistemas resistentes laterales con deformación lateral de tipo distorisión.}
-	\label{fig:EN_Pcrit}
-\end{figure}
-
-Para poder reconocer la carga crítica dada el anexo G, se debe reconocer que $\Sigma S$, la fuerza lateral soportada por el pórtico dividida por el ángulo de distorsión lateral ($\gamma = u / H$) del pórtico, es igual a:
-
-$$ \Sigma S = \frac{F_H}{\gamma} = \frac{K_p u}{u/H} = K_p H  $$
-
-A partir de lo cual, coinciden la carga crítica deducida y el valor propuesto por la norma. 
-
-\begin{figure}[htb]
-	\centering
-	AGREGAR FIGURA
-%	\includegraphics[width=1\textwidth]{EN_amplificacion_Global.png}
-	\caption{EN 1992-1-1, Anexo H. Amplifiación de efectos laterales globales.}
-\label{fig:EN_Pcrit}
-\end{figure}
+%:
+%
+%\begin{figure}[htb]
+%	\centering
+%	%\width{0.6\textwidth}
+%	AGREGAR FIGURA
+%%	\includegraphics[width=0.7\textwidth]{EN_Pcrit.png}
+%	\caption{EN 1992-1-1, Anexo H. Carga crítica Global para sistemas resistentes laterales con deformación lateral de tipo distorisión.}
+%	\label{fig:EN_Pcrit}
+%\end{figure}
+%
+%Para poder reconocer la carga crítica dada el anexo G, se debe reconocer que $\Sigma S$, la fuerza lateral soportada por el pórtico dividida por el ángulo de distorsión lateral ($\gamma = u / H$) del pórtico, es igual a:
+%
+%$$ \Sigma S = \frac{F_H}{\gamma} = \frac{K_p u}{u/H} = K_p H  $$
+%
+%A partir de lo cual, coinciden la carga crítica deducida y el valor propuesto por la norma. 
+%
+%\begin{figure}[htb]
+%	\centering
+%	AGREGAR FIGURA
+%%	\includegraphics[width=1\textwidth]{EN_amplificacion_Global.png}
+%	\caption{EN 1992-1-1, Anexo H. Amplifiación de efectos laterales globales.}
+%\label{fig:EN_Pcrit}
+%\end{figure}
 
 El Anexo H de la norma EN 1992-1-1 cubre casos más complejos que el presentado en esta sección, además de tomar en cuenta las particularidades del comportamiento material del hormigón armado, pero fundamentalmente aplica conceptos de estabilidad no más sofisticados que los vistos en esta sección.
 
 
-
-
-
-
-\section{Puntos críticos e imperfecciones} \label{sec:puntoCritico}
-
-
-
-\subsection{Tipos de Sistemas Estructurales} 
-
-En esta sección se realiza una breve introducción al concepto de punto crítico a través del estudio de un conjunto de sistemas estructurales formados por barras rígidas unidas por articulaciones y/o resortes elásticos lineales (de desplazamiento y/o de giro). Para cada estructura y sistema de cargas se muestran las curvas de carga-desplazamiento para la estructura sin imperfecciones (curva que parte del origen en color negro) y con imperfecciones geométricas (curvas que presentan un desplazamiento para carga nula en color azul). Los tramos de trazo continuo representan equilibrios estables mientras que los tramos discontinuos puntos de algún tipo de inestabilidad. La presente sección está basada en \citep{Bazzano2017}.
-
-
-
-El estudio de estabilidad elástica mediante el prinicipio de mínima energía potencial total puede realizarse tanto en estructuras discretas como continuas. La diferencia entre un tipo de estructuras y el otro es el espacio $\mcU$ donde se busca el mínimo.
-
-En el caso de estructuras continuas, la configuración deformada de la estructura $\bfu$ se expresa mediante una o más funciones. Al trabajar con las ecuaciones en el continuo se puede decir que la estructura tiene infinitos grados de libertad o que $\mcU$ es un espacio de dimensión infinita, mientras que al trabajar con métodos como por ejemplo el MEF, la solución vive en un espacio $\mcU^h$ de funciones de dimensión finita, con la dimensión dada por el número de grados de libertad y las funciones de interpolación utilizadas \citep{Hughes1987a}.
-
-
-El problema de minimización de la energía potencial total en el caso de $\bfu$ continua escapa de las herramientas usuales de Cálculo Vectorial y cae dentro del campo de Cálculo Variacional. En este curso no se presentará un tratamiento formal de esta última rama del cálculo, pero sí se deducirán algunos resultados puntuales usando ideas asociadas al mismo.
-
-Por otro lado, en el caso de estructuras discretas, la configuración deformada de la estructura $\bfu$ puede ser expresada mediante un número $n\in\mathbb{N}$ de valores reales. En este caso se dice que la estructura tiene $n$ grados de libertad o que $\mcU$ es un espacio de valores reales de dimensión finita como $\bbR^n$.
-
-En los capítulos introductorios de \citep{Bazzano2017} se presentan y analizan varios ejemplos de sistemas estructurales discretos, que introducen de forma didáctica los distintos tipos de estabilidad que se puede observar en estructuras de todo tipo de porte. En la Sección~
-
-
-
-
-\subsubsection{Bifurcación Simétrica Estable}
-
-Una bifurcación simétrica estable corresponde a una situación en la cual una estructura alcanza un punto crítico y a partir de ese punto, su curva de carga-desplazamiento se bifurca en varias ramas: una inestable y otras dos estables.
-
-El pandeo de columnas elásticas pertenece a esta categoría. En la Figura\autoref{fig:discreto11} se puede ver una versión discreta de ese tipo de estructura. En estos casos, al alcanzarse la bifurcación las estructuras logran mantener la carga aunque sea con grandes deformaciones (ej. columna elástica en compresión). En la Figura\autoref{fig:critico1} se muestra la curva carga-desplazamiento correspondiente. Notar que estas estructuras no son sensibles a imperfecciones, siempre y cuando el comportamiento material permanezca elástico.
-\begin{figure}[htb]
-	\centering
-	\subfloat[Esquema de estructura]{
-		\includegraphics[width=0.25\textwidth]{Discreto1}
-		\label{fig:discreto11}}
-	\hspace{1em}
-	\subfloat[Curva carga-desplazamiento]{
-		\includegraphics[width=0.55\textwidth]{Puntocritico1}
-		\label{fig:critico1}}
-	\caption{Estructura con comportamiento de bifurcación simétrica estable}
-	\label{fig:simetrica1}
-\end{figure}
-
-\subsubsection{Bifurcación Simétrica Inestable}
-
-Este tipo de comportamiento se corresponde al de estructuras y cargas tales que, al alcanzarse la carga crítica, la curva de carga-desplazamiento se divide en varias ramas, todas inestables. La rama inicial (fundamental) es la única estable.
-
-Las cáscaras esbeltas sometidas a compresión muestran este tipo de inestabilidad, ya que al alcanzar el punto de bifurcación pierden la capacidad de soportar la carga (ej. lata de aluminio en compresión). En la Figura\autoref{fig:discreto21} se muestra una estructura discreta que exhibe este comportamiento, la configuración de la estructura sin carga aplicada es representada por líneas punteada $(\theta = 0)$ mientras que en líneas sólidas se muestra la configuración deformada.
-
-En el gráfico de la Figura\autoref{fig:critico2} se observa que el comportamiento de estas estructuras es considerablemente sensible a imperfecciones. En general, la carga máxima soportada por la estructura decrece al considerar imperfecciones geométricas. El resultado observado en este ejemplo pone en evidencia la importancia de este tipo de análisis en estructuras como cáscaras.
-\begin{figure}[htb]
-	\centering
-	\subfloat[Esquema de estructura]{
-		\includegraphics[width=0.3\textwidth]{Discreto2}
-		\label{fig:discreto21}}
-	\hspace{1em}
-	\subfloat[Curva carga-desplazamiento]{
-		\includegraphics[width=0.55\textwidth]{Puntocritico2}
-		\label{fig:critico2}}
-	\caption{Estructura con comportamiento de bifurcación simétrica inestable}
-	\label{fig:simetrica2}
-\end{figure}
-
-\subsubsection{Bifurcación Asimétrica}
-
-Este tipo de comportamiento corresponde a situaciones en las cuales la estructura alcanza una configuración de equilibrio inestable en la cual la curva de carga-desplazamiento se divide en varias ramas: dos ramas inestables y una estable. En la
-Figura\autoref{fig:discreto31} se muestra otro ejemplo de estructura con este comportamiento. En la Figura\autoref{fig:critico3} se muestran las curvas de carga-desplazamiento.
-
-Considerando perturbaciones o imperfecciones hacia un lado la estructura se sigue una rama estable, mientras que con perturbaciones hacia el otro lado se sigue una rama inestable, con lo cual, se clasifica como inestable en general. Consecuentemente la estructura es considerada como sensible a imperfecciones.
-\begin{figure}[htb]
-	\centering
-	\subfloat[Esquema de estructura]{
-		\includegraphics[width=0.3\textwidth]{Discreto3}
-		\label{fig:discreto31}}
-	\hspace{1em}
-	\subfloat[Curva carga-desplazamiento]{
-		\includegraphics[width=0.55\textwidth]{Puntocritico3}
-		\label{fig:critico3}}
-	\caption{Estructura con comportamiento de bifurcación asimétrica}
-	\label{fig:asimetrica}
-\end{figure}
-
-
-
-
+%
+%
+%
+%
+%\section{Puntos críticos e imperfecciones} \label{sec:puntoCritico}
+%
+%
+%
+%\subsection{Tipos de Sistemas Estructurales} 
+%
+%En esta sección se realiza una breve introducción al concepto de punto crítico a través del estudio de un conjunto de sistemas estructurales formados por barras rígidas unidas por articulaciones y/o resortes elásticos lineales (de desplazamiento y/o de giro). Para cada estructura y sistema de cargas se muestran las curvas de carga-desplazamiento para la estructura sin imperfecciones (curva que parte del origen en color negro) y con imperfecciones geométricas (curvas que presentan un desplazamiento para carga nula en color azul). Los tramos de trazo continuo representan equilibrios estables mientras que los tramos discontinuos puntos de algún tipo de inestabilidad. La presente sección está basada en \citep{Bazzano2017}.
+%
+%
+%
+%El estudio de estabilidad elástica mediante el prinicipio de mínima energía potencial total puede realizarse tanto en estructuras discretas como continuas. La diferencia entre un tipo de estructuras y el otro es el espacio $\mcU$ donde se busca el mínimo.
+%
+%En el caso de estructuras continuas, la configuración deformada de la estructura $\bfu$ se expresa mediante una o más funciones. Al trabajar con las ecuaciones en el continuo se puede decir que la estructura tiene infinitos grados de libertad o que $\mcU$ es un espacio de dimensión infinita, mientras que al trabajar con métodos como por ejemplo el MEF, la solución vive en un espacio $\mcU^h$ de funciones de dimensión finita, con la dimensión dada por el número de grados de libertad y las funciones de interpolación utilizadas \citep{Hughes1987a}.
+%
+%
+%El problema de minimización de la energía potencial total en el caso de $\bfu$ continua escapa de las herramientas usuales de Cálculo Vectorial y cae dentro del campo de Cálculo Variacional. En este curso no se presentará un tratamiento formal de esta última rama del cálculo, pero sí se deducirán algunos resultados puntuales usando ideas asociadas al mismo.
+%
+%Por otro lado, en el caso de estructuras discretas, la configuración deformada de la estructura $\bfu$ puede ser expresada mediante un número $n\in\mathbb{N}$ de valores reales. En este caso se dice que la estructura tiene $n$ grados de libertad o que $\mcU$ es un espacio de valores reales de dimensión finita como $\bbR^n$.
+%
+%En los capítulos introductorios de \citep{Bazzano2017} se presentan y analizan varios ejemplos de sistemas estructurales discretos, que introducen de forma didáctica los distintos tipos de estabilidad que se puede observar en estructuras de todo tipo de porte. En la Sección~
+%
+%
+%
+%
+%\subsubsection{Bifurcación Simétrica Estable}
+%
+%Una bifurcación simétrica estable corresponde a una situación en la cual una estructura alcanza un punto crítico y a partir de ese punto, su curva de carga-desplazamiento se bifurca en varias ramas: una inestable y otras dos estables.
+%
+%El pandeo de columnas elásticas pertenece a esta categoría. En la Figura\autoref{fig:discreto11} se puede ver una versión discreta de ese tipo de estructura. En estos casos, al alcanzarse la bifurcación las estructuras logran mantener la carga aunque sea con grandes deformaciones (ej. columna elástica en compresión). En la Figura\autoref{fig:critico1} se muestra la curva carga-desplazamiento correspondiente. Notar que estas estructuras no son sensibles a imperfecciones, siempre y cuando el comportamiento material permanezca elástico.
+%\begin{figure}[htb]
+%	\centering
+%	\subfloat[Esquema de estructura]{
+%		\includegraphics[width=0.25\textwidth]{Discreto1}
+%		\label{fig:discreto11}}
+%	\hspace{1em}
+%	\subfloat[Curva carga-desplazamiento]{
+%		\includegraphics[width=0.55\textwidth]{Puntocritico1}
+%		\label{fig:critico1}}
+%	\caption{Estructura con comportamiento de bifurcación simétrica estable}
+%	\label{fig:simetrica1}
+%\end{figure}
+%
+%\subsubsection{Bifurcación Simétrica Inestable}
+%
+%Este tipo de comportamiento se corresponde al de estructuras y cargas tales que, al alcanzarse la carga crítica, la curva de carga-desplazamiento se divide en varias ramas, todas inestables. La rama inicial (fundamental) es la única estable.
+%
+%Las cáscaras esbeltas sometidas a compresión muestran este tipo de inestabilidad, ya que al alcanzar el punto de bifurcación pierden la capacidad de soportar la carga (ej. lata de aluminio en compresión). En la Figura\autoref{fig:discreto21} se muestra una estructura discreta que exhibe este comportamiento, la configuración de la estructura sin carga aplicada es representada por líneas punteada $(\theta = 0)$ mientras que en líneas sólidas se muestra la configuración deformada.
+%
+%En el gráfico de la Figura\autoref{fig:critico2} se observa que el comportamiento de estas estructuras es considerablemente sensible a imperfecciones. En general, la carga máxima soportada por la estructura decrece al considerar imperfecciones geométricas. El resultado observado en este ejemplo pone en evidencia la importancia de este tipo de análisis en estructuras como cáscaras.
+%\begin{figure}[htb]
+%	\centering
+%	\subfloat[Esquema de estructura]{
+%		\includegraphics[width=0.3\textwidth]{Discreto2}
+%		\label{fig:discreto21}}
+%	\hspace{1em}
+%	\subfloat[Curva carga-desplazamiento]{
+%		\includegraphics[width=0.55\textwidth]{Puntocritico2}
+%		\label{fig:critico2}}
+%	\caption{Estructura con comportamiento de bifurcación simétrica inestable}
+%	\label{fig:simetrica2}
+%\end{figure}
+%
+%\subsubsection{Bifurcación Asimétrica}
+%
+%Este tipo de comportamiento corresponde a situaciones en las cuales la estructura alcanza una configuración de equilibrio inestable en la cual la curva de carga-desplazamiento se divide en varias ramas: dos ramas inestables y una estable. En la
+%Figura\autoref{fig:discreto31} se muestra otro ejemplo de estructura con este comportamiento. En la Figura\autoref{fig:critico3} se muestran las curvas de carga-desplazamiento.
+%
+%Considerando perturbaciones o imperfecciones hacia un lado la estructura se sigue una rama estable, mientras que con perturbaciones hacia el otro lado se sigue una rama inestable, con lo cual, se clasifica como inestable en general. Consecuentemente la estructura es considerada como sensible a imperfecciones.
+%\begin{figure}[htb]
+%	\centering
+%	\subfloat[Esquema de estructura]{
+%		\includegraphics[width=0.3\textwidth]{Discreto3}
+%		\label{fig:discreto31}}
+%	\hspace{1em}
+%	\subfloat[Curva carga-desplazamiento]{
+%		\includegraphics[width=0.55\textwidth]{Puntocritico3}
+%		\label{fig:critico3}}
+%	\caption{Estructura con comportamiento de bifurcación asimétrica}
+%	\label{fig:asimetrica}
+%\end{figure}
+%
+%
+%
+%
