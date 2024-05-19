@@ -1,0 +1,21 @@
+Title,Description
+plotear deformada,Sería bueno que en el código de grafique también la estructura deformada en la misma figura que la estructura de referencia.
+cambios UT5a8,"* [x] incluir teórico UT5
+* [x] soluciones práctico UT5
+* [x] incluir teórico UT6
+* [x] soluciones práctico UT6
+* [x] incluir teórico UT7
+* [x] soluciones práctico UT7
+* [ ] incluir referencias y ejemplos UT8"
+integrar código para cálculo de inercia torsional al apunte,
+extender demostraciones de simetría en UT4,"desarrollar las demostraciones para el caso de simetría con carga puntual: modificar lo que hay y hacer la versión general con carga puntual, luego hacer la versión sin carga puntual como un caso particular."
+extender desarrollo de LI de momentos en UT4," - hacer el desarrollo para líneas de influencia de momentos
+ - agregar desarrollo de trenes de carga"
+presentar matriz de rigidez de elemento de pórtico 3D,
+mejorar figuras de sección 6.2,
+hacer ejemplos con análisis no lineal orientado a mostrar pandeo global y local,
+completar pasaje de figuras a svg,
+agregar ejercicio acoplando pandeo y reticulados en UT7,
+desarrollar un poco más tren de cargas en LI en teórico,
+agregar inercias caño,
+Agregar ej de MF con temperatura,
