@@ -742,15 +742,15 @@ A partir de las ecuaciones de la formulación fuerte del PEL es posible obtener 
 Si se considera un campo tensorial $\bfsig $ en equilibrio con las fuerzas externas y un campo de desplazamientos virtuales $\bfw$ compatible con las condiciones cinemáticas de contorno, entonces se cumple que:
 %
 \begin{equation}
-\int_{\Omega} \bfsig : \bfvarep (\bfw) dV = \int_{\Gamma_t}  \hat{\bft} \cdot \bfw d S + \int_{\Omega} \b \cdot \bfw dV,
+\int_{\Omega} \bfsig : \bfvarep (\bfw) dV = \int_{\Gamma_t}  \hat{\bft} \cdot \bfw d S + \int_{\Omega} \bfb \cdot \bfw dV,
 \end{equation}
 %
 donde el miembro izquierdo representa el trabajo de las fuerzas internas y el miembro derecho el trabajo de las fuerzas externas.
 
-Esta relación permite plantear el problema de encontrar $\bfsig$ como el problema de encontrar cuál es el campo tensorial que verifica la igualdad anterior para cualquier campo de desplazamientos virtual.
+Esta relación permite plantear el problema de encontrar $\bfsig$ como el problema de encontrar cuál es el campo tensorial que verifica la igualdad anterior para cualquier campo de desplazamientos virtuales.
 
 \begin{equation}
-\int_{\Omega} \bfsig : \bfvarep (\bfw) dV = \int_{\Gamma_t}  \hat{\bft} \cdot \bfw d S + \int_{\Omega} \b \cdot \bfw dV \qquad \forall \bfw \in \mcV_{u}
+\int_{\Omega} \bfsig : \bfvarep (\bfw) dV = \int_{\Gamma_t}  \hat{\bft} \cdot \bfw d S + \int_{\Omega} \bfb \cdot \bfw dV \qquad \forall \bfw \in \mcV_{u}
 \end{equation}
 %
 donde $\mcV_u$ es el conjunto de desplazamientos virtuales compatibles con los vínculos de apoyo.
@@ -762,7 +762,7 @@ Esta relación puede ser obtenida a partir de las ecuaciones de equilibrio puntu
 Considerando la ecuación constitutiva del material elástico lineal se puede reescribir la ecuación anterior obteniendo una nueva formulación del PEL. Esta formulación consiste en hallar el campo de desplazamientos $\bfu$ tal que se cumple:
 %
 \begin{equation}
-\int_{\Omega} \bbC[ \bfvarep (\bfu)] : \bfvarep (\bfw) dV = \int_{\Gamma_t}  \hat{\bft} \cdot \bfw d S + \int_{\Omega} \b \cdot \bfw dV \qquad \forall \bfw \in \mcV_{u}.
+\int_{\Omega} \bbC[ \bfvarep (\bfu)] : \bfvarep (\bfw) dV = \int_{\Gamma_t}  \hat{\bft} \cdot \bfw d S + \int_{\Omega} \bfb \cdot \bfw dV \qquad \forall \bfw \in \mcV_{u}.
 \end{equation}
 
 Este es el tipo de expresiones que posibilitan el desarrollo, de forma directa, de métodos numéricos para la resolución eficiente del problema, en particular el Método de los Elementos Finitos \citep{Hughes1987a}.
