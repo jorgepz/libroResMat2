@@ -15,14 +15,13 @@
 
 \chapter{Estructuras tridimensionales de barras}
 
-\section{Emparrillados}
 
-En esta sección se presentan de forma esquemática los conceptos más importantes para la determinación de desplazamientos y solicitaciones en estructuras planas de barras, sometidas a fuerzas perpendiculares al plano de la estructura. %
-%
-Estas estructuras, tal como fue visto en la Sección~\ref{sec:clasifest}, son llamadas estructuras planoespaciales o emparrillados.
+
+\section{Estructuras tridimensionales de barras}
+
+En esta sección se presentan conceptos, complementarios a lo visto en unidades anteriores, para el análisis de estructuras tridimensionales. Los elementos de barra pueden estar sometidos a fuerzas y momentos que producen 6 solicitaciones internas: directa, torsión, 2 flectores y 2 cortantes (correspondientes a la flexión en los dos planos definidos por los ejes de coordenadas locales transversales).
 
 \subsection{Torsión}
-
 
 En cursos anteriores se abordó la teoría de torsión de Saint-Venant para vigas de sección transversal con doble eje de simetría. %
 %
@@ -31,7 +30,7 @@ A continuación se enumeran algunas de las magnitudes y conceptos más important
 Sea una barra con un extremo empotrado sometida a un momento torsor $M_t$ se verifica:
 %
 \begin{equation}
-M_t = G J \Theta
+	M_t = G J \Theta
 \end{equation}
 %
 donde $G$ es la letra usualmente considerada en torsión para el módulo de corte. %
@@ -41,7 +40,7 @@ El módulo de corte es el segundo parámetro de Lamé $G=\mu$, donde $\mu$ está
 $\Theta$ es el \textit{barrenado}, dado por el cociente entre el ángulo de giro del extremo libre y el largo  $\Theta = \theta / \ell$, y $J$ es la inercia torsional de la sección dada por:
 %
 \begin{equation}
-J = \int_{A} \psi_P \dif A.
+	J = \int_{A} \psi_P \dif A.
 \end{equation}
 %
 donde $A$ es el área de la sección transversal y $\psi_P$ es la función de \emph{Prandtl}. %
@@ -49,37 +48,183 @@ donde $A$ es el área de la sección transversal y $\psi_P$ es la función de \e
 La función de \emph{Prandtl}, puede ser obtenida como la solución del siguiente problema en derivadas parciales:
 %
 \begin{equation}
-\left\{
-\begin{array}{lr}
-\Delta \psi_P = -2 & \text{en} \, A\\
-\psi_P = 0 & \text{sobre } \, \partial A
-\end{array}
-\right.
+	\left\{
+	\begin{array}{lr}
+		\Delta \psi_P = -2 & \text{en} \, A\\
+		\psi_P = 0 & \text{sobre } \, \partial A
+	\end{array}
+	\right.
 \end{equation} 
 %
 u obtenida de fórmulas para algunos casos particulares \citep{Young2001}.
 
 
-Si se considera un elemento con giros nodales $\theta_1$ y $\theta_2$ se tiene:
+Si se considera un elemento de barra con giros nodales $\theta_1$ y $\theta_2$ se tiene:
 %
 \begin{equation}
-  M_t = G J \frac{\theta_2 - \theta_1}{\ell}
+	M_t = G J \frac{\theta_2 - \theta_1}{\ell}
 \end{equation}
 
 Por otra parte la energía de deformación torsional está dada por:
 %
 \begin{equation}
-\Pi_{int,\text{torsión}}(\theta_1,\theta_2) = \frac{1}{2} \frac{G J}{\ell} \left( \theta_2 - \theta_1\right)^2.
+	\Pi_{int,\text{torsión}}(\theta_1,\theta_2) = \frac{1}{2} \frac{G J}{\ell} \left( \theta_2 - \theta_1\right)^2.
 \end{equation}
 %
 
 A partir de la relación entre $\psi_P$ y las tensiones rasantes se puede calcular también el valor de la tensión rasante máxima debida a torsión, dado por:
 %
 \begin{equation}
-\tau_{max} = \frac{M_t}{W_t}
+	\tau_{max} = \frac{M_t}{W_t}
 \end{equation}
 %
 donde $W_t$ es el módulo resistente torsional.
+
+
+
+\subsection{Elemento de viga sometido a flexo compresión esviada}
+
+El caso de flexión esviada corresponde a vigas sometidas a momentos flectores con componentes no nulas en los dos ejes de coordenadas locales transversales (siendo estos los ejes principales de la sección). %
+
+El desarrollo de las ecuaciones para vigas sometidas a esfuerzos axiales y transversales es equivalente al presentado en la Sección~\ref{sec:analiMatPort}, considerando que los giros de las secciones son no nulos tanto en el eje $y$ como el eje $z$, esto es $\theta_z \neq 0$ y $\theta_y \neq 0$. %
+%
+Al mismo tiempo se tiene que ambos desplazamientos transversales $v$ y $w$ son no nulos.
+
+También se mantiene la hipótesis de que caras planas permanecen planas, por lo que el desplazamiento de un punto ubicado en un punto con coordenadas $x,y,z$ puede ser escrito como:
+%
+\begin{equation} \label{eqn:despaxidosdir}
+	u(x,y,z) = u_G(x) - y \theta_z(x) + z \theta_y(x).
+\end{equation}
+
+Realizando un desarrollo equivalente al del caso plano se puede obtener las relaciones 
+%
+\begin{equation}
+	\theta_z(x) = \frac{\partial v}{\partial x}(x), \qquad  \theta_y(x) = - \frac{\partial w}{\partial x}(x),
+\end{equation}
+%
+y la expresión de la tensión axial:
+%
+\begin{equation}\label{eqn:tensaxiflexesv}
+	\boxed{
+		\sigma(x,y,z) = \frac{	N (x) }{A}
+		- y \frac{	M_z (x) }{I_z} + z \frac{	M_y (x) }{I_y} 
+	}
+\end{equation}
+
+En clase se presentará el razonamiento utilizado en este desarrollo así como también se verán ejemplos prácticos.
+
+
+
+
+\subsection{Elemento de pórtico tridimensional}
+
+En clase se presentará el elemento de barra tridimensional, el cual es considerado sometido a torsión, flexión en ambos planos (es decir \textit{flexión esviada}) y directa. %
+La relaciones desplazamientos esfuerzos pueden ser obtenidas de forma análoga a como ha sido realizado en unidades anteriores, superponiendo efectos y aplicando el PMEP considerando las energías de flexión, axial y torsional.
+
+En este curso se realizará un especial énfasis en el análisis de estructuras de pórtico 3D isostáticas, buscando obtener diagramas de  las seis solicitaciones presentes.
+
+
+\section{Ejercicios}
+\setcounter{ejercicio}{0}
+\ejercicio
+
+Se desea estudiar un aerogenerador cuyas dimensiones se muestran en la figura a la izquierda. Todas las palas tienen mismo largo y mismo ángulo de apertura 120$^\circ$. %
+%
+%
+En la figura a la derecha se muestra un estado de cargas estáticas idealizado, de interés para el diseño. %
+%
+Las fuerzas actuantes son:
+\begin{itemize}
+	\item Una fuerza puntual de 80 kN sobre cada punto: F, G y H, representando la fuerza del viento sobre las palas. 
+	\item Una fuerza del viento sobre la torre que se ha simplificado como una fuerza en B horizontal de 20 kN. 
+	\item El peso de las palas, de 30 kN, considerado como una carga puntual en el punto E.
+	\item La carga distribuida de 6.5 kN/m que representa el peso de la turbina.
+\end{itemize}
+
+Se pide: calcular las reacciones en A y los diagramas de solicitaciones.
+
+\begin{center}
+	\def\svgwidth{0.45\textwidth}
+	\input{figs/UT5/ej56.pdf_tex}
+\end{center}
+
+
+
+
+
+\ejercicio \label{ejUt5Grua}
+
+Sea una estructura formada por barras de sección cuadrada de $40$ cm de lado, compuestas por un material elástico lineal. La estructura tiene aplicadas dos cargas puntuales: en A una carga $P_A = 500$ kN y en B otra carga $P_B = 250$ kN. Por otra parte, la estructura está sometida a una carga distribuida uniforme $q= 250 $ N/m con sentido según $y_G$. No se considera el peso propio.
+
+A la izquierda muestra el esquema de la estructura en el plano $x-z$ y a la derecha el esquema básico estructural con ejes locales propuestos para cada barra.
+
+\begin{center}
+	\def\svgwidth{\textwidth}
+	\input{./figs/UT5/UT5_ejGrua.pdf_tex}
+\end{center}
+
+Trazar los diagramas de todas las solicitaciones de la estructura, de acuerdo con los ejes locales indicados para cada barra. Verificar que el momento flector $M_y$ es nulo en la sección C.
+
+
+
+
+\ejercicio (2do parcial 2021)
+
+En las etapas iniciales del diseño de la estructura de soporte de un cartel, se plantea el esquema básico de cálculo mostrado en la figura con las dos cargas distribuidas mostradas. La sección transversal  considerada inicialmente para las barras es cuadrada  y maciza de lado 15 cm y el material es acero ($E= 200$ GPa).
+
+\begin{center}
+	\def\svgwidth{0.8\textwidth}
+	\input{./figs/UT5/ej2EsquemaA.pdf_tex} 
+\end{center}
+
+\vspace{1mm}
+
+Se pide:
+%
+\parte Indicar si esta afirmación es verdadera o falsa para este problema: \textit{Las solicitaciones en las barras \textbf{no dependen} de la forma de la sección transversal de las barras}.
+%
+\parte Dibujar los diagramas de todas las solicitaciones de las barras considerando los ejes locales de la figura y justificando la obtención de todos los valores numéricos.
+%
+\parte Determinar las reacciones en el empotramiento, indicando el sistema de coordenadas usado.
+
+
+
+
+
+
+\ejercicio
+
+La estructura tridimensional de hormigón ($E=30$ GPa y $\nu=0.2$) mostrada en las está conformada por pilares de sección cuadrada $30 \times 30$ cm y vigas de $b=20$ cm y  $h=50$ cm.
+
+\begin{center}
+	\includegraphics[width=0.45\linewidth]{UT5ej5a}
+	\hspace{0.05\linewidth}
+	\includegraphics[width=0.45\linewidth]{UT5ej5b}
+\end{center}
+
+Para el caso de la estructura a la izquierda se considera $P=20$ kN y se pide:
+%
+\parte Estudiar los pórticos planos ABCD y EFGH independientes del resto de la estructura en forma analítica. 
+%
+\parte Modelar la estructura completa en un programa computacional y comparar  los resultados con los hallados en a). %
+%
+Para el caso de la estructura a la derecha se considera $q=10$ kN/m sobre la viga AB y se pide:
+%
+\parte Indicar qué modelo plano realizaría para estudiar el pórtico ABCD considerando que los puntos E y F están fijos. Obtener computacionalmente resultados de ese modelo. 
+%
+\parte Analizar los resultados de modelar la estructura tridimensional y comparar con los obtenidos en c). 
+
+
+
+
+
+
+
+\section{Emparrillados}
+
+En esta sección se presentan de forma esquemática los conceptos más importantes para la determinación de desplazamientos y solicitaciones en estructuras planas de barras, sometidas a fuerzas perpendiculares al plano de la estructura. %
+%
+Estas estructuras, tal como fue visto en la Sección~\ref{sec:clasifest}, son llamadas estructuras planoespaciales o emparrillados.
 
 
 \subsection{Barras sometidas a flexo-torsión}
@@ -342,52 +487,11 @@ Finalmente para comprender la deformación de la estructura se realizada un aná
 Para el análisis de la estructura tridimensional completa mostrada en la Figura~\ref{fig:UT5_ejemplo} utilizando un método analítico, es posible llevar la carga en el punto medio a los nodos, utilizando el enfoque de cargas equivalentes presentado en la Sección~\ref{sec:cargequiv}.
 
 
-\section{Estructuras tridimensionales de barras}
-
-En el caso de estructuras tridimensionales, los elementos de barra pueden estar sometidos a esfuerzos de fuerzas y momentos que producen 6 solicitaciones internas: directa, torsión, 2 flectores y 2 cortantes (correspondientes a la flexión en los dos planos definidos por los ejes de coordenadas locales transversales).
-
-\subsection{Elemento de viga sometido a flexo compresión esviada}
-
-El caso de flexión esviada corresponde a vigas sometidas a momentos flectores con componentes no nulas en los dos ejes de coordenadas locales transversales (siendo estos los ejes de los momentos de inercial principales). %
-
-El desarrollo de las ecuaciones para vigas sometidas a esfuerzos axiales y transversales es equivalente al presentado en la Sección~\ref{sec:analiMatPort}, considerando que los giros de las secciones son no nulos tanto en el eje $y$ como el eje $z$, esto es $\theta_z \neq 0$ y $\theta_y \neq 0$. %
-%
-Al mismo tiempo se tiene que ambos desplazamientos transversales $v$ y $w$ son no nulos.
-
-También se mantiene la hipótesis de que caras planas permanecen planas, por lo que el desplazamiento de un punto ubicado en un punto con coordenadas $x,y,z$ puede ser escrito como:
-%
-\begin{equation} \label{eqn:despaxidosdir}
-  u(x,y,z) = u_G(x) - y \theta_z(x) + z \theta_y(x).
-\end{equation}
-
-Realizando un desarrollo equivalente al del caso plano se puede obtener las relaciones 
-%
-\begin{equation}
- \theta_z(x) = \frac{\partial v}{\partial x}(x), \qquad  \theta_y(x) = - \frac{\partial w}{\partial x}(x),
-\end{equation}
-%
-y la expresión de la tensión axial:
-%
-\begin{equation}\label{eqn:tensaxiflexesv}
-\boxed{
-	\sigma(x,y,z) = \frac{	N (x) }{A}
-	- y \frac{	M_z (x) }{I_z} + z \frac{	M_y (x) }{I_y} 
-}
-\end{equation}
-
-En clase se presentará el razonamiento utilizado en este desarrollo así como también se verán ejemplos prácticos.
 
 
-
-
-\subsection{Elemento de pórtico tridimensional}
-
-En clase se presentará brevemente el elemento de barra tridimensional, el cual es considerado sometido a torsión, flexión en ambos planos (es decir \textit{flexión esviada}) y directa. %
-%
-En este curso se realizar un especial énfasis en el análisis de estructuras de pórtico 3D isostáticas.
 
 \section{Ejercicios}
-\setcounter{ejercicio}{0}
+%\setcounter{ejercicio}{0}
 
 \ejercicio
 
@@ -442,7 +546,7 @@ Considerando que todas las barras están compuestas por el mismo tubular que el 
 
 \ejercicio
 
-Sea un emparrillado modificado con respecto al del Ejercicio 2, en el cual se agrega una barra adicional, que está sometida a una carga $q=2$ kN/m, como se muestra en la figura.
+Sea un emparrillado modificado con respecto al del Ejercicio 6, en el cual se agrega una barra adicional, que está sometida a una carga $q=2$ kN/m, como se muestra en la figura.
 
 \begin{center}
 	\includegraphics[width=0.6\linewidth]{UT5ej3}
@@ -451,93 +555,6 @@ Sea un emparrillado modificado con respecto al del Ejercicio 2, en el cual se ag
 Se pide:
 \parte Resolver mediante análisis matricial. Trazar diagramas de solicitaciones.
 \parte Comparar resultados obtenidos en a) con los obtenidos utilizando alguna herramienta computacional.
-
-
-
-\ejercicio
-
-La estructura tridimensional de hormigón ($E=30$ GPa y $\nu=0.2$) mostrada en las está conformada por pilares de sección cuadrada $30 \times 30$ cm y vigas de $b=20$ cm y  $h=50$ cm.
-
-\begin{center}
-	\includegraphics[width=0.45\linewidth]{UT5ej5a}
-	\hspace{0.05\linewidth}
-	\includegraphics[width=0.45\linewidth]{UT5ej5b}
-\end{center}
-
-Para el caso de la estructura a la izquierda se considera $P=20$ kN y se pide:
-%
-\parte Estudiar los pórticos planos ABCD y EFGH independientes del resto de la estructura en forma analítica. 
-%
-\parte Modelar la estructura completa en un programa computacional y comparar  los resultados con los hallados en a). %
-%
-Para el caso de la estructura a la derecha se considera $q=10$ kN/m sobre la viga AB y se pide:
-%
-\parte Indicar qué modelo plano realizaría para estudiar el pórtico ABCD considerando que los puntos E y F están fijos. Obtener computacionalmente resultados de ese modelo. 
-%
-\parte Analizar los resultados de modelar la estructura tridimensional y comparar con los obtenidos en c). 
-
-\ejercicio
-
-Se desea estudiar un aerogenerador cuyas dimensiones se muestran en la figura a la izquierda. Todas las palas (o aspas) tienen el mismo largo y tienen mismo ángulo de apertura 120$^\circ$. %
-%
-%
-En la figura a la derecha se muestra un estado de cargas estáticas idealizado, de interés para el diseño. %
-%
-Las fuerzas actuantes son:
-\begin{itemize}
-\item Una fuerza puntual de 80 kN sobre cada punto: F, G y H, representando la fuerza del viento sobre las aspas. 
-\item Una fuerza del viento sobre la torre que se ha simplificado como una fuerza en B horizontal de 20 kN. 
-\item El peso de las aspas de 30 kN que se aplica como una carga puntual en el punto E.
-\item La carga distribuida de 6.5 kN/m que representa el peso de la turbina.
-\end{itemize}
-
-Se pide: calcular las reacciones en A y los diagramas de solicitaciones.
-
-\begin{center}
-	\def\svgwidth{0.5\textwidth}
-\input{figs/UT5/ej56.pdf_tex}
-\end{center}
-
-
-
-
-
-\ejercicio \label{ejUt5Grua}
-
-Sea una estructura formada por barras de sección cuadrada de $40$ cm de lado, compuestas por un material elástico lineal. La estructura tiene aplicadas dos cargas puntuales: en su nodo A, una carga $P_A = 500$ kN y en su nodo B, otra carga $P_B = 250$ kN. Por otra parte, la estructura está sometida a una carga distribuida uniforme $q= 250 $ N/m con sentido según $y_G$. No se considera el peso propio.
-
-A la izquierda muestra el esquema de la estructura en el plano $x-z$ y a la derecha el esquema básico estructural con ejes locales propuestos para cada barra.
-
-\begin{center}
-	\def\svgwidth{\textwidth}
-	\input{./figs/UT5/UT5_ejGrua.pdf_tex}
-\end{center}
-
-Trazar los diagramas de todas las solicitaciones de la estructura, de acuerdo con los ejes locales indicados para cada barra. Verificar que el momento flector $M_y$ es nulo en la sección C.
-
-
-
-
-\ejercicio (2do parcial 2021)
-
-En las etapas iniciales del diseño de la estructura de soporte de un cartel, se plantea el esquema básico de cálculo mostrado en la figura con las dos cargas distribuidas mostradas. La sección transversal  considerada inicialmente para las barras es cuadrada  y maciza de lado 15 cm y el material es acero ($E= 200$ GPa).
-
-\begin{center}
-	\def\svgwidth{0.8\textwidth}
-	\input{./figs/UT5/ej2EsquemaA.pdf_tex} 
-\end{center}
-
-\vspace{1mm}
-
-Se pide:
-%
-\parte Indicar si esta afirmación es verdadera o falsa para este problema: \textit{Las solicitaciones en las barras \textbf{no dependen} de la forma de la sección transversal de las barras}.
-%
-\parte Dibujar los diagramas de todas las solicitaciones de las barras considerando los ejes locales de la figura y justificando la obtención de todos los valores numéricos.
-%
-\parte Determinar las reacciones en el empotramiento, indicando el sistema de coordenadas usado.
-
-
 
 
 
@@ -598,13 +615,13 @@ Sobre las barras transversales actúa una carga q=3 kN/m y L=1.0 m. Se pide:
 \parte Comparar resultados obtenidos en a) y b).
 
 
-\ejercicio (adicional) 
-
-La estructura planoespacial mostrada en la figura está formada por barras de misma sección y longitud que el emparrillado del Ejercicio 2.
-
-\begin{center}
-	\includegraphics[width=0.75\linewidth]{UT5ej9}
-\end{center}
-
-Se pide: trazar diagramas de solicitaciones para $P=10$ kN.
+%\ejercicio (adicional) 
+%
+%La estructura planoespacial mostrada en la figura está formada por barras de misma sección y longitud que el emparrillado del Ejercicio 2.
+%
+%\begin{center}
+%	\includegraphics[width=0.7\linewidth]{UT5ej9}
+%\end{center}
+%
+%Se pide: trazar diagramas de solicitaciones para $P=10$ kN.
 

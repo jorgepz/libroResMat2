@@ -14,4 +14,4 @@
  * Bruno Bouchard realizó una corrección de una matriz de rigidez en un ejemplo de análisis de emparrillados: https://gitlab.fing.edu.uy/jorgepz/libroResMat2/-/commit/5d017a49ff323a1000e1a7aec6be9686b018fb33
  * Ignacio Suarez agregó la capacidad de ploteo de emparrillados en un código de ejemplo: https://gitlab.fing.edu.uy/jorgepz/libroResMat2/-/commit/1841f827f9096a806c462fc08c145f77e85846fb
  * Guillermo Castro realizó una corrección en la UT5 https://gitlab.fing.edu.uy/jorgepz/libroResMat2/-/commit/5a0503ab7b7600e573fa4865e68eb984dda4e662
-
+ * [José Pedro García](https://github.com/Jose-Pedro-Garcia) realizó correcciones en ecuaciones y texto de la UT1 https://github.com/jorgepz/libroResMat2/pull/15

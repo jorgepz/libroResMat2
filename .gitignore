@@ -9,3 +9,4 @@ latex/*.pdf
 *.blg
 *.xwm
 latex/svg2pdftex.sh
+tex/libroResMat2.pdf

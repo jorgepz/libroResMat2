@@ -423,16 +423,16 @@ Se observa que para determinar el NC en secciones no suaves, puede resultar conv
 
 % -----------------------------------------------
 % -----------------------------------------------
-\section{Análisis No Lineal de Secciones}
+\section{Análisis de Secciones que no soportan tracción}
 
-En esta sección se presentan los conceptos básicos en el análisis no lineal de tensiones en secciones, con particular interés en aquellos materiales que no soportan tracciones.
+En esta sección se presenta un caso particular del análisis no lineal de tensiones en secciones, para materiales que no soportan tracciones.
 
 A partir de lo visto en la Sección~\ref{sec:nucleocentral} se conoce que, si se tiene una fuerza de directa en un punto de aplicación fuera del núcleo central, la línea neutra corta a la sección, teniendo una zona comprimida y otra traccionada. %
 %
 En el caso de materiales sin resistencia a tracción, como hormigón,  mampostería o fundaciones directas, el análisis no lineal de tensiones adquiere relevancia. %
 %
 
-\subsection{Materiales que no soportan tracción}
+\subsection{Ecuaciones}
 
 Se considera el caso, muy frecuente en la práctica, de sección simétrica y con el punto de aplicación de la fuerza de directa perteneciente al eje de simetría ($M_z=0$). Por otra parte se supondrá nula la tensión en la zona traccionada, y una relación líneal entre tensiones y deformaciones para la zona comprimida como muestra la Figura~\ref{fig:MNSTesquema}. Lo anterior implica que para la determinación del eje neutro no son válidas las ecuaciones obtenidas en la Sección~\ref{sec:lineaneutra}.
 
@@ -655,8 +655,8 @@ Sobre la sección de la figura se aplican las cargas $P$ y $Q$ de igual valor y 
 \ejercicio 
 
 \noindent
-\begin{minipage}[b]{0.54\textwidth}
-La zapata de la figura trasmite al terreno la descarga vertical de un pilar, siendo $P=40$ kN. %
+\begin{minipage}[t][][b]{0.45\textwidth}
+La zapata de la figura transmite al terreno la descarga vertical de un pilar, siendo $P=40$ kN. %
 %
 Calcular el lado menor ($b$) de la zapata, si $\sigma_{terreno}=0,15$ MPa.
 
@@ -664,10 +664,10 @@ Calcular el lado menor ($b$) de la zapata, si $\sigma_{terreno}=0,15$ MPa.
 \parte $e=0,25$ m.
 \parte $e=0,50$ m.
 \end{minipage}
-~
-\begin{minipage}[b]{0.45\textwidth}
+\hfill
+\begin{minipage}[t][][b]{0.45\textwidth}
  \begin{center}
-  \includegraphics[width=0.5\linewidth]{UT6ej8}
+  \includegraphics[width=0.7\linewidth]{UT6ej8}
  \end{center}
 \end{minipage}
 
