@@ -26,7 +26,7 @@
 \usepackage{libertinust1math}
 \usepackage{titlesec}
 
-\usepackage[usenames]{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{graphicx,epsfig}
 \usepackage{mathrsfs,amsfonts,amssymb,amsmath,amsthm,mathtools}
 
@@ -34,12 +34,14 @@
 \definecolor{bluedark}{rgb}{0,0.1,0.5}%
 \definecolor{miblue}{rgb}{0,0.1,0.6}%
 
-\usepackage[colorlinks = true,
+\usepackage[colorlinks=true,
+breaklinks=true,
 linkcolor = miblue,
 urlcolor  = miblue,
 citecolor = blue,
 anchorcolor = miblue]{hyperref}
 
+\usepackage[nopatch=footnote]{microtype}
 \usepackage{anysize}
 
 \usepackage{wasysym}
@@ -106,7 +108,7 @@ anchorcolor = miblue]{hyperref}
 \usepackage[numbered,framed]{matlab-prettifier}
 
 \let\ph\mlplaceholder % shorter macro
-\lstMakeShortInline"
+\lstMakeShortInline|
 
 \lstset{
 	style              = Matlab-editor,
@@ -244,7 +246,7 @@ anchorcolor = miblue]{hyperref}
 %\footrulewidth 0 pt
 %\renewcommand{\headrulewidth}{0pt}
 
-\include{chapters/definitions}
+\input{chapters/definitions.tex}
 
 \usepackage[normalem]{ulem}
 \usepackage{datetime}
@@ -272,13 +274,13 @@ anchorcolor = miblue]{hyperref}
 \mainmatter
 
 \input{chapters/Cap1_intro}
-\input{chapters/Cap2_MD_MF}
-\input{chapters/Cap3_MDVigas}
-\input{chapters/Cap4_AnPP}
-\input{chapters/Cap5_PEsp}
-\input{chapters/Cap6_AnaliSecc}
-\input{chapters/Cap7_Estabilidad_A}
-\input{chapters/Cap7_Estabilidad_B}
+% \input{chapters/Cap2_MD_MF}
+% \input{chapters/Cap3_MDVigas}
+% \input{chapters/Cap4_AnPP}
+% \input{chapters/Cap5_PEsp}
+% \input{chapters/Cap6_AnaliSecc}
+% \input{chapters/Cap7_Estabilidad_A}
+% \input{chapters/Cap7_Estabilidad_B}
 %\input{chapters/Cap7_Inestabilidad_Otros}
 %\input{chapters/Cap8_Losas}
 
