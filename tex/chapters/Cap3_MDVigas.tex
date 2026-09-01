@@ -1489,3 +1489,39 @@ Se pide:
 	\item obtener los giros y desplazamientos correspondientes a las incógnitas del problema
 \end{enumerate}
  
+
+\section{Teoría de vigas de Timoshenko}
+
+En esta sección se presentan de forma esquemática y a modo de punteo las ecuaciones fundamentales de la teoría de vigas de Timoshenko. En clase se discutirá sobre el alcance, la necesidad y límites de la teoría, asimismo se presentará la resolución de un ejemplo de una viga. 
+
+Esta teoría fue desarrollada en la primera mitad del siglo XX por Timoshenko (y Ehrenfest \citep{timobeam}).  El cambio fundamental con respecto a la teoría de vigas esbeltas (Euler-Bernoulli) es que en este caso, se considera que caras planas \textit{permanecen planas, pero no necesariamente perpendiculares} a la curva deformada del eje de la viga. 
+
+
+En la Figura~\ref{fig:vigatimo} se muestra un diagrama simplificado de un tramo de una viga, donde en gris se presenta la configuración de referencia no deformada, en azul la deformada y en verde la sección plana que en este caso pasa a formar un ángulo $\phi$ con la sección correspondiente a la teoría de Euler-Bernoulli.
+
+\begin{figure}[htb]
+	\centering
+	\def\svgwidth{0.75\textwidth}
+	\input{figs/UT3/viga2d_timo.pdf_tex}
+	\caption{Diagrama viga de teoría de Timoshenko.}
+	\label{fig:vigatimo}
+\end{figure}
+
+Se considera que la sección gira un ángulo $\theta$, por lo que el desplaamiento axial será
+\begin{equation}
+u(x,y)= u_G(x) - y \theta(x)
+\end{equation}
+%
+pero ahora se cuenta con una incógnita a determinar $\phi$, que determina el ángulo $\theta$ como:
+\begin{equation}
+	\theta =  \frac{dv}{dx} - \phi
+\end{equation}
+
+
+
+\begin{equation}
+	\gamma = \theta + \frac{dw}{dx}
+\end{equation}
+
+
+
